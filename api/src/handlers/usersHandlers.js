@@ -1,4 +1,4 @@
-const { createUserDB } = require("../controllers/Users");
+const { createUserDB, getUserById } = require("../controllers/Users");
 
 const getUsersHandler = (req, res) => {
 const { firstName } = req.query;
@@ -7,15 +7,18 @@ const { firstName } = req.query;
 };
 
 const getUserByIdHandler = async (req, res) => {
-const { id } = req.params
+    const { id } = req.params;
+
+const source = isNaN(id) ? "bdd" : "api"
+
+
 try {
-    const response = await getUserById();
+    const response = await getUserById(id, source);
     res.status(200).json(response);
 } catch (error) {
     res.status(400).json({error: error.message});
 }
 
-    res.status(200).send(`Detalle del usuario ${id}`);
 };
 
 const createUserHandler = async (req, res) => {
