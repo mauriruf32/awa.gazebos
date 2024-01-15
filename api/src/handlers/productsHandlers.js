@@ -1,13 +1,35 @@
-const { createProductDB } = require("../controllers/Products");
+const { createProductDB, getProductById, getAllProducts } = require("../controllers/Products");
 
-const getProductsHandler = (req, res) => {
-    res.status(200).send("Todos los productos");
+const getProductsHandler = async (req, res) => {
+  const { name } = req.query;
+
+  try {
+
+  if(name) {
+      const userByName = await getProductByName(name);
+      res.status(200).json(userByName);
+  } else {
+      const response = await getAllProducts();
+      res.status(200).json(response);
+
+  }
+      
+  } catch (error) {
+      res.status(400).json({error: error.message});
+  }
 };
 
-const getProductByIdHandler = (req, res) => {
-const { id } = req.params
+const getProductByIdHandler = async (req, res) => {
+  const { id } = req.params;
 
-    res.status(200).send(`Detalle del producto ${id}`);
+  try {
+    const response = await getProductById(id);
+    res.status(200).json(response);
+  } catch (error) {
+    res.status(400).json({error: error.message});
+  }
+
+    // res.status(200).send(`Detalle del producto ${id}`);
 };
 
 const createProductHandler = async (req, res) => {
@@ -30,7 +52,7 @@ const createProductHandler = async (req, res) => {
       }
 
 
-    res.status(200).send("Producto creado");
+    // res.status(200).send("Producto creado");
 };
 
 module.exports = {

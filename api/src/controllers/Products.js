@@ -7,6 +7,20 @@ const createProductDB = async (name, image, description, price, stock, size, mat
      
 };
 
+const getProductById = async (id) => {
+
+ return await Product.findByPk(id);
+    
+    
+};
+
+const getAllProducts = async () => {
+ 
+    return await Product.findAll();
+};
+
 module.exports = {
     createProductDB,
+    getProductById,
+    getAllProducts,
 };
