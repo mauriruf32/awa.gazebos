@@ -4,14 +4,12 @@ const getUsersHandler = async (req, res) => {
     const { firstName } = req.query;
 
     try {
-
     if(firstName) {
         const userByName = await getUserByName(firstName);
         res.status(200).json(userByName);
     } else {
         const response = await getAllUsers();
         res.status(200).json(response);
-
     }
         
     } catch (error) {
