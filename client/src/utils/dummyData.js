@@ -1,14 +1,7 @@
-import React from 'react';
-import NavBar from '../../Components/NavBar/NavBar';
-import Card from "../../Components/Card/Card"
-import logo from "../../Components/Card/logo.jpeg";
-import gazebo1 from "../../Components/Card/gazebo1.webp";
-
-const Home = () => {
-  const dummyData = [
+const dummyData = [
     {
       name: "Artículo 1",
-      image: logo,
+      image: "imagen_1.jpg",
       description: "Descripción del artículo 1.",
       price: 19.99,
       stock: 50,
@@ -18,7 +11,7 @@ const Home = () => {
     },
     {
       name: "Artículo 2",
-      image: gazebo1,
+      image: "imagen_2.jpg",
       description: "Descripción del artículo 2.",
       price: 29.99,
       stock: 30,
@@ -58,16 +51,5 @@ const Home = () => {
     },
   ];
   
-
-  return (
-    <div>
-            <NavBar />
-      {dummyData.map((product, index) => (
-        <Card key={index} {...product} />
-      ))}
-      Home
-      </div>
-  )
-}
-
-export default Home;
+  module.exports = dummyData;
+  

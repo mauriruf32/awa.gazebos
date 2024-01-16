@@ -1,0 +1,39 @@
+/* DetailProduct.css */
+.detail-product-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 150px;
+    height: 600px;
+    width: 860px;
+  }
+  
+  .detail-product-image img {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .detail-product-info {
+    flex: 1;
+    margin-left: 100px;
+    text-align: left; 
+  }
+  
+  .product-description {
+    margin-bottom: 15px;
+  }
+  
+  .product-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .additional-info {
+    margin-top: 15px;
+  }
+  
+  .additional-info p {
+    margin: 5px 0;
+  }
+  

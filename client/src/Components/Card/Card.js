@@ -1,25 +1,62 @@
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import gazebo1 from "./gazebo1.webp";
 
-function Product() {
+import Swal from "sweetalert2";
+
+function Product({ name, image, description, price, stock, size, material, category }) {
+
+
+  const handleDetailProductClick = () => {
+    Swal.fire({
+      title: `<strong>${name}</strong>`,
+      html: `
+        <div class="detail-card">
+          <img class="detail-img" src="${image}" alt="${name}" />
+          <div class="detail-info">
+            <p><strong>Descripción:</strong> ${description}</p>
+            <p><strong>Tamaño:</strong> ${size}</p>
+            <p><strong>Material:</strong> ${material}</p>
+            <p><strong>Categoria:</strong> ${category}</p>
+            <p><strong>Precio:</strong> $${price}</p>
+          </div>
+        </div>`,
+      showCloseButton: true,
+      showCancelButton: true,
+      focusConfirm: false,
+      confirmButtonText: "Agregar al carrito",
+      cancelButtonText: "+ Info",
+      confirmButtonColor: "#202020",
+    }).then((result) => {
+      if (result.isConfirmed) {
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // Redirect to the specified route when cancel button is pressed
+        window.location.href = `producto/${name}`;
+      }
+    });
+  };
+
+     
+  // const handleAddToCartClick = () => {
+  //   const productId = id;
+  //   addToCart(productId);
+  // };
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={gazebo1} />
+      <Card.Img variant="top" src={image} alt={name} onClick={handleDetailProductClick} />
       <Card.Body>
-        <Card.Title>Gazebo Elastico Armado Rapido Toldo Playa Sombrilla</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
+        <Card.Title >{name}</Card.Title>
+        <Card.Text>{description}</Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+        <ListGroup.Item>Price: ${price}</ListGroup.Item>
+        <ListGroup.Item>Stock: {stock}</ListGroup.Item>
+        <ListGroup.Item>Size: {size}</ListGroup.Item>
+        <ListGroup.Item>Material: {material}</ListGroup.Item>
+        <ListGroup.Item>Category: {category}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
+        <Card.Link  href="/producto/:name">Card Link</Card.Link>
         <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
     </Card>

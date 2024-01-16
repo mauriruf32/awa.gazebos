@@ -1,6 +1,8 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import { Nav } from "react-bootstrap";
+
 import logo from "../Card/logo.jpeg";
 
 
@@ -9,7 +11,7 @@ const NavBar = () => {
     <>
     <Navbar bg="secondary">
       <Container>
-        <Navbar.Brand href="/home">
+        <Navbar.Brand href="/">
           <img
             alt=""
             src={logo}
@@ -18,6 +20,9 @@ const NavBar = () => {
             className="d-inline-block align-top"
           />{' '}
         </Navbar.Brand>
+        <Nav.Link href="/register">Registrate</Nav.Link>
+              {/* <Nav.Link href="/ProductList">ProductList</Nav.Link>
+              <Nav.Link href="/Inventory">Inventario</Nav.Link> */}
       </Container>
     </Navbar>
   </>
