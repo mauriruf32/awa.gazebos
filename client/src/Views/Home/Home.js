@@ -61,9 +61,9 @@ const Home = () => {
 
   return (
     <div>
-            <NavBar />
+      <NavBar />
       {dummyData.map((product, index) => (
-        <Card key={index} {...product} />
+      <Card key={index} {...product} />
       ))}
       Home
       </div>

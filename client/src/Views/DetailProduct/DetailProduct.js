@@ -5,9 +5,8 @@ import React, { useEffect, useState } from "react";
 // import Reviews from "../../Components/Review/Review.jsx";
 import "./DetailProduct.css";
 
-function DetailProduct() {
+function DetailProduct({ name, image, description, price, stock, size, material, category }) {
 
-  const { name } = useParams();
   const [Producto, setProducto] = useState([]);
 
   useEffect(() => {
@@ -29,17 +28,17 @@ function DetailProduct() {
   return (
     <div className="detail-product-container">
       <div className="detail-product-image">
-        <img src={Producto.image} alt={Producto.name} />
+        <img src={image} alt={name} />
       </div>
       <div className="detail-product-info">
         <h4>
           <b>{Producto.name}</b>
         </h4>
-        <p className="product-description">{Producto.description}</p>
-        <p><strong>Size:</strong> {Producto.size}</p>
+        <p className="product-description">{description}</p>
+        <p><strong>Size:</strong> {size}</p>
         <p><strong>Material:</strong> {Producto.material}</p>
-        <p><strong>Category:</strong> {Producto.category}</p>
-        <p className="product-price">${Producto.price}</p>
+        <p><strong>Category:</strong> {category}</p>
+        <p className="product-price">${price}</p>
         {/* <Reviews productId={Producto.id}/> */}
       </div>
     </div>

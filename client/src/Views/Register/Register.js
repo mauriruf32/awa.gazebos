@@ -224,7 +224,7 @@ const Register = () => {
                   <h4>
                     ¿Ya tienes una cuenta?
                     <span>
-                      <Link to="/LoginUp">
+                      <Link to="/Login">
                         Iniciar sesión
                       </Link>
                     </span>
