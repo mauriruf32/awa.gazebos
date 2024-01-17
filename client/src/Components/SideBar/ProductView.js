@@ -1,6 +1,6 @@
 // ProductView.js (donde se muestran los productos)
 import React, { useState, useEffect } from 'react';
-import Product from './Product.js';
+import Card from "../Card/Card";
 import Sidebar from './SideBar';
 
 const ProductView = ({ products }) => {
@@ -45,7 +45,7 @@ const ProductView = ({ products }) => {
       <Sidebar onFilterChange={handleFilterChange} onSortChange={handleSortChange} />
       <div className="product-list">
         {filteredProducts.map(product => (
-          <Product key={product.id} {...product} />
+          <Card key={product.id} product={product} />
         ))}
       </div>
     </div>

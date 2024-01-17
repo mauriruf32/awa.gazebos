@@ -1,9 +1,10 @@
 import React from 'react';
-import { getProducts } from '../../redux/actions';
+import { getProducts, orderProductsByPrice } from '../../redux/actions';
 import { useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NavBar from '../../Components/NavBar/NavBar';
 import Card from "../../Components/Card/Card"
+import ProductView from '../../Components/SideBar/ProductView';
 // import logo from "../../Components/Card/logo.jpeg";
 // import gazebo1 from "../../Components/Card/gazebo1.webp";
 
@@ -62,9 +63,14 @@ const Home = () => {
   // ];
   
   const dispatch = useDispatch();
-  // const [order, setOrder] = useState(false);
+  const [order, setOrder] = useState(false);
   const allProducts =  useSelector((state) => state.allProducts);
 
+  const handleOrder = function(evento){
+    dispatch(orderProductsByPrice(evento.target.value))
+    if (!order) setOrder(true);
+    else setOrder (false);
+  }
 
   useEffect(() => {
     dispatch(getProducts());
@@ -74,7 +80,12 @@ const Home = () => {
   return (
     <div>
       <NavBar />
+{/* <ProductView/> */}
+<select name="order" onChange={handleOrder}  >
 
+             <option value="asc">Higher price</option>
+             <option value="desc">Lower price</option>
+            </select>
       Home
       {/* <Card {...allProducts} /> */}
       {allProducts.map((product) => (

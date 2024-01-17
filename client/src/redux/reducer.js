@@ -27,14 +27,11 @@ const rootReducer = (state = initialState, action) => {
         case ORDER_BY_PRICE:
             const orderProducts = state.allProducts.sort((x,y) => {
                 switch (action.payload){
-                    case "alphabetA":
-                        return x.name.localeCompare(y.name);
-                    case "alphabetZ":
-                        return y.name.localeCompare(x.name);
-                    case "lowerPopulation":
-                        return x.population - y.population;
-                    case "higherPopulation":
-                        return y.population - x.population;
+
+                    case "desc":
+                        return x.price - y.price;
+                    case "asc":
+                        return y.price - x.price;
                 }
             })
             return {
