@@ -1,5 +1,5 @@
 import { FILTER_BY_COLOR, GET_PRODUCTS, GET_PRODUCT_BY_ID, 
-     GET_PRODUCT_BY_NAME, FILTER_BY_MATERIAL, ORDER_BY_PRICE} from "./actions";
+     GET_PRODUCT_BY_NAME, FILTER_BY_MATERIAL, ORDER_BY_PRICE, POST_PRODUCT} from "./actions";
 
 const initialState = {
     allProducts: [],
@@ -61,12 +61,12 @@ const rootReducer = (state = initialState, action) => {
                 
         return { ...state, products: productsMat };
 
-        // case POST_PRODUCT:{
-        //     return {
-        //         ...state,
-        //         activities: [...state.activities, action.payload]
-        //         }
-        //     }
+        case POST_PRODUCT:{
+            return {
+                ...state,
+                allProducts: [...state.allProducts, action.payload]
+                }
+            }
 
         // case GET_ACTIVITIES:{
         //     return {

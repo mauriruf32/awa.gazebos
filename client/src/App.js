@@ -4,6 +4,7 @@ import Home from "../src/Views/Home/Home";
 import Register from "../src/Views/Register/Register";
 import DetailProduct from "../src/Views/DetailProduct/DetailProduct";
 import Login from "./Views/Login/Login";
+import CreateProduct from "../src/Views/FormAdmin/CreateProduct"
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/producto/:name" element={<DetailProduct />} />
+          <Route path="/products/:name" element={<DetailProduct />} />
+          <Route path="/products/create" element={<CreateProduct />} />
           <Route path="/login" element={<Login />} />
         </Routes>
 

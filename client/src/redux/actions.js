@@ -7,7 +7,7 @@ export const FILTER_BY_COLOR = "FILTER_BY_COLOR";
 export const ORDER_BY_PRICE = "ORDER_BY_PRICE";
 export const GET_PRODUCT_BY_NAME = "GET_PRODUCT_BY_NAME";
 // export const GET_ACTIVITIES = "GET_ACTIVITIES";
-// export const POST_ACTIVITY = "POST_ACTIVITY";
+export const POST_PRODUCT = "POST_PRODUCT";
 
 
 export function getProducts(){
@@ -56,15 +56,15 @@ export function getProductByName(name){
 //     };
 // }
 
-// export function postActivity(data){
-//     return async function (dispatch){
-//             const response = await axios.post('http://localhost:3001/activities/', data)
-//             return dispatch({
-//                 type: "POST_ACTIVITIY",
-//                 payload: response.data
-//             })
-//         }
-//     }    
+export function postProduct(data){
+    return async function (dispatch){
+            const response = await axios.post('http://localhost:3001/products', data)
+            return dispatch({
+                type: "POST_PRODUCT",
+                payload: response.data
+            })
+        }
+    }    
 
 export function filterProductsByMaterial(material) {
     return{
