@@ -7,16 +7,14 @@ import Login from "./Views/Login/Login";
 
 function App() {
   return (
-    <Router>
-      <div>
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/producto/:name" element={<DetailProduct />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-      </div>
-    </Router>
+
   );
 }
 
