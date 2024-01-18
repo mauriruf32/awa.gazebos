@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getProductByName } from "../../redux/actions";
 import { useDispatch } from "react-redux";
-import { Form, Button } from "react-bootstrap"; // Asegúrate de importar Button desde react-bootstrap
+import { Form, Button } from "react-bootstrap"; 
 
 const SearchBar = () => {
   const dispatch = useDispatch();
