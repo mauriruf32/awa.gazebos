@@ -152,10 +152,10 @@ const Form = () => {
 
     return (
     <form  onSubmit={submitHandler}>
-        <h1>Create your own activity:</h1>
-        <h3>Here you can create any activity you want and assign the countries you like the most...</h3>
+        <h1>Crea aqui tu producto:</h1>
+        <h3>Completa todos los parametros, luego presiona guardar foto y por ultimo "crear producto"</h3>
         <div >
-            <label>Nombre Producto: </label>
+            <label>Nombre: </label>
             <input type="text" value={form.name} onChange={changeHandler} name="name" />
             {errors.name && <span>{errors.name}</span>}
         </div>

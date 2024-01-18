@@ -1,9 +1,9 @@
 import { FILTER_BY_COLOR, GET_PRODUCTS, GET_PRODUCT_BY_ID, 
-     GET_PRODUCT_BY_NAME, FILTER_BY_MATERIAL, ORDER_BY_PRICE, POST_PRODUCT} from "./actions";
+    GET_PRODUCT_BY_NAME, FILTER_BY_MATERIAL, ORDER_BY_PRICE, POST_PRODUCT} from "./actions";
 
 const initialState = {
     allProducts: [],
-    productsFilter: []
+    productsFilter: [],
 };
 
 const rootReducer = (state = initialState, action) => {

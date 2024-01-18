@@ -1,4 +1,4 @@
-const { createProductDB, getProductById, getAllProducts } = require("../controllers/Products");
+const { createProductDB, getProductById, getAllProducts, getProductByName } = require("../controllers/Products");
 
 const getProductsHandler = async (req, res) => {
   const { name } = req.query;
