@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-
 import { getProductByName } from "../../redux/actions";
 import { useDispatch } from "react-redux";
-import { Form } from "react-bootstrap";
-
+import { Form, Button } from "react-bootstrap"; // Asegúrate de importar Button desde react-bootstrap
 
 const SearchBar = () => {
   const dispatch = useDispatch();
@@ -14,14 +12,16 @@ const SearchBar = () => {
     setLocalSearchValue(newValue);
   };
 
-  useEffect(() => {
-    const timerId = setTimeout(() => {
-      dispatch(getProductByName(localSearchValue));
-    }, 500);
-    return () => clearTimeout(timerId);
-  }, [localSearchValue, dispatch]);
+  const handleSearchClick = () => {
+    dispatch(getProductByName(localSearchValue));
+  };
 
-
+  // useEffect(() => {
+  //   const timerId = setTimeout(() => {
+  //     dispatch();
+  //   }, 500);
+  //   return () => clearTimeout(timerId);
+  // }, [localSearchValue, dispatch]);
 
   return (
     <Form className="d-flex">
@@ -33,6 +33,12 @@ const SearchBar = () => {
         onChange={handleChange}
         value={localSearchValue}
       />
+      <Button variant="primary" 
+  
+      onClick={handleSearchClick}
+      >
+        Search
+      </Button>
     </Form>
   );
 };
