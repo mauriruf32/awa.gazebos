@@ -1,15 +1,21 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
+
 import { useDispatch, useSelector } from "react-redux";
 // import { getCountries, orderCountriesByName, getActivities } from "../../redux/actions";
 
 const Form = () => {
     // const dispatch = useDispatch();
     // const countries = useSelector((state) => state.countries);
+    const [imagePreview, setImagePreview] = useState(null);
+    const [imageSelected, setImageSelected] = useState("");
+    console.log(imagePreview);
     
 
     const [form, setForm ] = useState({
         name:"",
+        image:"",
         description:"",
         price:"",
         stock: "",
@@ -20,6 +26,7 @@ const Form = () => {
 
     const [errors, setErrors] = useState({
         name:"",
+        image:"",
         description:"",
         price:"",
         stock: "",
@@ -29,6 +36,7 @@ const Form = () => {
     });
 
     const changeHandler = (event) => {
+        event.preventDefault();
         const property = event.target.name;
         const value = event.target.value;
 
@@ -63,18 +71,61 @@ const Form = () => {
             setErrors({...errors,category: "Less than 20 characters."})
         }
         else {
-            setErrors({...errors, name:"", description:"", price:"", size:"", material:"", category:""})
+            setErrors({...errors, name:"", description:"", price:"", stock:"", size:"", material:"", category:""})
         }
-    } 
+    };
 
-    const submitHandler = (event) => {
-        if (form.name==="" || form.description==="" || form.price==="" || form.size ==="" || form.material==="" || form.category==="" ){
+    const uploadImage = async () => {
+        try {
+          const formData = new FormData();
+          formData.append("file", imageSelected);
+          formData.append("upload_preset", "jvu2gwik");
+    
+          const response = await axios.post(`https://api.cloudinary.com/v1_1/djsqt7j6v/image/upload`, formData);
+    
+          setImagePreview(response.data.url);
+        } catch (error) {
+          console.error("Error al subir la imagen:", error.message);
+        }
+      };
+
+    const submitHandler = async (event) => {
         event.preventDefault();
-        alert("All fields must be filled out.")}
-        else{
-        axios.post("http://localhost:3001/products", form)
-        alert("Product created successfully!!")
-    }
+        try {
+            await uploadImage();
+            await axios.post(`http://localhost:3001/products`, {
+                ...form,
+                image: imagePreview,
+              })
+        Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "Producto agregado exitosamente",
+                showConfirmButton: false,
+                timer: 2000,
+              });
+
+             setForm({
+                name: "",
+                image: "",
+                description: "",
+                size: "",
+                price: "",
+                stock: "",
+                material: "",
+                category: "",
+              });
+        } catch (error) {
+            console.error("Error al agregar producto:", error.message);
+        }
+
+    //     if (form.name==="" || form.description==="" || form.price==="" || form.stock==="" || form.size ==="" || form.material==="" || form.category==="" ){
+    //     event.preventDefault();
+    //     alert("All fields must be filled out.")}
+    //     else{
+    //     axios.post("http://localhost:3001/products", form)
+    //     alert("Product created successfully!!")
+    // }
     };
 
     // useEffect(()=>{
@@ -104,11 +155,36 @@ const Form = () => {
         <h1>Create your own activity:</h1>
         <h3>Here you can create any activity you want and assign the countries you like the most...</h3>
         <div >
-            <label>Activity Name: </label>
+            <label>Nombre Producto: </label>
             <input type="text" value={form.name} onChange={changeHandler} name="name" />
             {errors.name && <span>{errors.name}</span>}
         </div>
+        <div>
+          <label htmlFor="image" >
+            Imagen:
+          </label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+            onChange={(e) => {
+              setImageSelected(e.target.files[0]);
+            }}
+            
+          />
+          <button onClick={() => uploadImage()}>Guardar foto</button>
 
+          <div >
+            {imagePreview && (
+              <img
+                src={imagePreview}
+                alt="Preview"
+                
+              />
+            )}
+          </div>
+        </div>
         <div >
             <label>Descripción: </label>
             <input type="text" value={form.description} onChange={changeHandler} name="description" />
@@ -155,7 +231,7 @@ const Form = () => {
 
         </div> */}
 
-        <button type="submit">Create Activity</button>
+        <button type="submit">Crear Producto</button>
     </form>
     )
 };
