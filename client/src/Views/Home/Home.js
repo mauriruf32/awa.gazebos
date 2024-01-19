@@ -13,6 +13,10 @@ const Home = () => {
   const [order, setOrder] = useState(false);
   const allProducts =  useSelector((state) => state.allProducts);
 
+  const resetFilters = () => {
+    dispatch(getProducts()); 
+  };
+
   const handleOrder = function(evento){
     dispatch(orderProductsByPrice(evento.target.value))
     if (!order) setOrder(true);
@@ -32,12 +36,15 @@ const Home = () => {
   return (
     <div>
       <NavBar />
+      <button onClick={resetFilters}>    
+Reset Filters
+        </button>
             <select name="order" onChange={handleOrder}>
              <option value="asc">Higher price</option>
              <option value="desc">Lower price</option>
             </select>
             <select name="activity" onChange={handleFilterActivity} >
-            <option value="all">All</option>
+            <option onClick={resetFilters} value="all">All</option>
             {allProducts.map((product) => {
                     return (<option key={product.id} product={product.material}> {product.material} </option> );
                   })}
@@ -46,6 +53,7 @@ const Home = () => {
       {allProducts.map((product) => (
       <Card key={product.id} product={product} />
       ))}
+                  
       </div>
   )
 }
