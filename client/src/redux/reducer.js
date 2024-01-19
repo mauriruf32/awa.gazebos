@@ -1,9 +1,9 @@
-import { FILTER_BY_COLOR, GET_PRODUCTS, GET_PRODUCT_BY_ID, 
+import { GET_PRODUCTS, GET_PRODUCT_BY_ID, 
     GET_PRODUCT_BY_NAME, FILTER_BY_MATERIAL, ORDER_BY_PRICE, POST_PRODUCT} from "./actions";
 
 const initialState = {
     allProducts: [],
-    productsFilter: [],
+    materialFilter: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -39,27 +39,27 @@ const rootReducer = (state = initialState, action) => {
                   allProducts: orderProducts,
                 };
 
-        case FILTER_BY_COLOR:
-            const byColor = state.allProducts.filter((product) => action.payload.includes(product.color))
+        case FILTER_BY_MATERIAL:
+            const byMaterial = state.allProducts.filter((product) => action.payload.includes(product.material))
             return {
                  ...state,
-                 allProducts: byColor,
+                 allProducts: byMaterial,
             };
 
-        case FILTER_BY_MATERIAL:
-            const materialFilter = 
-            action.payload !== 'all' 
-            ? state.materials.filter(material => material.material === action.payload) 
-            : state.materials 
+    //     case FILTER_BY_MATERIAL:
+    //         const materiales = 
+    //         action.payload !== 'all' 
+    //         ? state.materialFilter.filter(material => material.material === action.payload) 
+    //         : state.materialFilter 
 
-      let productos= materialFilter[0].allProducts;
+    //   let productos = materiales[0].allProducts;
 
-      let productsMat =
-            materialFilter=== state.activities
-            ? state.allProducts
-            : state.allProducts.filter(productA => productos.includes(productA.id)) 
+    //   let productsMat =
+    //   materiales=== state.materialFilter
+    //         ? state.materiales
+    //         : state.materiales.filter(productA => productos.includes(productA.id)) 
                 
-        return { ...state, products: productsMat };
+    //     return { ...state, materiales: productsMat };
 
         case POST_PRODUCT:{
             return {

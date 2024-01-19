@@ -1,5 +1,5 @@
 import React from 'react';
-import { getProducts, orderProductsByPrice } from '../../redux/actions';
+import { getProducts, orderProductsByPrice, filterProductsByMaterial } from '../../redux/actions';
 import { useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NavBar from '../../Components/NavBar/NavBar';
@@ -17,6 +17,11 @@ const Home = () => {
     dispatch(orderProductsByPrice(evento.target.value))
     if (!order) setOrder(true);
     else setOrder (false);
+  };
+
+  const handleFilterActivity = function(evento){
+    evento.preventDefault();
+    dispatch(filterProductsByMaterial(evento.target.value))
   }
 
   useEffect(() => {
@@ -30,6 +35,12 @@ const Home = () => {
             <select name="order" onChange={handleOrder}>
              <option value="asc">Higher price</option>
              <option value="desc">Lower price</option>
+            </select>
+            <select name="activity" onChange={handleFilterActivity} >
+            <option value="all">All</option>
+            {allProducts.map((product) => {
+                    return (<option key={product.id} product={product.material}> {product.material} </option> );
+                  })}
             </select>
       Home
       {allProducts.map((product) => (

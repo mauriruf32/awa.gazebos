@@ -3,7 +3,7 @@ import axios from "axios";
 export const GET_PRODUCTS = "GET_PRODUCTS";
 export const GET_PRODUCT_BY_ID = "GET_PRODUCT_BY_ID";
 export const FILTER_BY_MATERIAL = "FILTER_BY_MATERIAL";
-export const FILTER_BY_COLOR = "FILTER_BY_COLOR";
+// export const FILTER_BY_COLOR = "FILTER_BY_COLOR";
 export const ORDER_BY_PRICE = "ORDER_BY_PRICE";
 export const GET_PRODUCT_BY_NAME = "GET_PRODUCT_BY_NAME";
 // export const GET_ACTIVITIES = "GET_ACTIVITIES";
