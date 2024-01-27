@@ -23,7 +23,7 @@ export default function Login() {
 
     onSubmit: async (values) => {
       try {
-        const response = await axios.post(`${URL}login`, values);
+        const response = await axios.get(`http://localhost:3001/users`, values);
 
         if (response.status === 200) {
           const responseData = response.data;
@@ -54,7 +54,7 @@ export default function Login() {
             confirmButtonText: "OK",
           });
         }
-        window.location.href = "/Profile";
+        window.location.href = "/profile";
       } catch (error) {
         console.error("Error durante el inicio de sesión:", error);
 
@@ -142,7 +142,7 @@ export default function Login() {
 
             <div className="my-3">
               <span>
-                ¿No tienes Cuenta? <Link to="/Register">Regístrate</Link>
+                ¿No tienes Cuenta? <Link to="/register">Regístrate</Link>
               </span>
 
               <br />

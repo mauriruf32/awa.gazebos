@@ -6,8 +6,9 @@ export const FILTER_BY_MATERIAL = "FILTER_BY_MATERIAL";
 // export const FILTER_BY_COLOR = "FILTER_BY_COLOR";
 export const ORDER_BY_PRICE = "ORDER_BY_PRICE";
 export const GET_PRODUCT_BY_NAME = "GET_PRODUCT_BY_NAME";
-// export const GET_ACTIVITIES = "GET_ACTIVITIES";
+export const GET_USERS_BY_ID = "GET_USERS_BY_ID";
 export const POST_PRODUCT = "POST_PRODUCT";
+export const LOGIN_USER = "LOGIN_USER";
 
 
 export function getProducts(){
@@ -44,17 +45,17 @@ export function getProductByName(name){
     };
 }
 
-// export function getActivities(){
-//     return async function (dispatch){
-//         const response = await axios.get(
-//             `http://localhost:3001/activities`
-//         );
-//         return dispatch({
-//             type: "GET_ACTIVITIES",
-//             payload: response.data
-//         });
-//     };
-// }
+export function getUsersById(id){
+    return async function (dispatch){
+        const response = await axios.get(
+            `http://localhost:3001/users/${id}`
+        );
+        return dispatch({
+            type: "GET_USERS_BY_ID",
+            payload: response.data
+        });
+    };
+}
 
 export function postProduct(data){
     return async function (dispatch){
@@ -86,3 +87,10 @@ export function orderProductsByPrice(order) {
         payload: color,
       };
     };
+
+    export const LoginUser = (LoginUser) => {
+        return {
+          type: LOGIN_USER,
+          payload: LoginUser,
+        };
+      };

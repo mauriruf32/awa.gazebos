@@ -20,10 +20,9 @@ const getUsersHandler = async (req, res) => {
 const getUserByIdHandler = async (req, res) => {
     const { id } = req.params;
 
-const source = isNaN(id) ? "bdd" : "api"
 
 try {
-    const response = await getUserById(id, source);
+    const response = await getUserById(id);
     res.status(200).json(response);
 } catch (error) {
     res.status(400).json({error: error.message});
@@ -32,10 +31,10 @@ try {
 };
 
 const createUserHandler = async (req, res) => {
-    const {firstName, email, phoneNumber} = req.body;
+    const {firstName, lastName, birthDate, phoneNumber, email, password} = req.body;
 
     try {
-        const response = await createUserDB(firstName, email, phoneNumber);
+        const response = await createUserDB(firstName, lastName, birthDate, phoneNumber, email, password);
         res.status(200).json(response)
     } catch (error) {
         res.status(400).json({error: error.message});

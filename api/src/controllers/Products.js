@@ -17,35 +17,15 @@ const getAllProducts = async () => {
     return await Product.findAll();
 };
 
-const getProductByName = async(name) => {
+const getProductByName = async (name) => {
 
-    const userDB = await Product.findAll({where: {name: name}});
+    const userDB = await Product.findAll({
+                where: { name: { [Op.iLike]: `%${name}%` },
+                }});
 
-return userDB;
+    return userDB;
 
-    // const userFiltered = await User.filter(user => user.firstName === firstName);
 };
-
-// const getProductByName = async(name) => {
-
-//     try {
-//       if (name){
-//       const product = await Product.findAll({
-//         where: { name: { [Op.iLike]: `%${name}%` },
-//         }})
-//         res.status(200).json(product);
-//       } 
-//       else {
-//         const product = await Product.findAll()
-//         res.status(200).json(product);
-//       }
-//     } catch (error) {
-//       res.status(500).json({ error: 'No se encontraron productos con ese nombre.' });
-//     }
-
-
-   
-// };
 
 module.exports = {
     createProductDB,

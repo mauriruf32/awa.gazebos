@@ -43,8 +43,8 @@ Reset Filters
              <option value="asc">Higher price</option>
              <option value="desc">Lower price</option>
             </select>
-            <select name="activity" onChange={handleFilterActivity} >
-            <option onClick={resetFilters} value="all">All</option>
+            <select name="materiales" onChange={handleFilterActivity} >
+            <option onChange={resetFilters} value="materiales" >Materiales</option>
             {allProducts.map((product) => {
                     return (<option key={product.id} product={product.material}> {product.material} </option> );
                   })}

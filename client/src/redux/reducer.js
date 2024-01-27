@@ -1,9 +1,10 @@
 import { GET_PRODUCTS, GET_PRODUCT_BY_ID, 
-    GET_PRODUCT_BY_NAME, FILTER_BY_MATERIAL, ORDER_BY_PRICE, POST_PRODUCT} from "./actions";
+    GET_PRODUCT_BY_NAME, FILTER_BY_MATERIAL, ORDER_BY_PRICE, POST_PRODUCT, GET_USERS_BY_ID, LOGIN_USER } from "./actions";
 
 const initialState = {
     allProducts: [],
     materialFilter: [],
+    userData: null,
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -13,6 +14,9 @@ const rootReducer = (state = initialState, action) => {
                 allProducts: action.payload,
                 productsFilter: action.payload
             };
+
+        case LOGIN_USER:
+            return { ...state, userData: action.payload };
 
         case GET_PRODUCT_BY_ID:
             return { ...state, 
@@ -40,7 +44,8 @@ const rootReducer = (state = initialState, action) => {
                 };
 
         case FILTER_BY_MATERIAL:
-            const byMaterial = state.allProducts.filter((product) => action.payload.includes(product.material))
+            const byMaterial =
+            state.allProducts.filter((product) => action.payload.includes(product.material))
             return {
                  ...state,
                  allProducts: byMaterial,
@@ -68,12 +73,12 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
 
-        // case GET_ACTIVITIES:{
-        //     return {
-        //             ...state,
-        //             activities: action.payload
-        //         }
-        //       }
+        case GET_USERS_BY_ID:{
+            return {
+                    ...state,
+                    userData: action.payload
+                }
+              }
 
 
         default:

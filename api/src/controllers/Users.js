@@ -1,19 +1,17 @@
 const { User } = require("../db");
-const axios = require(`axios`);
+const { Op } = require('sequelize');
 
-const createUserDB = async (firstName, email, phoneNumber) => {
 
-    return await User.create({firstName, email, phoneNumber});
+const createUserDB = async (firstName, lastName, birthDate, phoneNumber, email, password) => {
+
+    return await User.create({firstName, lastName, birthDate, phoneNumber, email, password});
 };
 
-const getUserById = async(id, source) => {
+const getUserById = async(id) => {
 
-    const user = source === "api" 
-        ? (await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`))
-            .data 
-        : await User.findByPk(id);
+    const userDB = await User.findByPk(id);
 
-return user;
+return userDB;
 
 };
 
@@ -26,7 +24,9 @@ return usersDB;
 
 const getUserByName = async(name) => {
 
-    const userDB = await User.findAll({where: {firstName: name}});
+    const userDB = await User.findAll({
+        where: { firstName: { [Op.iLike]: `%${name}%` },
+        }});
 
 return userDB;
 

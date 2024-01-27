@@ -1,46 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { getProductByName } from "../../redux/actions";
 import { useDispatch } from "react-redux";
-import { Form, Button } from "react-bootstrap"; 
+import Swal from "sweetalert2";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
-  const [localSearchValue, setLocalSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState("");
 
-  const handleChange = (event) => {
-    const newValue = event.target.value;
-    setLocalSearchValue(newValue);
+  const handleChange = (e) => {
+    setSearchValue(e.target.value.toLowerCase());
   };
 
-  const handleSearchClick = () => {
-    dispatch(getProductByName(localSearchValue));
-  };
+  const handleSearchClick = async () => {
 
-  // useEffect(() => {
-  //   const timerId = setTimeout(() => {
-  //     dispatch();
-  //   }, 500);
-  //   return () => clearTimeout(timerId);
-  // }, [localSearchValue, dispatch]);
+    try {
+      if (searchValue.trim() === "") {
+        // Mostrar SweetAlert2 si el campo de búsqueda está vacío
+        await Swal.fire({
+          icon: "warning",
+          title: "Ingrese un nombre de producto",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        
+      } 
+      await dispatch(getProductByName(searchValue));
+    } catch (error) {
+      console.error("Error al agregar producto:");
+    }
+
+  };
 
   return (
-    <Form className="d-flex">
-      <Form.Control
-        type="search"
-        placeholder="Search"
-        className="me-2"
-        aria-label="Search"
-        onChange={handleChange}
-        value={localSearchValue}
-      />
-      <Button variant="primary" 
-  
-      onClick={handleSearchClick}
-      >
-        Search
-      </Button>
-    </Form>
+    <div>
+      <input type="search" onChange={handleChange} placeholder="Search.." />
+      <button onClick={handleSearchClick}>Buscar</button>
+    </div>
   );
 };
 
 export default SearchBar;
+
+

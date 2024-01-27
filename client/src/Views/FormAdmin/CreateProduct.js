@@ -71,7 +71,7 @@ const Form = () => {
             setErrors({...errors,category: "Less than 20 characters."})
         }
         else {
-            setErrors({...errors, name:"", description:"", price:"", stock:"", size:"", material:"", category:""})
+            setErrors({...errors, name:"", image:"", description:"", price:"", stock:"", size:"", material:"", category:""})
         }
     };
 
