@@ -6,6 +6,7 @@ import DetailProduct from "../src/Views/DetailProduct/DetailProduct";
 import Login from "./Views/Login/Login";
 import CreateProduct from "../src/Views/FormAdmin/CreateProduct"
 import { Profiles } from "./Views/Profiles/Profiles";
+import ShowProducts from "./Views/FormAdmin/ShowProducts";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/products/:name" element={<DetailProduct />} />
           <Route path="/products/create" element={<CreateProduct />} />
+          <Route path="/products/showproducts" element={<ShowProducts />} />
           <Route path="/profile" element={<Profiles />} />
           <Route path="/login" element={<Login />} />
         </Routes>

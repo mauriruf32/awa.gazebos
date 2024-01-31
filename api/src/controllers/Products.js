@@ -18,7 +18,6 @@ const getProductById = async (id) => {
 
 const deleteProduct = async (id) => {
     try {
-      // Implementation to delete a product by ID from the database using Sequelize
       const deletedRows = await Product.destroy({
         where: {
           id: id,

@@ -3,7 +3,8 @@ import { getProducts, orderProductsByPrice, filterProductsByMaterial } from '../
 import { useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NavBar from '../../Components/NavBar/NavBar';
-import Card from "../../Components/Card/Card"
+import Card from "../../Components/Card/Card";
+import "./Home.css";
 
 
 const Home = () => {
@@ -36,6 +37,8 @@ const Home = () => {
   return (
     <div>
       <NavBar />
+      Home
+      <div className='containerFilters'>
       <button onClick={resetFilters}>    
 Reset Filters
         </button>
@@ -49,10 +52,14 @@ Reset Filters
                     return (<option key={product.id} product={product.material}> {product.material} </option> );
                   })}
             </select>
-      Home
+      </div>
+
+           <div className='containerCards'>
       {allProducts.map((product) => (
       <Card key={product.id} product={product} />
       ))}
+           </div>
+
                   
       </div>
   )
