@@ -8,9 +8,32 @@ const createProductDB = async (name, image, description, price, stock, size, mat
 };
 
 const getProductById = async (id) => {
+   
+    const product = await Product.findByPk(id);
 
-    return await Product.findByPk(id);
+
+  
+    return product;
 };
+
+const deleteProduct = async (id) => {
+    try {
+      // Implementation to delete a product by ID from the database using Sequelize
+      const deletedRows = await Product.destroy({
+        where: {
+          id: id,
+        },
+      });
+  
+      if (deletedRows === 0) {
+        throw new Error("Product not found");
+      }
+  
+      return { message: "Product deleted successfully" };
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  };
 
 const getAllProducts = async () => {
  
@@ -32,4 +55,5 @@ module.exports = {
     getProductById,
     getAllProducts,
     getProductByName,
+    deleteProduct,
 };

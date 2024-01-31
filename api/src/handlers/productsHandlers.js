@@ -1,4 +1,4 @@
-const { createProductDB, getProductById, getAllProducts, getProductByName } = require("../controllers/Products");
+const { createProductDB, getProductById, getAllProducts, getProductByName, deleteProduct } = require("../controllers/Products");
 
 const getProductsHandler = async (req, res) => {
   const { name } = req.query;
@@ -55,8 +55,23 @@ const createProductHandler = async (req, res) => {
     // res.status(200).send("Producto creado");
 };
 
+const deleteProductHandler = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const response = await deleteProduct(id);
+    res.status(200).json(response);
+  } catch (error) {
+    res.status(400).json({error: error.message});
+  }
+
+    // res.status(200).send(`Detalle del producto ${id}`);
+};
+
+
 module.exports = {
     getProductByIdHandler,
     getProductsHandler,
     createProductHandler,
+    deleteProductHandler,
 };
