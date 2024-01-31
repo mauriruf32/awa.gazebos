@@ -49,10 +49,30 @@ const getProductByName = async (name) => {
 
 };
 
+const updateProduct = async (id, updatedData) => {
+  try {
+    // Implementation to update a product by ID in the database using Mongoose
+    const updatedProduct = await ProductModel.findByIdAndUpdate(
+      id,
+      updatedData,
+      { new: true } // To return the updated document
+    );
+
+    if (!updatedProduct) {
+      throw new Error("Product not found");
+    }
+
+    return updatedProduct;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
+
 module.exports = {
     createProductDB,
     getProductById,
     getAllProducts,
     getProductByName,
     deleteProduct,
+    updateProduct,
 };
