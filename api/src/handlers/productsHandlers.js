@@ -70,15 +70,16 @@ const deleteProductHandler = async (req, res) => {
 
 const updateProductHandler = async (req, res) => {
   const { id } = req.params;
-  const updatedData = req.body;
 
   try {
-    const updatedProduct = await updateProduct(id, updatedData);
+    const updatedProduct = await updateProduct(id, body);
     res.status(200).json(updatedProduct);
   } catch (error) {
+    console.error("Error from server:", error.response?.data); // Log the error response
     res.status(400).json({ error: error.message });
   }
 };
+
 
 module.exports = {
     getProductByIdHandler,

@@ -52,7 +52,7 @@ const getProductByName = async (name) => {
 const updateProduct = async (id, updatedData) => {
   try {
     // Implementation to update a product by ID in the database using Mongoose
-    const updatedProduct = await ProductModel.findByIdAndUpdate(
+    const updatedProduct = await ProductModel.update(
       id,
       updatedData,
       { new: true } // To return the updated document
@@ -68,11 +68,12 @@ const updateProduct = async (id, updatedData) => {
   }
 };
 
+
 module.exports = {
-    createProductDB,
-    getProductById,
-    getAllProducts,
-    getProductByName,
-    deleteProduct,
-    updateProduct,
+  createProductDB,
+  getProductById,
+  getAllProducts,
+  getProductByName,
+  deleteProduct,
+  updateProduct, // Include the new updateProduct controller
 };
