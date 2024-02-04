@@ -25,8 +25,8 @@ const NavBar = () => {
         <Nav.Link href="/login">LogIn</Nav.Link>
         <Nav.Link href="/products/create">create</Nav.Link>
         <SearchBar/>
-              {/* <Nav.Link href="/ProductList">ProductList</Nav.Link>
-              <Nav.Link href="/Inventory">Inventario</Nav.Link> */}
+              <Nav.Link href="/products/showproducts">ProductList</Nav.Link>
+              <Nav.Link href="/Inventory">Inventario</Nav.Link>
       </Container>
     </Navbar>
   </>

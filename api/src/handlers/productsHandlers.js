@@ -1,4 +1,4 @@
-const { createProductDB, getProductById, getAllProducts, getProductByName, deleteProduct, updateProduct } = require("../controllers/Products");
+const { createProductDB, getProductById, getAllProducts, getProductByName, deleteProduct } = require("../controllers/Products");
 
 const getProductsHandler = async (req, res) => {
   const { name } = req.query;
@@ -68,17 +68,7 @@ const deleteProductHandler = async (req, res) => {
     // res.status(200).send(`Detalle del producto ${id}`);
 };
 
-const updateProductHandler = async (req, res) => {
-  const { id } = req.params;
 
-  try {
-    const updatedProduct = await updateProduct(id, body);
-    res.status(200).json(updatedProduct);
-  } catch (error) {
-    console.error("Error from server:", error.response?.data); // Log the error response
-    res.status(400).json({ error: error.message });
-  }
-};
 
 
 module.exports = {
@@ -86,5 +76,4 @@ module.exports = {
     getProductsHandler,
     createProductHandler,
     deleteProductHandler,
-    updateProductHandler,
 };
