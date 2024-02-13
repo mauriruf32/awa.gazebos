@@ -2,7 +2,7 @@ import React from 'react';
 import { getProducts, orderProductsByPrice, filterProductsByMaterial } from '../../redux/actions';
 import { useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import NavBar from '../../Components/NavBar/NavBar';
+import CarouselHome from "../../Components/Carousel/Carousel";
 import Card from "../../Components/Card/Card";
 import "./Home.css";
 
@@ -36,7 +36,7 @@ const Home = () => {
 
   return (
     <div>
-      <NavBar />
+      <CarouselHome />
       Home
       <div className='containerFilters'>
       <button onClick={resetFilters}>    

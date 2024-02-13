@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { Nav } from "react-bootstrap";
 
-import logo from "../Card/logo.jpeg";
+import logo from "../Card/logo_sin_fondo.png";
 import SearchBar from '../SearchBar/SearchBar';
 
 
@@ -16,8 +16,7 @@ const NavBar = () => {
           <img
             alt=""
             src={logo}
-            width="60"
-            height="60"
+            width="100"
             className="d-inline-block align-top"
           />{' '}
         </Navbar.Brand>
