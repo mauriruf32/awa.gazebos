@@ -1,5 +1,5 @@
 import { GET_PRODUCTS, GET_PRODUCT_BY_ID, 
-    GET_PRODUCT_BY_NAME, FILTER_BY_MATERIAL, ORDER_BY_PRICE, POST_PRODUCT, GET_USERS_BY_ID, LOGIN_USER } from "./actions";
+    GET_PRODUCT_BY_NAME, FILTER_BY_MATERIAL, ORDER_BY_PRICE, POST_PRODUCT, GET_USER_BY_ID, LOGIN_USER } from "./actions";
 
 const initialState = {
     allProducts: [],
@@ -73,7 +73,7 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
 
-        case GET_USERS_BY_ID:{
+        case GET_USER_BY_ID:{
             return {
                     ...state,
                     userData: action.payload

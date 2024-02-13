@@ -1,12 +1,13 @@
 import axios from "axios";
 
 export const GET_PRODUCTS = "GET_PRODUCTS";
+export const GET_USERS = "GET_USERS";
 export const GET_PRODUCT_BY_ID = "GET_PRODUCT_BY_ID";
 export const FILTER_BY_MATERIAL = "FILTER_BY_MATERIAL";
 // export const FILTER_BY_COLOR = "FILTER_BY_COLOR";
 export const ORDER_BY_PRICE = "ORDER_BY_PRICE";
 export const GET_PRODUCT_BY_NAME = "GET_PRODUCT_BY_NAME";
-export const GET_USERS_BY_ID = "GET_USERS_BY_ID";
+export const GET_USER_BY_ID = "GET_USER_BY_ID";
 export const POST_PRODUCT = "POST_PRODUCT";
 export const LOGIN_USER = "LOGIN_USER";
 
@@ -45,13 +46,23 @@ export function getProductByName(name){
     };
 }
 
-export function getUsersById(id){
+export function getUserById(id){
     return async function (dispatch){
         const response = await axios.get(
             `http://localhost:3001/users/${id}`
         );
         return dispatch({
-            type: "GET_USERS_BY_ID",
+            type: "GET_USER_BY_ID",
+            payload: response.data
+        });
+    };
+}
+
+export function getUsers(){
+    return async function(dispatch){
+        const response = await axios.get(`http://localhost:3001/users`);
+         dispatch ({
+            type: "GET_USERS",
             payload: response.data
         });
     };
@@ -90,7 +101,7 @@ export function orderProductsByPrice(order) {
 
     export const LoginUser = (LoginUser) => {
         return {
-          type: LOGIN_USER,
+          type: "LOGIN_USER",
           payload: LoginUser,
         };
       };

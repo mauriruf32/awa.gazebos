@@ -1,10 +1,22 @@
 // import React from 'react'
 import React, { useState, useEffect } from "react";
-// import styles from "./profile.module.css";
-import axios from "axios";
+// import  {getUserById}  from "../../redux/actions"; 
+// import axios from "axios";
+// const URL = `http://localhost:3001/users/`;
 
-export const Profiles = ({ userData }) => {
-  const { firstName, lastName, email, phoneNumber} = userData;
+
+export const Profiles = ({ users }) => {
+const { firstName, lastName, email, phoneNumber } = users;
+
+//   useEffect(() =>{
+//     getUserById();
+// },[]);
+
+// const getUserById = async (id) => {
+//     const user = await axios.get(`${URL}${id}`);
+//     setUser(user)
+// };
+
 
 
 
@@ -16,7 +28,7 @@ export const Profiles = ({ userData }) => {
             <br />
             <br />
             <h1 >
-              Hola {userData.firstName}! Bienvenido a tu perfil
+              Hola {firstName}! Bienvenido a tu perfil
             </h1>
           </div>
           <div >

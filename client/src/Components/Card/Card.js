@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 function Product({ product }) {
 
-  const { name, image, description, price, stock, size, material, category } = product;
+  const { id, name, image, description, price, stock, size, material, category } = product;
 
   const handleDetailProductClick = () => {
     Swal.fire({
@@ -32,7 +32,7 @@ function Product({ product }) {
       if (result.isConfirmed) {
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         // Redirect to the specified route when cancel button is pressed
-        window.location.href = `products/${name}`;
+        window.location.href = `products/${id}`;
       }
     });
   };
@@ -59,7 +59,7 @@ function Product({ product }) {
         <ListGroup.Item>Category: {category}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
-        <Card.Link  href="/producto/:name">Card Link</Card.Link>
+        <Card.Link  href="/products/:name">Card Link</Card.Link>
         <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
     </Card>
