@@ -39,13 +39,14 @@ const createProductHandler = async (req, res) => {
         description,
         price,
         stock,
+        color,
         size,
         material,
         category,
       } = req.body;
 
       try {
-        const response = await createProductDB(name, image, description, price, stock, size, material, category);
+        const response = await createProductDB(name, image, description, price, stock, color, size, material, category);
         res.status(200).json(response)
       } catch (error) {
         res.status(400).json({error: error.message});

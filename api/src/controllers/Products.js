@@ -1,9 +1,9 @@
 const { Product } = require("../db");
 const { Op } = require('sequelize');
 
-const createProductDB = async (name, image, description, price, stock, size, material, category) => {
+const createProductDB = async (name, image, description, price, stock, color, size, material, category) => {
 
-    return await Product.create({name, image, description, price, stock, size, material, category});
+    return await Product.create({name, image, description, price, stock, color, size, material, category});
 
 };
 

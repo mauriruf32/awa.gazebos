@@ -1,10 +1,10 @@
 import { GET_PRODUCTS, GET_PRODUCT_BY_ID, 
-    GET_PRODUCT_BY_NAME, FILTER_BY_MATERIAL, ORDER_BY_PRICE, POST_PRODUCT, GET_USER_BY_ID, LOGIN_USER } from "./actions";
+    GET_PRODUCT_BY_NAME, FILTER_BY_MATERIAL, ORDER_BY_PRICE, POST_PRODUCT, GET_USER_BY_ID, LOGIN_USER, FILTER_BY_COLOR } from "./actions";
 
 const initialState = {
     allProducts: [],
     materialFilter: [],
-    userData: null,
+    userData: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -50,6 +50,13 @@ const rootReducer = (state = initialState, action) => {
                  ...state,
                  allProducts: byMaterial,
             };
+            case FILTER_BY_COLOR:
+                const byColor =
+                state.allProducts.filter((product) => action.payload.includes(product.color))
+                return {
+                     ...state,
+                     allProducts: byColor,
+                };
 
     //     case FILTER_BY_MATERIAL:
     //         const materiales = 

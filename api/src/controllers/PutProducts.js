@@ -7,6 +7,7 @@ const PutProducts = async (req, res) => {
     description,
     price,
     stock,
+    color,
     deleted,
     size,
     material,
@@ -26,6 +27,7 @@ const PutProducts = async (req, res) => {
     productToUpdate.description = description;
     productToUpdate.price = price;
     productToUpdate.stock = stock;
+    productToUpdate.color = color;
     productToUpdate.size = size;
     productToUpdate.material = material;
     productToUpdate.category = category;

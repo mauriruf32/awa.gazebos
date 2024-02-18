@@ -22,7 +22,7 @@ function DetailProduct() {
       }
     );
     return setProducto({});
-  }, []);
+  }, [id]);
 
 
 
@@ -42,6 +42,7 @@ function DetailProduct() {
         <p><strong>Category:</strong> {producto.category}</p>
         <p className="product-price">${producto.price}</p>
         {/* <Reviews productId={Producto.id}/> */}
+        {/* <Star stars={stars} reviews={reviews} /> */}
       </div>
     </div>
   );

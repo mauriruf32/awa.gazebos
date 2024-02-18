@@ -1,5 +1,5 @@
 import React from 'react';
-import { getProducts, orderProductsByPrice, filterProductsByMaterial } from '../../redux/actions';
+import { getProducts, orderProductsByPrice, filterProductsByMaterial, filterProductsByColor } from '../../redux/actions';
 import { useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CarouselHome from "../../Components/Carousel/Carousel";
@@ -7,9 +7,7 @@ import Card from "../../Components/Card/Card";
 import "./Home.css";
 
 
-const Home = () => {
-  
-  
+const Home = () => {  
   const dispatch = useDispatch();
   const [order, setOrder] = useState(false);
   const allProducts =  useSelector((state) => state.allProducts);
@@ -24,9 +22,14 @@ const Home = () => {
     else setOrder (false);
   };
 
-  const handleFilterActivity = function(evento){
+  const handleFilterMaterial = function(evento){
     evento.preventDefault();
     dispatch(filterProductsByMaterial(evento.target.value))
+  };
+
+  const handleFilterColor = function(evento){
+    evento.preventDefault();
+    dispatch(filterProductsByColor(evento.target.value))
   }
 
   useEffect(() => {
@@ -46,10 +49,16 @@ Reset Filters
              <option value="asc">Higher price</option>
              <option value="desc">Lower price</option>
             </select>
-            <select name="materiales" onChange={handleFilterActivity} >
+            <select name="materiales" onChange={handleFilterMaterial} >
             <option onChange={resetFilters} value="materiales" >Materiales</option>
             {allProducts.map((product) => {
                     return (<option key={product.id} product={product.material}> {product.material} </option> );
+                  })}
+            </select>
+            <select name="colores" onChange={handleFilterColor} >
+            <option onChange={resetFilters} value="colores" >Colores</option>
+            {allProducts.map((product) => {
+                    return (<option key={product.id} product={product.color}> {product.color} </option> );
                   })}
             </select>
       </div>

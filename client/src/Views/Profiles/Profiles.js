@@ -1,22 +1,30 @@
 // import React from 'react'
 import React, { useState, useEffect } from "react";
 // import  {getUserById}  from "../../redux/actions"; 
-// import axios from "axios";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+
 // const URL = `http://localhost:3001/users/`;
 
 
-export const Profiles = ({ users }) => {
-const { firstName, lastName, email, phoneNumber } = users;
+export const Profiles = () => {
+  const { id } = useParams();
 
-//   useEffect(() =>{
-//     getUserById();
-// },[]);
+  const [user, setUser] = useState([]);
 
-// const getUserById = async (id) => {
-//     const user = await axios.get(`${URL}${id}`);
-//     setUser(user)
-// };
 
+  useEffect(() => {
+    axios(`http://localhost:3001/users/${id}`).then(
+      ({ data }) => {
+        if (data.name) {
+          setUser(data);
+        } else {
+          window.alert("No hay usuario con ese ID");
+        }
+      }
+    );
+    return setUser({});
+  }, []);
 
 
 
@@ -28,7 +36,7 @@ const { firstName, lastName, email, phoneNumber } = users;
             <br />
             <br />
             <h1 >
-              Hola {firstName}! Bienvenido a tu perfil
+              Hola {user.firstName}! Bienvenido a tu perfil
             </h1>
           </div>
           <div >
@@ -41,10 +49,10 @@ const { firstName, lastName, email, phoneNumber } = users;
             <div>
                 <div>
                   <ul >
-                    <li >Nombre: {firstName}</li>
-                    <li >Apellido: {lastName}</li>
-                    <li >Email: {email}</li>
-                    <li >Telefono: {phoneNumber}</li>
+                    <li >Nombre: {user.firstName}</li>
+                    <li >Apellido: {user.lastName}</li>
+                    <li >Email: {user.email}</li>
+                    <li >Telefono: {user.phoneNumber}</li>
                   </ul>
                 </div>
             

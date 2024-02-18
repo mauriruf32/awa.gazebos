@@ -24,7 +24,6 @@ main()
   })
 
 server.listen(PORT, () => {
-    conn.sync({force: false});
-
+    conn.sync({force: true});
     console.log(`Listening on port ${PORT}`);
 });

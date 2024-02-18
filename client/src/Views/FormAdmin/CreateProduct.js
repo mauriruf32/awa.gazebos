@@ -19,6 +19,7 @@ const Form = () => {
         description:"",
         price:"",
         stock: "",
+        color: "",
         size: "",
         material: "",
         category: "",
@@ -31,6 +32,7 @@ const Form = () => {
         price:"",
         stock: "",
         size: "",
+        color: "",
         material: "",
         category: "",
     });
@@ -62,7 +64,10 @@ const Form = () => {
             setErrors({ ...errors, stock: 'Stock cannot have letters.' });
         }
         else if (form.size.length > 20){
-            setErrors({...errors,size: "Less than 20 characters."})
+            setErrors({...errors,size: "Less than 20 characters."});
+        }
+        else if (form.color !== "Rojo" || form.color !== "Azul" || form.color !=="Naranja" || form.color !== "Amarillo" ){
+            setErrors({...errors,color: 'You must select a season.'})
         }
         else if (form.material.length > 20){
             setErrors({...errors,material: "Less than 20 characters."})
@@ -71,7 +76,7 @@ const Form = () => {
             setErrors({...errors,category: "Less than 20 characters."})
         }
         else {
-            setErrors({...errors, name:"", image:"", description:"", price:"", stock:"", size:"", material:"", category:""})
+        setErrors({...errors, name:"", image:"",  description:"", price:"", stock:"", size:"", color:"", material:"", category:""})
         }
     };
 
@@ -112,6 +117,7 @@ const Form = () => {
                 size: "",
                 price: "",
                 stock: "",
+                color: "",
                 material: "",
                 category: "",
               });
@@ -205,6 +211,16 @@ const Form = () => {
             <label>Tamaño: </label>
             <input type="text" value={form.size} onChange={changeHandler} name="size" />
             {errors.size && <span>{errors.size}</span>}
+        </div>
+        <div >
+            <label>Color: </label>
+                <select type="text" value={form.color} onChange={changeHandler} name="color" >
+                    <option value="Rojo">Rojo</option>
+                    <option value="Azul">Azul</option>
+                    <option value="Naranja">Naranja</option>
+                    <option value="Amarillo">Amarillo</option>
+                </select>
+            {errors.color && <span>{errors.color}</span>}
         </div>
         <div >
             <label>Material: </label>

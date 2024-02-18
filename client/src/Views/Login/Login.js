@@ -54,7 +54,7 @@ export default function Login() {
             confirmButtonText: "OK",
           });
         }
-        window.location.href = "/profile";
+        window.location.href = "users/:id";
       } catch (error) {
         console.error("Error durante el inicio de sesión:", error);
 

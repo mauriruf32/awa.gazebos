@@ -29,6 +29,10 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      color: {
+        type: DataTypes.ENUM('Rojo','Azul','Naranja','Amarillo'), 
+        allowNull: false
+      },
       size: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -41,6 +45,7 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+
       deleted: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
