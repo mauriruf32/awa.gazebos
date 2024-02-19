@@ -3,6 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 import { useDispatch, useSelector } from "react-redux";
+import MultiImagenes from "../../Components/Imagenes/MultiImagenes";
 // import { getCountries, orderCountriesByName, getActivities } from "../../redux/actions";
 
 const Form = () => {
@@ -179,6 +180,8 @@ const Form = () => {
             }}
             
           />
+            <MultiImagenes/>
+
           <button onClick={() => uploadImage()}>Guardar foto</button>
 
           <div >
