@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import CarouselHome from "../../Components/Carousel/Carousel";
 import Card from "../../Components/Card/Card";
 import "./Home.css";
+import Footer from '../../Components/Footer/Footer';
 
 
 const Home = () => {  
@@ -69,7 +70,7 @@ Reset Filters
       ))}
            </div>
 
-                  
+              <Footer />    
       </div>
   )
 }

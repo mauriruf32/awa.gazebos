@@ -90,24 +90,24 @@ function Product({ product }) {
       <Card.Body>
         <Card.Title >{
         name}</Card.Title>
-        <Card.Text>{description}</Card.Text>
+        {/* <Card.Text>{description}</Card.Text> */}
       </Card.Body>
       <ListGroup className="list-group-flush">
         <ListGroup.Item>Price: ${price}</ListGroup.Item>
-        <ListGroup.Item>Stock: {stock}</ListGroup.Item>
+        {/* <ListGroup.Item>Stock: {stock}</ListGroup.Item> */}
         <ListGroup.Item>Size: {size}</ListGroup.Item>
         <ListGroup.Item>Color: {color}</ListGroup.Item>
         <ListGroup.Item>Material: {material}</ListGroup.Item>
         <ListGroup.Item>Category: {category}</ListGroup.Item>
       </ListGroup>
-      <Card.Body>
+      {/* <Card.Body>
       <button className="cart-btn" onClick={handleAddToCartClick}>
             <i className="fa fa-plus"></i>
             <strong>Add to Cart</strong>
           </button>
         <Card.Link  href="/products/:name">Card Link</Card.Link>
         <Card.Link href="#">Another Link</Card.Link>
-      </Card.Body>
+      </Card.Body> */}
     </Card>
   );
 }

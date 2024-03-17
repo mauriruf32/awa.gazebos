@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Dropzone from "react-dropzone";
 import { Container } from 'react-bootstrap';
 import axios from 'axios';
@@ -41,6 +41,7 @@ const Images = (props) => {
             axios.post("http://localhost:3001/images", form)
                 .then(() => {
                     alert("Imagenes creadas!!");
+                    setForm({ name: "", url: [] }); // Limpiar el formulario
                 })
                 .catch((error) => {
                     console.error("Error al crear las imagenes:", error);
@@ -100,19 +101,19 @@ const Images = (props) => {
             <div>
                 <Container>
                     <h1 className='text-center'>Upload your images here</h1>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter image name"
+                        value={form.name}
+                        onChange={changeHandler}
+                    />
                     <Dropzone className="dropzone" onDrop={handleDrop}>
                         {({ getRootProps, getInputProps }) => (
                             <section>
                                 <div {...getRootProps({ className: "dropzone" })}>
                                     <input {...getInputProps()} />
                                     <p>Drop your images here</p>
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        placeholder="Enter image name"
-                                        value={form.name}
-                                        onChange={changeHandler}
-                                    />
                                 </div>
                             </section>
                         )}
