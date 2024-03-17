@@ -4,6 +4,7 @@ require("dotenv").config();
 const UsersModel = require("./models/Users");
 const ProductsModel = require("./models/Product");
 const PostsModel = require("./models/Posts");
+const ImagesModel = require("./models/Images");
 
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME} = process.env;
 
@@ -15,6 +16,7 @@ const sequelize = new Sequelize(
 UsersModel(sequelize);
 PostsModel(sequelize);
 ProductsModel(sequelize);
+ImagesModel(sequelize);
 
 const {
     Product,
@@ -23,14 +25,17 @@ const {
     // ShoppingCart,
     // Order,
     Post,
-    // Cart_Product,
+    Images,
     // Order_Product,
   } = sequelize.models;
   
   Post.belongsTo(User);
   User.hasMany(Post);
+  Images.belongsTo(Product);
   Post.belongsTo(Product);
   Product.hasMany(Post);
+  Product.hasMany(Images);
+
   
 //   User.hasMany(Favorite);
 //   Favorite.belongsTo(User);

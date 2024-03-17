@@ -61,3 +61,10 @@ model Users {
   deleted      Boolean?  @default(false)
   Posts        Posts[]
 }
+
+enum enum_Products_color {
+  Rojo
+  Azul
+  Naranja
+  Amarillo
+}

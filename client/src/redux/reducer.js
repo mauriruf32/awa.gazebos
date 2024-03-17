@@ -1,10 +1,11 @@
 import { GET_PRODUCTS, GET_PRODUCT_BY_ID, 
-    GET_PRODUCT_BY_NAME, FILTER_BY_MATERIAL, ORDER_BY_PRICE, POST_PRODUCT, GET_USER_BY_ID, LOGIN_USER, FILTER_BY_COLOR } from "./actions";
+    GET_PRODUCT_BY_NAME, FILTER_BY_MATERIAL, ORDER_BY_PRICE, POST_PRODUCT, GET_USER_BY_ID, LOGIN_USER, FILTER_BY_COLOR, POST_IMAGES, GET_IMAGES } from "./actions";
 
 const initialState = {
     allProducts: [],
     materialFilter: [],
     userData: [],
+    images: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -14,6 +15,12 @@ const rootReducer = (state = initialState, action) => {
                 allProducts: action.payload,
                 productsFilter: action.payload
             };
+
+        case GET_IMAGES:
+            return {
+            ...state,
+            images: action.payload
+        }
 
         case LOGIN_USER:
             return { ...state, userData: action.payload };
@@ -77,6 +84,13 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 allProducts: [...state.allProducts, action.payload]
+                }
+            }
+        
+        case POST_IMAGES:{
+                return {
+                    ...state,
+                    images: [...state.images, action.payload]
                 }
             }
 

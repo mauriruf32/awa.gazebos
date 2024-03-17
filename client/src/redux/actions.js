@@ -10,6 +10,8 @@ export const GET_PRODUCT_BY_NAME = "GET_PRODUCT_BY_NAME";
 export const GET_USER_BY_ID = "GET_USER_BY_ID";
 export const POST_PRODUCT = "POST_PRODUCT";
 export const LOGIN_USER = "LOGIN_USER";
+export const POST_IMAGES = "POST_IMAGES";
+export const GET_IMAGES = "GET_IMAGES";
 
 
 export function getProducts(){
@@ -44,6 +46,26 @@ export function getProductByName(name){
             payload: response.data
         });
     };
+}
+
+export function postImages(data){
+    return async function (dispatch){
+            const response = await axios.post('http://localhost:3001/images', data)
+            return dispatch({
+                type: "POST_IMAGES",
+                payload: response.data
+            })
+        }
+    }
+
+export function getImages(){
+return async function (dispatch){
+    const response = await axios.get('http://localhost:3001/images');
+    dispatch ({
+        type: "GET_IMAGES",
+        payload: response.data
+    });
+};
 }
 
 export function getUserById(id){

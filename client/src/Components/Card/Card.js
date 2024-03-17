@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import axios from "axios";
 import Swal from "sweetalert2";
+import "./Card.css";
 
 function Product({ product }) {
 
@@ -83,7 +84,7 @@ function Product({ product }) {
     addToCart(productId);
   };
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '18rem' }} className="cardcaja">
       <Card.Img variant="top" src={image} alt={
         name} onClick={handleDetailProductClick} />
       <Card.Body>

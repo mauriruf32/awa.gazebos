@@ -1,41 +1,40 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Swal from "sweetalert2";
-
 import { useDispatch, useSelector } from "react-redux";
-import MultiImagenes from "../../Components/Imagenes/MultiImagenes";
-// import { getCountries, orderCountriesByName, getActivities } from "../../redux/actions";
+import Swal from "sweetalert2";
+import { getImages } from "../../redux/actions";
 
 const Form = () => {
-    // const dispatch = useDispatch();
-    // const countries = useSelector((state) => state.countries);
+    const dispatch = useDispatch();
+    const images = useSelector((state) => state.images);
     const [imagePreview, setImagePreview] = useState(null);
     const [imageSelected, setImageSelected] = useState("");
     console.log(imagePreview);
-    
 
-    const [form, setForm ] = useState({
-        name:"",
-        image:"",
-        description:"",
-        price:"",
+    const [form, setForm] = useState({
+        name: "",
+        image: "",
+        description: "",
+        price: "",
         stock: "",
         color: "",
         size: "",
         material: "",
         category: "",
+        images: [],
     });
 
     const [errors, setErrors] = useState({
-        name:"",
-        image:"",
-        description:"",
-        price:"",
+        name: "",
+        image: "",
+        description: "",
+        price: "",
         stock: "",
         size: "",
         color: "",
         material: "",
         category: "",
+        images: "",
     });
 
     const changeHandler = (event) => {
@@ -43,10 +42,9 @@ const Form = () => {
         const property = event.target.name;
         const value = event.target.value;
 
-        validate({...form,[property]:value})
-
-        setForm({...form,[property]:value})  
-    }
+        validate({ ...form, [property]: value });
+        setForm({ ...form, [property]: value });
+    };
 
     const validate = (form) => {
         if (form.name.length > 20) {
@@ -67,8 +65,8 @@ const Form = () => {
         else if (form.size.length > 20){
             setErrors({...errors,size: "Less than 20 characters."});
         }
-        else if (form.color !== "Rojo" || form.color !== "Azul" || form.color !=="Naranja" || form.color !== "Amarillo" ){
-            setErrors({...errors,color: 'You must select a season.'})
+        else if (form.color !== "Rojo" && form.color !== "Azul" && form.color !== "Naranja" && form.color !== "Amarillo") {
+            setErrors({ ...errors, color: 'You must select a season.' });
         }
         else if (form.material.length > 20){
             setErrors({...errors,material: "Less than 20 characters."})
@@ -76,24 +74,28 @@ const Form = () => {
         else if (form.category.length > 20){
             setErrors({...errors,category: "Less than 20 characters."})
         }
-        else {
-        setErrors({...errors, name:"", image:"",  description:"", price:"", stock:"", size:"", color:"", material:"", category:""})
+        else if (form.images === ""){
+            setErrors({...errors,images: 'You must choose at least 1 image.'})
+        }
+       else {
+            setErrors({ ...errors, name: "", image: "", description: "", price: "", stock: "", size: "", color: "", material: "", category: "", images: [] });
         }
     };
 
     const uploadImage = async () => {
         try {
-          const formData = new FormData();
-          formData.append("file", imageSelected);
-          formData.append("upload_preset", "jvu2gwik");
-    
-          const response = await axios.post(`https://api.cloudinary.com/v1_1/djsqt7j6v/image/upload`, formData);
-    
-          setImagePreview(response.data.url);
+            const formData = new FormData();
+            formData.append("file", imageSelected);
+            formData.append("upload_preset", "jvu2gwik");
+
+            const response = await axios.post(`https://api.cloudinary.com/v1_1/djsqt7j6v/image/upload`, formData);
+
+            setImagePreview(response.data.url);
+            setForm({ ...form, image: response.data.url }); // Guardar la URL de la imagen en el formulario
         } catch (error) {
-          console.error("Error al subir la imagen:", error.message);
+            console.error("Error al subir la imagen:", error.message);
         }
-      };
+    };
 
     const submitHandler = async (event) => {
         event.preventDefault();
@@ -101,99 +103,69 @@ const Form = () => {
             await uploadImage();
             await axios.post(`http://localhost:3001/products`, {
                 ...form,
-                image: imagePreview,
-              })
-        Swal.fire({
+            });
+            Swal.fire({
                 position: "top-center",
                 icon: "success",
                 title: "Producto agregado exitosamente",
                 showConfirmButton: false,
                 timer: 2000,
-              });
+            });
 
-             setForm({
+            // Limpiar el formulario después de enviar
+            setForm({
                 name: "",
-                image: "",
                 description: "",
-                size: "",
                 price: "",
                 stock: "",
+                size: "",
                 color: "",
                 material: "",
                 category: "",
-              });
+                images: "",
+            });
+            setImagePreview(null); // Limpiar la previsualización de la imagen
         } catch (error) {
             console.error("Error al agregar producto:", error.message);
         }
-
-    //     if (form.name==="" || form.description==="" || form.price==="" || form.stock==="" || form.size ==="" || form.material==="" || form.category==="" ){
-    //     event.preventDefault();
-    //     alert("All fields must be filled out.")}
-    //     else{
-    //     axios.post("http://localhost:3001/products", form)
-    //     alert("Product created successfully!!")
-    // }
     };
 
-    // useEffect(()=>{
-    //     dispatch(getCountries());
-    //     dispatch(getActivities());
-    // },[dispatch]);
+    useEffect(() => {
+        dispatch(getImages());
+    }, [dispatch]);
 
-    // const changeHandler2=(e)=> {
-    //     var options = e.target.options;
-    //     var value = [];
-    //     for (var i = 0, l = options.length; i < l; i++) {
-    //       if (options[i].selected) {
-    //         value.push(options[i].value);
-    //       }
-    //     }
-    //     console.log(value);
-    //     return setForm({ ...form, ["products"]: value });
-    //   }
-
-    //   const handleOrder = function(evento){
-    //     evento.preventDefault();
-    //     dispatch(orderCountriesByName(evento.target.value))
-    //   }
+    const changeHandler2 = (e) => {
+        const selectedImages = Array.from(e.target.selectedOptions, (option) => option.value);
+        setForm({ ...form, images: selectedImages });
+    };
 
     return (
-    <form  onSubmit={submitHandler}>
-        <h1>Crea aqui tu producto:</h1>
-        <h3>Completa todos los parametros, luego presiona guardar foto y por ultimo "crear producto"</h3>
-        <div >
-            <label>Nombre: </label>
-            <input type="text" value={form.name} onChange={changeHandler} name="name" />
-            {errors.name && <span>{errors.name}</span>}
-        </div>
-        <div>
-          <label htmlFor="image" >
-            Imagen:
-          </label>
-          <input
-            type="file"
-            id="image"
-            name="image"
-            accept="image/*"
-            onChange={(e) => {
-              setImageSelected(e.target.files[0]);
-            }}
-            
-          />
-            <MultiImagenes/>
-
-          <button onClick={() => uploadImage()}>Guardar foto</button>
-
-          <div >
-            {imagePreview && (
-              <img
-                src={imagePreview}
-                alt="Preview"
-                
-              />
-            )}
-          </div>
-        </div>
+        <form onSubmit={submitHandler}>
+            <h1>Crea aqui tu producto:</h1>
+            <h3>Completa todos los parametros, luego presiona guardar foto y por ultimo "crear producto"</h3>
+            <div>
+                <label>Nombre: </label>
+                <input type="text" value={form.name} onChange={changeHandler} name="name" />
+                {errors.name && <span>{errors.name}</span>}
+            </div>
+            <div>
+                <label htmlFor="image">Imagen:</label>
+                <input
+                    type="file"
+                    id="image"
+                    name="image"
+                    accept="image/*"
+                    onChange={(e) => {
+                        setImageSelected(e.target.files[0]);
+                    }}
+                />
+                <button type="button" onClick={() => uploadImage()}>
+                    Guardar foto
+                </button>
+                <div>
+                    {imagePreview && <img src={imagePreview} alt="Preview" />}
+                </div>
+            </div>
         <div >
             <label>Descripción: </label>
             <input type="text" value={form.description} onChange={changeHandler} name="description" />
@@ -235,21 +207,12 @@ const Form = () => {
             <input type="text" value={form.category} onChange={changeHandler} name="category" />
             {errors.category && <span>{errors.category}</span>}
         </div>
-        {/* <div className={style.inputbox}>
-            <label>Countries where the activity takes place: </label>
-            <select name="order" onChange={handleOrder} className={style.select} >
-             <option value="alphabetA">Names (A-Z)</option>
-             <option value="alphabetZ">Names (Z-A)</option>
-            </select>
-            <select type="text" value={form.countries} name="countries" onChange={changeHandler2}  multiple required>
-                  {countries.map((country) => {
-                    return (<option key={country.id} value={country.id}>{" "} {country.name} </option> );
+        <select type="text" value={form.images} name="images" onChange={changeHandler2} multiple required>
+                  {images.map((image) => {
+                    return (<option key={image.id} value={image.id}>{" "} {image.name}, </option> );
                   })}
             </select>
-            {errors.countries && <span>{errors.countries}</span>}
-
-        </div> */}
-
+            {errors.images && <span>{errors.images}</span>}
         <button type="submit">Crear Producto</button>
     </form>
     )

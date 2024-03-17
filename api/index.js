@@ -4,26 +4,26 @@ const {conn} = require("./src/db");
 
 const PORT = 3001;
 
-const { PrismaClient } = require('@prisma/client')
+// const { PrismaClient } = require('@prisma/client')
 
-const prisma = new PrismaClient()
+// const prisma = new PrismaClient()
 
-async function main() {
-    const allProducts = await prisma.products.findMany();
-  console.log(allProducts)
-}
+// async function main() {
+//     const Product = await prisma.product.findMany();
+//   console.log(Product)
+// }
 
-main()
-  .then(async () => {
-    await prisma.$disconnect()
-  })
-  .catch(async (e) => {
-    console.error(e)
-    await prisma.$disconnect()
-    process.exit(1)
-  })
+// main()
+//   .then(async () => {
+//     await prisma.$disconnect()
+//   })
+//   .catch(async (e) => {
+//     console.error(e)
+//     await prisma.$disconnect()
+//     process.exit(1)
+//   })
 
 server.listen(PORT, () => {
-    conn.sync({force: true});
+    conn.sync({force: false});
     console.log(`Listening on port ${PORT}`);
 });

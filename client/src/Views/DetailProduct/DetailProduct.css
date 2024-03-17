@@ -9,8 +9,8 @@
   }
   
   .detail-product-image img {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
   }
   
   .detail-product-info {
@@ -37,3 +37,12 @@
     margin: 5px 0;
   }
   
+  .product-images {
+    display: flex;
+    height: 50%;
+    
+  }
+  .clickable-images {
+    width:  50%;
+    height: 50%;
+  }

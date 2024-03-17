@@ -4,7 +4,8 @@ import Home from "../src/Views/Home/Home";
 import Register from "../src/Views/Register/Register";
 import DetailProduct from "../src/Views/DetailProduct/DetailProduct";
 import Login from "./Views/Login/Login";
-import CreateProduct from "../src/Views/FormAdmin/CreateProduct"
+import CreateProduct from "../src/Views/FormAdmin/CreateProduct";
+import Imagenes from "../src/Views/FormAdmin/Images.js";
 import Profile  from "./Views/Profiles/Profile.js";
 import ShowProducts from "./Views/FormAdmin/ShowProducts";
 import EditProducts from "./Views/FormAdmin/EditProducts";
@@ -20,7 +21,6 @@ function App() {
   return (
     <div>
           {location.pathname !== "/register" &&
-        location.pathname !== "/products/create" &&
          (
           <NavBar />
         )}
@@ -30,6 +30,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/products/:id" element={<DetailProduct />} />
           <Route path="/products/create" element={<CreateProduct />} />
+          <Route path="/images" element={<Imagenes />} />
           <Route path="/products/showproducts" element={<ShowProducts />} />
           <Route path="/edit/:id" element={<EditProducts />} />
           <Route path="/users/:id" element={<Profile />} />

@@ -2,6 +2,7 @@ const { Router } = require("express");
 const usersRouter = require("./usersRouter");
 const postRouter = require("./postsRouter");
 const productRouter = require("./productsRouter");
+const imagesRouter = require("./imagesRouter");
 
 const mainRouter = Router();
 
@@ -10,6 +11,8 @@ mainRouter.use("/users", usersRouter);
 mainRouter.use("/posts", postRouter);
 
 mainRouter.use("/products", productRouter);
+
+mainRouter.use("/images", imagesRouter);
 
 // mainRouter.get("/products", (req, res) => {
 //     res.status(200).send("Todos los productos");

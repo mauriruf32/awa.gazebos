@@ -33,28 +33,27 @@ const getProductByIdHandler = async (req, res) => {
 };
 
 const createProductHandler = async (req, res) => {
-    const {
-        name,
-        image,
-        description,
-        price,
-        stock,
-        color,
-        size,
-        material,
-        category,
-      } = req.body;
+  const {
+    name,
+    image, // Cambiado de `image` a `images`
+    description,
+    price,
+    stock,
+    color,
+    size,
+    material,
+    category,
+    images,
+  } = req.body;
 
-      try {
-        const response = await createProductDB(name, image, description, price, stock, color, size, material, category);
-        res.status(200).json(response)
-      } catch (error) {
-        res.status(400).json({error: error.message});
-      }
-
-
-    // res.status(200).send("Producto creado");
+  try {
+    const response = await createProductDB(name, image, description, price, stock, color, size, material, category, images);
+    res.status(200).json(response);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 };
+
 
 const deleteProductHandler = async (req, res) => {
   const { id } = req.params;
@@ -69,6 +68,25 @@ const deleteProductHandler = async (req, res) => {
     // res.status(200).send(`Detalle del producto ${id}`);
 };
 
+// const productImageHandler = async (req, res) => {
+
+//   try {
+//       const { url } = req.body;
+
+//       if (typeof url !== 'string') {
+//           throw new Error('URL must be a string');
+//       }
+
+//       const productImage = await createProductImage(url);
+
+      
+//       res.status(201).json(productImage);
+//   } catch (error) {
+      
+//       console.error(error);
+//       res.status(500).json({ error: error.message });
+//   }
+// };
 
 
 

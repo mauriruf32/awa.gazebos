@@ -3,15 +3,16 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { Nav } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
-import logo from "../Card/logo_sin_fondo.png";
+import logo from "../Card/image-blanca.png";
 import SearchBar from '../SearchBar/SearchBar';
+import "./NavBar.css";
 
 
 const NavBar = () => {
   const { user, loginWithRedirect, logout, isAuthenticated  } = useAuth0();
   return (
     <>
-    <Navbar bg="secondary">
+    <Navbar className='nav-container'>
       <Container>
         <Navbar.Brand href="/">
           <img
@@ -23,9 +24,15 @@ const NavBar = () => {
         </Navbar.Brand>
         <Nav.Link href="/register">Registrate</Nav.Link>
         <Nav.Link href="/login">LogIn</Nav.Link>
-        <Nav.Link href="/products/create">create</Nav.Link>
+        <Nav.Link href="/images">Imagenes</Nav.Link>
+
         
-        { isAuthenticated && <p>{user.name}</p>}
+        { isAuthenticated && <p>{user.name}</p>
+        && <Nav.Link href="/products/create">create</Nav.Link>
+        }
+                { isAuthenticated 
+        && <Nav.Link href="/products/showproducts">ProductList</Nav.Link>
+        }
 
         { isAuthenticated ? (
         <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
@@ -36,7 +43,6 @@ const NavBar = () => {
         )}
 
         <SearchBar/>
-              <Nav.Link href="/products/showproducts">ProductList</Nav.Link>
               <Nav.Link href="/users/:id">Perfil</Nav.Link>
               <Nav.Link href="/Inventory">Inventario</Nav.Link>
       </Container>
