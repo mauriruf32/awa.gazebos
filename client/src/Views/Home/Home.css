@@ -7,6 +7,6 @@
 }
 
 .containerFilters {
-    display: grid;
+    display: flex;
     width: 50px;
 }

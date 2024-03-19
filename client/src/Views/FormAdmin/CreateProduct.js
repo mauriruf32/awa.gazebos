@@ -3,6 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { getImages } from "../../redux/actions";
+import "./CreateProduct.css";
 
 const Form = () => {
     const dispatch = useDispatch();
@@ -140,16 +141,16 @@ const Form = () => {
     };
 
     return (
-        <form onSubmit={submitHandler}>
+        <form className="form-container" onSubmit={submitHandler}>
             <h1>Crea aqui tu producto:</h1>
             <h3>Completa todos los parametros, luego presiona guardar foto y por ultimo "crear producto"</h3>
-            <div>
-                <label>Nombre: </label>
+            <div className="form-name">
+                <label className="form-name">Nombre: </label>
                 <input type="text" value={form.name} onChange={changeHandler} name="name" />
                 {errors.name && <span>{errors.name}</span>}
             </div>
-            <div>
-                <label htmlFor="image">Imagen:</label>
+            <div className="form-name">
+                <label className="form-name" htmlFor="image">Imagen:</label>
                 <input
                     type="file"
                     id="image"
@@ -166,28 +167,27 @@ const Form = () => {
                     {imagePreview && <img src={imagePreview} alt="Preview" />}
                 </div>
             </div>
-        <div >
+        <div className="form-name">
             <label>Descripción: </label>
             <input type="text" value={form.description} onChange={changeHandler} name="description" />
             {errors.description && <span>{errors.description}</span>}
         </div>
 
-        <div >
+        <div className="form-stockPrecio">
             <label>Precio: </label>
             <input type="number" value={form.price} onChange={changeHandler} name="price" />
             {errors.price && <span>{errors.price}</span>}
-        </div>
-        <div >
+
             <label>Stock: </label>
             <input type="number" value={form.stock} onChange={changeHandler} name="stock" />
             {errors.stock && <span>{errors.stock}</span>}
         </div>
-        <div >
+        <div className="form-name">
             <label>Tamaño: </label>
             <input type="text" value={form.size} onChange={changeHandler} name="size" />
             {errors.size && <span>{errors.size}</span>}
         </div>
-        <div >
+        <div className="form-name">
             <label>Color: </label>
                 <select type="text" value={form.color} onChange={changeHandler} name="color" >
                     <option value="Rojo">Rojo</option>
@@ -197,12 +197,12 @@ const Form = () => {
                 </select>
             {errors.color && <span>{errors.color}</span>}
         </div>
-        <div >
+        <div className="form-name">
             <label>Material: </label>
             <input type="text" value={form.material} onChange={changeHandler} name="material" />
             {errors.material && <span>{errors.material}</span>}
         </div>
-        <div >
+        <div className="form-name">
             <label>Categoria: </label>
             <input type="text" value={form.category} onChange={changeHandler} name="category" />
             {errors.category && <span>{errors.category}</span>}

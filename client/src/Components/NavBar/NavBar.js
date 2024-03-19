@@ -6,6 +6,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import logo from "../Card/image-blanca.png";
 import SearchBar from '../SearchBar/SearchBar';
 import "./NavBar.css";
+import SideBarAdmin from '../SideBar/SideBar';
 
 
 const NavBar = () => {
@@ -24,15 +25,16 @@ const NavBar = () => {
         </Navbar.Brand>
         <Nav.Link href="/register">Registrate</Nav.Link>
         <Nav.Link href="/login">LogIn</Nav.Link>
-        <Nav.Link href="/images">Imagenes</Nav.Link>
+        {/* <Nav.Link href="/images">Imagenes</Nav.Link> */}
 
         
         { isAuthenticated && <p>{user.name}</p>
-        && <Nav.Link href="/products/create">create</Nav.Link>
+        && <SideBarAdmin/>
         }
-                { isAuthenticated 
-        && <Nav.Link href="/products/showproducts">ProductList</Nav.Link>
-        }
+
+        {/* { isAuthenticated 
+        && <SideBarAdmin/>
+        } */}
 
         { isAuthenticated ? (
         <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>

@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import image1 from "../../Components/Card/logo_sin_fondo3.png";
 import image2 from "../../utils/envios.jpg";
-import image3 from "../../utils/envios.jpg";
+import image3 from "../../utils/enviossss.jpg";
 import { Container } from "react-bootstrap";
 
 

@@ -1,48 +1,35 @@
-import React from 'react'
-import Dropdown from 'react-bootstrap/Dropdown';
-import { getProducts, orderProductsByPrice, filterProductsByMaterial } from '../../redux/actions';
-import { useEffect, useState} from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Nav } from "react-bootstrap";
 
 
-function SideBar() {
-    const dispatch = useDispatch();
-    const [order, setOrder] = useState(false);
-    const allProducts =  useSelector((state) => state.allProducts);
-  
-    const resetFilters = () => {
-      dispatch(getProducts()); 
-    };
-  
-    const handleOrder = function(evento){
-      dispatch(orderProductsByPrice(evento.target.value))
-      if (!order) setOrder(true);
-      else setOrder (false);
-    };
-  
-    const handleFilterMaterial = function(evento){
-      evento.preventDefault();
-      dispatch(filterProductsByMaterial(evento.target.value))
-    }
-  
-    useEffect(() => {
-      dispatch(getProducts());
-    }, [dispatch]);
+function SideBarAdmin() {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const { user } = useAuth0();
 
   return (
-    <div><Dropdown className="d-inline mx-2" autoClose="inside" onChange={handleFilterMaterial} >
-    <Dropdown.Toggle id="dropdown-autoclose-inside">
-    Materiales
-    </Dropdown.Toggle>
-    <Dropdown.Menu name="materiales" onChange={handleFilterMaterial} >
-            <Dropdown.Item onChange={resetFilters} value="materiales" >Materiales</Dropdown.Item>
-            {allProducts.map((product) => {
-                    return (<Dropdown.Item key={product.id} product={product.material}> {product.material} </Dropdown.Item> );
-                  })}
-            </Dropdown.Menu>
-  </Dropdown>
-  </div>
-  )
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Barra Admin
+      </Button>
+
+      <Offcanvas show={show} onHide={handleClose}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Bienvenido {user.name}</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          Aqui encontraras todos las opciones habilitadas para el admin:
+          <Nav.Link href='/products/create'>Crear Producto</Nav.Link> 
+          <Nav.Link href='/products/showproducts'>Ver Productos</Nav.Link> 
+          <Nav.Link href='/images'>Crear Imagenes</Nav.Link> 
+        </Offcanvas.Body>
+      </Offcanvas>
+    </>
+  );
 }
 
-export default SideBar;
+export default SideBarAdmin;
