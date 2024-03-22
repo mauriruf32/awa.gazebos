@@ -13,7 +13,7 @@ function SideBarAdmin() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button class="btn btn-outline-warning" onClick={handleShow}>
         Barra Admin
       </Button>
 
