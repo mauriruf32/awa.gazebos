@@ -140,6 +140,7 @@ const Form = () => {
         setForm({ ...form, images: selectedImages });
     };
 
+
     return (
         <form className="form-container" onSubmit={submitHandler}>
             <h1>Crea aqui tu producto:</h1>
