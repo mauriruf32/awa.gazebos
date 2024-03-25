@@ -13,7 +13,7 @@ function SideBarAdmin() {
 
   return (
     <>
-      <Button class="btn btn-outline-warning" onClick={handleShow}>
+      <Button type="button" class="btn btn-warning" onClick={handleShow}>
         Barra Admin
       </Button>
 
@@ -25,6 +25,7 @@ function SideBarAdmin() {
           Aqui encontraras todos las opciones habilitadas para el admin:
           <Nav.Link href='/products/create'>Crear Producto</Nav.Link> 
           <Nav.Link href='/products/showproducts'>Ver Productos</Nav.Link> 
+          <Nav.Link href='/users/showusers'>Ver Usuarios</Nav.Link> 
           <Nav.Link href='/images'>Crear Imagenes</Nav.Link> 
         </Offcanvas.Body>
       </Offcanvas>

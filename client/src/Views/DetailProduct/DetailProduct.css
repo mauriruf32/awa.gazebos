@@ -1,48 +1,73 @@
-/* DetailProduct.css */
+.container-detail {
+  display: flex;
+  justify-content: center;
+}
+
 .detail-product-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    margin-top: 150px;
-    height: 600px;
-    width: 860px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.detail-product-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.detail-product-info {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.product-description {
+  margin-bottom: 10px;
+}
+
+.product-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-images img {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .detail-product-container {
+    width: 90%;
   }
-  
-  .detail-product-image img {
-    width: 300px;
-    height: 300px;
+}
+
+@media only screen and (max-width: 576px) {
+  .product-images img {
+    width: 80px;
+    height: 80px;
   }
-  
-  .detail-product-info {
-    flex: 1;
-    margin-left: 100px;
-    text-align: left; 
-  }
-  
-  .product-description {
-    margin-bottom: 15px;
-  }
-  
-  .product-price {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-  
-  .additional-info {
-    margin-top: 15px;
-  }
-  
-  .additional-info p {
-    margin: 5px 0;
-  }
-  
-  .product-images {
-    display: flex;
-    height: 50%;
-    
-  }
-  .clickable-images {
-    width:  50%;
-    height: 50%;
-  }
+}
+
+.custom-popup-class {
+  /* Estilos para el popup personalizado */
+  width: auto; /* Ancho automático */
+  max-width: 90%; /* Ancho máximo del popup */
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-popup-class img {
+  /* Estilos para las imágenes dentro del popup */
+  display: block;
+  margin: 0 auto;
+  max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  max-height: 90vh; /* Altura máxima del popup */
+  border-radius: 10px;
+  object-fit: contain; /* La imagen se ajusta manteniendo la relación de aspecto */
+}
+

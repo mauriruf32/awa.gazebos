@@ -23,8 +23,8 @@ const NavBar = () => {
             className="d-inline-block align-top"
           />{' '}
         </Navbar.Brand>
-        <Nav.Link href="/register">Registrate</Nav.Link>
-        <Nav.Link href="/login">LogIn</Nav.Link>
+        {/* <Nav.Link href="/register">Registrate</Nav.Link>
+        <Nav.Link href="/login">LogIn</Nav.Link> */}
         {/* <Nav.Link href="/images">Imagenes</Nav.Link> */}
 
         
@@ -37,16 +37,15 @@ const NavBar = () => {
         } */}
 
         { isAuthenticated ? (
-        <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+        <button type="button" class="btn btn-warning" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
         Log Out
         </button>
         ) : (
-        <button onClick={() => loginWithRedirect()}>Log In</button>
+        <button type="button" class="btn btn-warning" onClick={() => loginWithRedirect()}>Log In</button>
         )}
 
-        <SearchBar/>
-              <Nav.Link href="/users/:id">Perfil</Nav.Link>
-              <Nav.Link href="/Inventory">Inventario</Nav.Link>
+        {/* <SearchBar/> */}
+              {/* <Nav.Link href="/users/:id">Perfil</Nav.Link> */}
       </Container>
     </Navbar>
   </>

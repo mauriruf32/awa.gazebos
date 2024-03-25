@@ -4,9 +4,14 @@
     flex-wrap: wrap;
     margin-top: 20px;
     width: 100%;
+
 }
+
+/* .card-compo {
+border-color: rgb(255, 72, 0);
+border-radius: 10px;
+} */
 
 .containerFilters {
     display: flex;
-    width: 50px;
 }

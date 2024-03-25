@@ -1,5 +1,15 @@
-import { GET_PRODUCTS, GET_PRODUCT_BY_ID, 
-    GET_PRODUCT_BY_NAME, FILTER_BY_MATERIAL, ORDER_BY_PRICE, POST_PRODUCT, GET_USER_BY_ID, LOGIN_USER, FILTER_BY_COLOR, POST_IMAGES, GET_IMAGES } from "./actions";
+import { GET_PRODUCTS, 
+    GET_PRODUCT_BY_ID,
+    GET_PRODUCT_BY_NAME, 
+    FILTER_BY_MATERIAL, 
+    ORDER_BY_PRICE, 
+    POST_PRODUCT, 
+    LOGIN_USER, 
+    FILTER_BY_COLOR, 
+    POST_IMAGES, 
+    GET_IMAGES, 
+    GET_USERS,
+    GET_USER_BY_ID } from "./actions";
 
 const initialState = {
     allProducts: [],
@@ -94,12 +104,19 @@ const rootReducer = (state = initialState, action) => {
                 }
             }
 
-        case GET_USER_BY_ID:{
+        case GET_USERS:{
             return {
                     ...state,
                     userData: action.payload
                 }
               }
+
+        case GET_USER_BY_ID:{
+            return {
+                    ...state,
+                    userData: action.payload
+                }
+            }
 
 
         default:

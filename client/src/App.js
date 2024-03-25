@@ -6,12 +6,14 @@ import DetailProduct from "../src/Views/DetailProduct/DetailProduct";
 import Login from "./Views/Login/Login";
 import CreateProduct from "../src/Views/FormAdmin/CreateProduct";
 import Imagenes from "../src/Views/FormAdmin/Images.js";
-import Profile  from "./Views/Profiles/Profile.js";
 import ShowProducts from "./Views/FormAdmin/ShowProducts";
 import EditProducts from "./Views/FormAdmin/EditProducts";
 import Cart from "./Views/Cart/Cart";
 import NavBar from '../src/Components/NavBar/NavBar';
 import { useLocation } from "react-router-dom";
+import Footer from "./Components/Footer/Footer.js";
+import ShowUsers from "./Views/FormAdmin/ShowUsers.js";
+import { Profiles } from "./Views/Profiles/Profiles.js";
 
 
 
@@ -33,10 +35,12 @@ function App() {
           <Route path="/images" element={<Imagenes />} />
           <Route path="/products/showproducts" element={<ShowProducts />} />
           <Route path="/edit/:id" element={<EditProducts />} />
-          <Route path="/users/:id" element={<Profile />} />
+          <Route path="/users/:id" element={<Profiles />} />
+          <Route path="/users/showusers" element={<ShowUsers />} />
           <Route path="/login" element={<Login />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
+        <Footer/>
         </div>
 
   );

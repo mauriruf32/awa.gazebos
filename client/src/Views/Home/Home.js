@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import CarouselHome from "../../Components/Carousel/Carousel";
 import Card from "../../Components/Card/Card";
 import "./Home.css";
-import Footer from '../../Components/Footer/Footer';
 
 
 const Home = () => {  
@@ -41,22 +40,21 @@ const Home = () => {
   return (
     <div>
       <CarouselHome />
-      Home
       <div className='containerFilters'>
-      <button onClick={resetFilters}>    
-Reset Filters
+      <button type="button" class="btn btn-warning" onClick={resetFilters}>    
+          Resetear filtros
         </button>
-            <select name="order" onChange={handleOrder}>
-             <option value="asc">Higher price</option>
-             <option value="desc">Lower price</option>
+            <select class="form-select" name="order" onChange={handleOrder}>
+             <option value="asc">Precio mas alto</option>
+             <option value="desc">Precio mas bajo</option>
             </select>
-            <select name="materiales" onChange={handleFilterMaterial} >
+            <select class="form-select" name="materiales" onChange={handleFilterMaterial} >
             <option onChange={resetFilters} value="materiales" >Materiales</option>
             {allProducts.map((product) => {
                     return (<option key={product.id} product={product.material}> {product.material} </option> );
                   })}
             </select>
-            <select name="colores" onChange={handleFilterColor} >
+            <select class="form-select" name="colores" onChange={handleFilterColor} >
             <option onChange={resetFilters} value="colores" >Colores</option>
             {allProducts.map((product) => {
                     return (<option key={product.id} product={product.color}> {product.color} </option> );
@@ -69,8 +67,6 @@ Reset Filters
       <Card key={product.id} product={product} />
       ))}
            </div>
-
-              <Footer />    
       </div>
   )
 }

@@ -1,8 +1,12 @@
-.cardcaja {
-    border-radius: 20px;
-    border-color: #2182f2;
+
+
+.card-model {
+    border-color: #ff0808;
+    border-radius: 50px;
+    border-width: 10px;
+    border-image-repeat: round;
 }
 
 .detail-img {
-    width: 50%;
+    width: 40%;
 }

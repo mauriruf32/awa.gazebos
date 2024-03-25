@@ -84,7 +84,7 @@ function Product({ product }) {
     addToCart(productId);
   };
   return (
-    <Card style={{ width: '18rem' }} className="cardcaja">
+    <Card className="card-model" style={{ width: '18rem' }} >
       <Card.Img variant="top" src={image} alt={
         name} onClick={handleDetailProductClick} />
       <Card.Body>

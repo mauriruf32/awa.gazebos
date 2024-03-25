@@ -46,10 +46,14 @@ function DetailProduct() {
       showCloseButton: true,
       showConfirmButton: false,
       focusConfirm: false,
+      customClass: {
+        popup: 'custom-popup-class', // Clase CSS personalizada para el popup
+      }
     });
   };
 
   return (
+    <div className="container-detail"> 
     <div className="detail-product-container">
       <div className="detail-product-image">
         {producto.image && (
@@ -57,7 +61,6 @@ function DetailProduct() {
             src={producto.image}
             alt={producto.name}
             onClick={() => showImagePopup(producto.image)}
-            className="clickable-image"
           />
         )}
       </div>
@@ -83,6 +86,7 @@ function DetailProduct() {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 }

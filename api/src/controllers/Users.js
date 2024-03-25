@@ -16,9 +16,8 @@ return userDB;
 };
 
 const getAllUsers = async () => {
-    const usersDB = await User.findAll();
-
-return usersDB;
+    
+    return await User.findAll();
 
 };
 

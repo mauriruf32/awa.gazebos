@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-// const URL = `http://localhost:3001/users/`;
 
 
 export const Profiles = () => {
