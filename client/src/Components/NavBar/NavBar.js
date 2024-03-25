@@ -19,7 +19,7 @@ const NavBar = () => {
           <img
             alt=""
             src={logo}
-            width="100"
+            width="200"
             className="d-inline-block align-top"
           />{' '}
         </Navbar.Brand>

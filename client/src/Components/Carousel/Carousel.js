@@ -11,7 +11,7 @@ import "./Carousel.css";
 
 function CarouselHome() {
   return (
-    <Container fluid className="p-0">
+    <Container fluid className="p-0 w-100">
       <Carousel>
         <Carousel.Item interval={5000}>
           <img className="d-block w-100 half-height-img fluid" src={image1} alt="img1" text="First slide"/>
