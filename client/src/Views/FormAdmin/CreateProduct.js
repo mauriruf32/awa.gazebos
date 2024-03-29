@@ -48,8 +48,8 @@ const Form = () => {
     };
 
     const validate = (form) => {
-        if (form.name.length > 20) {
-            setErrors({...errors, name: "Less than 20 characters."})
+        if (form.name.length > 50) {
+            setErrors({...errors, name: "Less than 50 characters."})
         }
         else if (/.*\d+.*/.test(form.name)) {
             setErrors({...errors, name: 'The name cannot have numbers.'})

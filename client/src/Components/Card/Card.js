@@ -56,7 +56,6 @@ function Product({ product }) {
         <div class="detail-card">
           <img class="detail-img" src="${image}" alt="${name}" />
           <div class="detail-info">
-            <p><strong>Descripción:</strong> ${description}</p>
             <p><strong>Tamaño:</strong> ${size}</p>
             <p><strong>Material:</strong> ${material}</p>
             <p><strong>Categoria:</strong> ${category}</p>
@@ -93,12 +92,12 @@ function Product({ product }) {
         {/* <Card.Text>{description}</Card.Text> */}
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Price: ${price}</ListGroup.Item>
+        <ListGroup.Item>Precio: ${price}</ListGroup.Item>
         {/* <ListGroup.Item>Stock: {stock}</ListGroup.Item> */}
-        <ListGroup.Item>Size: {size}</ListGroup.Item>
+        <ListGroup.Item>Tamaño: {size}</ListGroup.Item>
         <ListGroup.Item>Color: {color}</ListGroup.Item>
-        <ListGroup.Item>Material: {material}</ListGroup.Item>
-        <ListGroup.Item>Category: {category}</ListGroup.Item>
+        {/* <ListGroup.Item>Material: {material}</ListGroup.Item>
+        <ListGroup.Item>Category: {category}</ListGroup.Item> */}
       </ListGroup>
       {/* <Card.Body>
       <button className="cart-btn" onClick={handleAddToCartClick}>

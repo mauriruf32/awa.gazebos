@@ -54,26 +54,7 @@ function DetailProduct() {
 
   return (
     <div className="container-detail"> 
-    <div className="detail-product-container">
-      <div className="detail-product-image">
-        {producto.image && (
-          <img
-            src={producto.image}
-            alt={producto.name}
-            onClick={() => showImagePopup(producto.image)}
-          />
-        )}
-      </div>
-      <div className="detail-product-info">
-        <h4>
-          <b>{producto.name}</b>
-        </h4>
-        <p className="product-description">{producto.description}</p>
-        <p><strong>Size:</strong> {producto.size}</p>
-        <p><strong>Material:</strong> {producto.material}</p>
-        <p><strong>Category:</strong> {producto.category}</p>
-        <p className="product-price">${producto.price}</p>
-        {/* Mostrar solo las imágenes asociadas al producto */}
+      <div className="detail-product-container">
         <div className="product-images">
           {images.filter(image => producto.images.includes(String(image.id))).map((image) => (
             <img
@@ -85,8 +66,28 @@ function DetailProduct() {
             />
           ))}
         </div>
+        <div className="detail-product-image">
+          {producto.image && (
+            <img
+              src={producto.image}
+              alt={producto.name}
+              onClick={() => showImagePopup(producto.image)}
+            />
+          )}
+        </div>
+        <div className="detail-product-info">
+          <h4>
+            <b>{producto.name}</b>
+          </h4>
+          <p><strong>Size:</strong> {producto.size}</p>
+          <p><strong>Material:</strong> {producto.material}</p>
+          <p><strong>Category:</strong> {producto.category}</p>
+          <p className="product-price">${producto.price}</p>
+        </div>
+
       </div>
-    </div>
+      <p c>{producto.description}</p>
+
     </div>
   );
 }
