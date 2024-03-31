@@ -84,10 +84,14 @@ function DetailProduct() {
           <p><strong>Category:</strong> {producto.category}</p>
           <p className="product-price">${producto.price}</p>
         </div>
-
       </div>
-      <p c>{producto.description}</p>
-
+      
+      <div className="product-description">
+        <p>Descripción:</p>
+        {producto.description && producto.description.split('\n').map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
+      </div>
     </div>
   );
 }

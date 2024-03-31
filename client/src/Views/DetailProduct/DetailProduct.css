@@ -74,3 +74,11 @@
   object-fit: contain; /* La imagen se ajusta manteniendo la relación de aspecto */
 }
 
+.product-description {
+  display: row;
+  text-align: left;
+  width: 80%;
+  height: 80%;
+  font-size: large;
+  margin-left: 100px;
+}

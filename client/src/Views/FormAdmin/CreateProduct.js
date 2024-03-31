@@ -168,11 +168,11 @@ const Form = () => {
                     {imagePreview && <img src={imagePreview} alt="Preview" />}
                 </div>
             </div>
-        <div className="form-name">
-            <label>Descripción: </label>
-            <input type="text" value={form.description} onChange={changeHandler} name="description" />
-            {errors.description && <span>{errors.description}</span>}
-        </div>
+            <div className="form-name">
+    <label>Descripción: </label>
+    <textarea value={form.description} onChange={changeHandler} name="description" />
+    {errors.description && <span>{errors.description}</span>}
+</div>
 
         <div className="form-stockPrecio">
             <label>Precio: </label>
