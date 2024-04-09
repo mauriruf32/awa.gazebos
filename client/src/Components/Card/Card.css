@@ -1,10 +1,12 @@
 
 
 .card-model {
-    border-color: #ff0808;
-    border-radius: 50px;
-    border-width: 10px;
+    border-color: #000000;
+    border-radius: 10px;
+    border-width: 1px;
     border-image-repeat: round;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 .detail-img {

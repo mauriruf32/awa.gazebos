@@ -54,7 +54,7 @@ const Home = () => {
                     return (<option key={product.id} product={product.material}> {product.material} </option> );
                   })}
             </select>
-            <select class="form-select" name="colores" onChange={handleFilterColor} >
+            <select class="form-select" className="form-select" name="colores" onChange={handleFilterColor} >
             <option onChange={resetFilters} value="colores" >Colores</option>
             {allProducts.map((product) => {
                     return (<option key={product.id} product={product.color}> {product.color} </option> );

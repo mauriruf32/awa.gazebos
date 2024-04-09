@@ -81,7 +81,9 @@ function DetailProduct() {
           </h4>
           <p><strong>Size:</strong> {producto.size}</p>
           <p><strong>Material:</strong> {producto.material}</p>
-          <p><strong>Category:</strong> {producto.category}</p>
+          <p><strong>Categoria:</strong> {producto.category}</p>
+          <p><strong>Material Tela:</strong> {producto.materialTela}</p>
+          <p><strong>Stock:</strong> {producto.stock}</p>
           <p className="product-price">${producto.price}</p>
         </div>
       </div>

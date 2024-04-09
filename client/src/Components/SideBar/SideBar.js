@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useAuth0 } from '@auth0/auth0-react';
 import { Nav } from "react-bootstrap";
+import "./SideBar.css";
 
 
 function SideBarAdmin() {
@@ -17,11 +18,11 @@ function SideBarAdmin() {
         Barra Admin
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose}>
+      <Offcanvas className="side-container" show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Bienvenido {user.name}</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body className='side-body'>
           Aqui encontraras todos las opciones habilitadas para el admin:
           <Nav.Link href='/products/create'>Crear Producto</Nav.Link> 
           <Nav.Link href='/products/showproducts'>Ver Productos</Nav.Link> 

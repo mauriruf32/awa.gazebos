@@ -21,6 +21,7 @@ const Form = () => {
         color: "",
         size: "",
         material: "",
+        materialTela: "",
         category: "",
         images: [],
     });
@@ -34,6 +35,7 @@ const Form = () => {
         size: "",
         color: "",
         material: "",
+        materialTela: "",
         category: "",
         images: "",
     });
@@ -201,6 +203,11 @@ const Form = () => {
         <div className="form-name">
             <label>Material: </label>
             <input type="text" value={form.material} onChange={changeHandler} name="material" />
+            {errors.material && <span>{errors.material}</span>}
+        </div>
+        <div className="form-name">
+            <label>Material Tela: </label>
+            <input type="text" value={form.materialTela} onChange={changeHandler} name="materialTela" />
             {errors.material && <span>{errors.material}</span>}
         </div>
         <div className="form-name">

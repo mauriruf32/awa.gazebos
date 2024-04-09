@@ -36,14 +36,13 @@ const Register = () => {
     try {
       const response = await axios.post(`http://localhost:3001/users`, values);
 
-      if (response.status === 201) {
+      if (response.status === 200) {
         Swal.fire({
           icon: "success",
           title: "Registro exitoso",
           showConfirmButton: false,
           timer: 1500,
         });
-        createCart(response.data.ID);
       } else {
         Swal.fire({
           icon: "error",
@@ -60,19 +59,7 @@ const Register = () => {
   };
 
 
-  const createCart = async (userId) => {
-    try {
-      const { data } = await axios.post(
-        `${URL}shoppingCart`,
-        {
-          userId,
-        }
-      );
-      // console.log(data);
-    } catch (error) {
-      alert(error.message);
-    }
-  };
+ 
 
   return (
     <div  >

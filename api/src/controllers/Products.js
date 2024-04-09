@@ -1,9 +1,9 @@
 const { Product, Images } = require("../db");
 const { Op } = require('sequelize');
 
-const createProductDB = async (name, image, description, price, stock, color, size, material, category, images) => {
+const createProductDB = async (name, image, description, price, stock, color, size, material, materialTela, category, images) => {
     // Aquí se crea el producto con el atributo `images` en lugar de `image`
-    return await Product.create({ name, image, description, price, stock, color, size, material, category, images });
+    return await Product.create({ name, image, description, price, stock, color, size, material, materialTela, category, images });
 };
 
 

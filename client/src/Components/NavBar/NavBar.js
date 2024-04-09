@@ -4,7 +4,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Nav } from "react-bootstrap";
 import { useAuth0 } from "@auth0/auth0-react";
 import logo from "../Card/image-blanca.png";
-import SearchBar from '../SearchBar/SearchBar';
 import "./NavBar.css";
 import SideBarAdmin from '../SideBar/SideBar';
 
@@ -23,18 +22,18 @@ const NavBar = () => {
             className="d-inline-block align-top"
           />{' '}
         </Navbar.Brand>
-        {/* <Nav.Link href="/register">Registrate</Nav.Link>
-        <Nav.Link href="/login">LogIn</Nav.Link> */}
-        {/* <Nav.Link href="/images">Imagenes</Nav.Link> */}
-
+        <Nav.Link href="/login">LogIn</Nav.Link>
+        <Nav.Link href="/profiles">Perfil</Nav.Link>
         
+        { isAuthenticated  && <Nav.Link href="/profiles">Perfil</Nav.Link>
+        
+        }
         { isAuthenticated && <p>{user.name}</p>
         && <SideBarAdmin/>
+        
         }
 
-        {/* { isAuthenticated 
-        && <SideBarAdmin/>
-        } */}
+
 
         { isAuthenticated ? (
         <button type="button" class="btn btn-warning" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
@@ -44,8 +43,6 @@ const NavBar = () => {
         <button type="button" class="btn btn-warning" onClick={() => loginWithRedirect()}>Log In</button>
         )}
 
-        {/* <SearchBar/> */}
-              {/* <Nav.Link href="/users/:id">Perfil</Nav.Link> */}
       </Container>
     </Navbar>
   </>

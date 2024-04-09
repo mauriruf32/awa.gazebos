@@ -1,5 +1,7 @@
 .half-height-img {
     height: 60vh; /* Esto establece la altura de las imágenes al 50% de la altura de la ventana del navegador */
     object-fit: cover; /* Esto asegura que las imágenes se ajusten dentro de su contenedor sin distorsionarse */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
   }
   

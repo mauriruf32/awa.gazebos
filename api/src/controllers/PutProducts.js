@@ -11,6 +11,7 @@ const PutProducts = async (req, res) => {
     deleted,
     size,
     material,
+    materialTela,
     category,
   } = req.body;
   const productId = req.params.id;
@@ -30,6 +31,7 @@ const PutProducts = async (req, res) => {
     productToUpdate.color = color;
     productToUpdate.size = size;
     productToUpdate.material = material;
+    productToUpdate.materialTela = materialTela;
     productToUpdate.category = category;
     productToUpdate.deleted = deleted;
 

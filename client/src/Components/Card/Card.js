@@ -83,7 +83,7 @@ function Product({ product }) {
     addToCart(productId);
   };
   return (
-    <Card className="card-model" style={{ width: '18rem' }} >
+    <Card  style={{ width: '18rem', borderColor: "orange" }} >
       <Card.Img variant="top" src={image} alt={
         name} onClick={handleDetailProductClick} />
       <Card.Body>
@@ -91,13 +91,10 @@ function Product({ product }) {
         name}</Card.Title>
         {/* <Card.Text>{description}</Card.Text> */}
       </Card.Body>
-      <ListGroup className="list-group-flush">
+      <ListGroup className="list-group-flush" style={{  borderColor: "orange" }}>
         <ListGroup.Item>Precio: ${price}</ListGroup.Item>
-        {/* <ListGroup.Item>Stock: {stock}</ListGroup.Item> */}
         <ListGroup.Item>Tamaño: {size}</ListGroup.Item>
         <ListGroup.Item>Color: {color}</ListGroup.Item>
-        {/* <ListGroup.Item>Material: {material}</ListGroup.Item>
-        <ListGroup.Item>Category: {category}</ListGroup.Item> */}
       </ListGroup>
       {/* <Card.Body>
       <button className="cart-btn" onClick={handleAddToCartClick}>

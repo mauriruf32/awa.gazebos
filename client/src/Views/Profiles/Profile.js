@@ -1,21 +1,33 @@
-import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import React, { useState } from "react";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css'; // Estilo por defecto de react-tabs
+import CreateProduct from "../FormAdmin/CreateProduct";
+import CreateImages from "../FormAdmin/Images";
+import EditProduct from "../FormAdmin/EditProducts";
 
 const Profile = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
-
-  if (isLoading) {
-    return <div>Loading ...</div>;
-  }
+  const [tabIndex, setTabIndex] = useState(0);
 
   return (
-    isAuthenticated && (
-      <div>
-        <img src={user.picture} alt={user.name} />
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
-      </div>
-    )
+    <div>
+      <h1>Bienvenido</h1>
+      <Tabs selectedIndex={tabIndex} onSelect={index => setTabIndex(index)}>
+        <TabList>
+          <Tab>Home</Tab>
+          <Tab>Profile</Tab>
+          <Tab>Contact</Tab>
+        </TabList>
+        <TabPanel>
+          <CreateImages />
+        </TabPanel>
+        <TabPanel>
+          <CreateProduct />
+        </TabPanel>
+        <TabPanel>
+          <EditProduct />
+        </TabPanel>
+      </Tabs>
+    </div>
   );
 };
 

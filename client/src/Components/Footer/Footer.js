@@ -11,7 +11,7 @@ function Footer() {
   return (
     <footer class=" text-center text-white" style={{ backgroundColor: 'black' }}>
     <div class="container p-1 pb-0" style={{ backgroundColor: 'black' }}>
-      <section class="mb-4" style={{ backgroundColor: 'black' }}>
+      <section class="mb-2" style={{ backgroundColor: 'black' }}>
       <a href="https://wa.me/543435149599" className="btn btn-line-light btn-lg m-1" role="button">
                 <img src={Phone} alt="logoPhone" />
                 <li className='text-white'>+54 343 514-9599</li>

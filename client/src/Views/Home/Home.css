@@ -4,6 +4,8 @@
     flex-wrap: wrap;
     margin-top: 20px;
     width: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 
 }
 
@@ -14,4 +16,10 @@ border-radius: 10px;
 
 .containerFilters {
     display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.form-select {
+    border-radius: 10px;
+    border-color: rgba(255, 166, 0, 0.651) 
 }

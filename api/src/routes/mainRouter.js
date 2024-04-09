@@ -3,6 +3,7 @@ const usersRouter = require("./usersRouter");
 const postRouter = require("./postsRouter");
 const productRouter = require("./productsRouter");
 const imagesRouter = require("./imagesRouter");
+const loginRouter = require("./loginRouter");
 
 const mainRouter = Router();
 
@@ -13,6 +14,9 @@ mainRouter.use("/posts", postRouter);
 mainRouter.use("/products", productRouter);
 
 mainRouter.use("/images", imagesRouter);
+
+mainRouter.use("/login", loginRouter);
+
 
 // mainRouter.get("/products", (req, res) => {
 //     res.status(200).send("Todos los productos");
