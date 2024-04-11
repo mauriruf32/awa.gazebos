@@ -10,7 +10,7 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DATABASE_URL} = process.env;
 
 
 const sequelize = new Sequelize(
-    `postgresql://postgres:WyFafHKWksPgnawOcgTdaEHachOHUsxv@viaduct.proxy.rlwy.net:17990/railway`,
+    DATABASE_URL,
     {logging: false}
 );
 
