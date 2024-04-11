@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import "./Login.css";
 
 const Login = (props) => {
   const { login } = props;
@@ -39,13 +40,14 @@ const Login = (props) => {
   const handlerSubmit = (event) => {
     event.preventDefault();
     login(userData);
+    alert("Activity created successfully!!")
   }
 
 
   return (
-    <div>
+    <div className='login-container'>
       <h1>Bienvenido</h1>
-      <form onSubmit={handlerSubmit}>
+      <form className='login-form' onSubmit={handlerSubmit}>
         <div>
         <label>Email:</label>
         <input type='texto' value={userData.email} onChange={changeHandler} name="email" />
@@ -56,7 +58,7 @@ const Login = (props) => {
         <input type='texto' value={userData.password} onChange={changeHandler} name="password" />
         {errors.password && <span>{errors.password}</span>}
         </div>
-        <button type="submit"></button>
+        <button type="submit">LogIn</button>
       </form>
     </div>
   )

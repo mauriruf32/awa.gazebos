@@ -1,8 +1,21 @@
 .nav-container {
     background-color: #000000;
-    border-radius: 10px;
-    height: 80px;
+    height: 150px;
     color: #fcfcfc;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       
+}
+
+.boton-login{
+    background-color: hsl(0, 0%, 100%);
+    border-color: rgb(243, 243, 243);
+    border-radius: 20px;
+    border-width: 2px;
+    width: 10%;
+    height: 50px;
+    color:rgb(0, 0, 0) ;
+}
+
+.boton-login:hover {
+    background-color: #f89a0d;
 }

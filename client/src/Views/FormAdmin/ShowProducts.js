@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // import { getProducts } from "../../redux/actions";
+import "./ShowProducts.css"
 
 const URL = `http://localhost:3001/products/`;
 
@@ -24,7 +25,7 @@ const ShowProducts = () => {
 
     return (
 
-    <div className="container">
+    <div className="show-prod">
         <div className="row">
             <div className="col">
                 <table className="table">

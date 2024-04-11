@@ -6,10 +6,11 @@ const ProductsModel = require("./models/Product");
 const PostsModel = require("./models/Posts");
 const ImagesModel = require("./models/Images");
 
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME} = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DATABASE_URL} = process.env;
+
 
 const sequelize = new Sequelize(
-    `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+    `postgresql://postgres:WyFafHKWksPgnawOcgTdaEHachOHUsxv@viaduct.proxy.rlwy.net:17990/railway`,
     {logging: false}
 );
 

@@ -86,7 +86,7 @@ const Images = (props) => {
                     images.map((item, index) => (
                         <img
                             key={index}
-                            alt="Image"
+                            alt=""
                             style={{ width: "10%", height: "10%", backgroundSize: "cover", paddingRight: "15px" }}
                             src={item}
                         />

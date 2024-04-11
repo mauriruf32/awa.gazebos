@@ -1,9 +1,56 @@
-.form-images {
-    width: 100%;
-    height: 100%;
-    margin-top: 10%;
-    display: grid;
-    justify-content: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+/* Images.css */
 
-}
+.form-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .dropzone {
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  .dropzone p {
+    margin: 0;
+  }
+  
+  .dropzone:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .img {
+    width: 100px; /* Ajusta el tamaño de las imágenes según lo necesites */
+    height: 100px; /* Ajusta el tamaño de las imágenes según lo necesites */
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

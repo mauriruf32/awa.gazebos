@@ -1,0 +1,69 @@
+/* EditProduct.css */
+
+.edit-prod {
+    margin-top: 50px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .table th {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .table th span {
+    font-size: 0.8em;
+  }
+  
+  .table td {
+    text-align: center;
+  }
+  
+  .btn {
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .btn-danger:hover {
+    background-color: #bd2130;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
+  input[type="checkbox"] {
+    margin-top: 5px;
+  }
+  

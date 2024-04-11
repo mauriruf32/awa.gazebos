@@ -1,8 +1,5 @@
-import axios from "axios";
-// import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-// import { getProducts } from "../../redux/actions";
 import React, { useState, useEffect } from "react";
+import "./EditProducts.css";
 
 
 const URL = `http://localhost:3001/products/`;
@@ -192,13 +189,15 @@ const EditProduct = () => {
       });
   
       return (
-        <table >
-          <thead>{renderTableHeader()}</thead>
-          <tbody>
+        <div >
+        <div className="row">
+        <div className="col"  >
+        <table className="table"  >
+          <thead className="table-primary">{renderTableHeader()}</thead>
+          <tbody >
             {sortedProducts.map((product) => (
-              <tr key={product.id}>
+              <tr  key={product.id}>
                 {renderTableCell(product, "name")}
-                {renderTableCell(product, "image")}
                 {renderTableCell(product, "description")}
                 {renderTableCell(product, "price")}
                 {renderTableCell(product, "stock")}
@@ -233,6 +232,10 @@ const EditProduct = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      </div>
+      </div>
+
       );
     };
   
@@ -258,8 +261,7 @@ const EditProduct = () => {
     };
   
     return (
-      <div >
-        <h2>Product List</h2>
+      <div className="edit-prod" >
         {renderTable()}
       </div>
     )
