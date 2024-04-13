@@ -27,7 +27,7 @@ function App() {
   const [access, setAccess] = useState(false)
 
 
-  const URL = 'http://localhost:3001'
+  const URL = process.env.URL || 'http://localhost:3001';
 
   async function login({email, password}){
     try {

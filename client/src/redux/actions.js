@@ -13,10 +13,12 @@ export const LOGIN_USER = "LOGIN_USER";
 export const POST_IMAGES = "POST_IMAGES";
 export const GET_IMAGES = "GET_IMAGES";
 
+const URL = process.env.URL || "http://localhost:3001";
+
 
 export function getProducts(){
     return async function(dispatch){
-        const response = await axios.get(`http://localhost:3001/products`);
+        const response = await axios.get(`${URL}/products`);
          dispatch ({
             type: "GET_PRODUCTS",
             payload: response.data
@@ -27,7 +29,7 @@ export function getProducts(){
 export function getProductById(id){
     return async function (dispatch) {
         const response = await axios.get(
-            `http://localhost:3001/products/${id}`
+            `${URL}/products/${id}`
         );
          dispatch({
             type: "GET_PRODUCT_BY_ID", 
@@ -39,7 +41,7 @@ export function getProductById(id){
 export function getProductByName(name){
     return async function (dispatch){
         const response = await axios.get(
-            `http://localhost:3001/products/?name=${name}`
+            `${URL}/products/?name=${name}`
         );
          dispatch({
             type: "GET_PRODUCT_BY_NAME",
@@ -50,7 +52,7 @@ export function getProductByName(name){
 
 export function postImages(data){
     return async function (dispatch){
-            const response = await axios.post('http://localhost:3001/images', data)
+            const response = await axios.post(`${URL}/images`, data)
             return dispatch({
                 type: "POST_IMAGES",
                 payload: response.data
@@ -60,7 +62,7 @@ export function postImages(data){
 
 export function getImages(){
 return async function (dispatch){
-    const response = await axios.get('http://localhost:3001/images');
+    const response = await axios.get(`${URL}/images`);
     dispatch ({
         type: "GET_IMAGES",
         payload: response.data
@@ -71,7 +73,7 @@ return async function (dispatch){
 export function getUserById(id){
     return async function (dispatch){
         const response = await axios.get(
-            `http://localhost:3001/users/${id}`
+            `${URL}/users/${id}`
         );
         return dispatch({
             type: "GET_USER_BY_ID",
@@ -82,7 +84,7 @@ export function getUserById(id){
 
 export function getUsers(){
     return async function(dispatch){
-        const response = await axios.get(`http://localhost:3001/users`);
+        const response = await axios.get(`${URL}/users`);
          dispatch ({
             type: "GET_USERS",
             payload: response.data
@@ -92,7 +94,7 @@ export function getUsers(){
 
 export function postProduct(data){
     return async function (dispatch){
-            const response = await axios.post('http://localhost:3001/products', data)
+            const response = await axios.post(`${URL}/products`, data)
             return dispatch({
                 type: "POST_PRODUCT",
                 payload: response.data
