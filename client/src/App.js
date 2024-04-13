@@ -19,6 +19,9 @@ import { useState } from 'react';
 
 import axios from 'axios';
 
+const URL = process.env.URL || 'http://localhost:3001';
+
+
 function App() {
   const userData = useSelector((state) => state.userData);
   const location = useLocation();
@@ -27,7 +30,6 @@ function App() {
   const [access, setAccess] = useState(false)
 
 
-  const URL = process.env.URL || 'http://localhost:3001';
 
   async function login({email, password}){
     try {
