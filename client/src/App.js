@@ -19,7 +19,6 @@ import { useState } from 'react';
 
 import axios from 'axios';
 
-const URL = process.env.URL || 'http://localhost:3001';
 
 
 function App() {
@@ -29,6 +28,7 @@ function App() {
   const navigate = useNavigate()
   const [access, setAccess] = useState(false)
 
+  const URL = process.env.URL || 'http://localhost:3001';
 
 
   async function login({email, password}){
