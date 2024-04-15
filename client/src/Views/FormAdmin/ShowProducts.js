@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import { getProducts } from "../../redux/actions";
 import "./ShowProducts.css"
 
-const URL = `http://localhost:3001/products/`;
+const URL = process.env.URL || 'http://localhost:3001';
 
 const ShowProducts = () => {
     const [ products, setProduct] = useState([]);

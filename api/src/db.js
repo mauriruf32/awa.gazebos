@@ -6,18 +6,18 @@ const ProductsModel = require("./models/Product");
 const PostsModel = require("./models/Posts");
 const ImagesModel = require("./models/Images");
 
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DATABASE_URL} = process.env;
-
-const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
-  {logging: false}
-);
-
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DATABASE_URL, URL} = process.env;
 
 // const sequelize = new Sequelize(
-//     DATABASE_URL,
-//     {logging: false}
+//   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+//   {logging: false}
 // );
+
+
+const sequelize = new Sequelize(
+    DATABASE_URL,
+    {logging: false}
+);
 
 UsersModel(sequelize);
 PostsModel(sequelize);

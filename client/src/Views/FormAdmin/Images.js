@@ -4,6 +4,9 @@ import { Container } from 'react-bootstrap';
 import axios from 'axios';
 import "./Images.css";
 
+const URL = process.env.URL || 'http://localhost:3001';
+
+
 const Images = (props) => {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -38,7 +41,7 @@ const Images = (props) => {
         if (form.url.length === 0 || form.name === "") {
             alert("All fields must be filled out.");
         } else {
-            axios.post("http://localhost:3001/images", form)
+            axios.post(`${URL}/images`, form)
                 .then(() => {
                     alert("Imagenes creadas!!");
                     setForm({ name: "", url: [] }); // Limpiar el formulario

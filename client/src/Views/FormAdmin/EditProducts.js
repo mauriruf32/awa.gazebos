@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./EditProducts.css";
 
 
-const URL = `http://localhost:3001/products/`;
+const URL = process.env.URL || 'http://localhost:3001';
+
 
 const EditProduct = () => {
     const [products, setProducts] = useState([]);
@@ -16,7 +17,7 @@ const EditProduct = () => {
     useEffect(() => {
       const fetchProducts = async () => {
         try {
-          const response = await fetch(`http://localhost:3001/products/`, {
+          const response = await fetch(`${URL}/products/`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
@@ -51,7 +52,7 @@ const EditProduct = () => {
       e.preventDefault();
   
       try {
-        const response = await fetch(`http://localhost:3001/products/edit/${productId}`, {
+        const response = await fetch(`${URL}/products/edit/${productId}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
