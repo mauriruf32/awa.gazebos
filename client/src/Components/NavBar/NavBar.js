@@ -21,11 +21,11 @@ const NavBar = () => {
             className="d-inline-block align-top"
           />{' '}
         </Navbar.Brand>
-        <button className='boton-login' >
+        {/* <button className='boton-login' >
         <Nav.Link href="/login">Login</Nav.Link>
 
         </button>
-        
+         */}
         {/* { isAuthenticated  && <Nav.Link href="/profiles">Perfil</Nav.Link>
         
         }

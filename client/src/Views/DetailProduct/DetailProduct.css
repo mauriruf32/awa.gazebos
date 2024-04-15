@@ -1,5 +1,5 @@
 .container-detail {
-  display: row;
+  display: table;
   justify-content: center;
   margin-top: 5%;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -10,13 +10,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-left: 5%;
   
 }
 
 .detail-product-image img {
   width: 100%; /* Ajusta el tamaño de la imagen principal */
   height: auto;
+  border-radius: 10px;
+
 }
 
 .clickable-image {
@@ -40,9 +41,10 @@
 }
 
 .product-images img {
-  width: 200px;
-  height: 200px;
+  width:  100px;
+  height: 100px;
   margin: 5px;
+  border-radius: 10px;
 }
 
 

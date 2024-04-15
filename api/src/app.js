@@ -4,6 +4,8 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const mainRouter = require("./routes/mainRouter");
 const cors = require("cors");
+const pg = require('pg');
+
 
 const app = express();
 
@@ -26,6 +28,11 @@ app.use((req, res, next) => {
 })
 
 app.use(express.json());
+
+const pool = new pg.Pool({
+    connectionString: process.env.DATABASE_URL,
+})
+
 
 app.use(mainRouter);
 
