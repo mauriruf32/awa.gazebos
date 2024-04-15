@@ -14,7 +14,7 @@ const ShowProducts = () => {
     },[]);
 
     const getProducts = async () => {
-        const res = await axios.get(URL);
+        const res = await axios.get(`${URL}/products`);
         setProduct(res.data)
     };
 
