@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { getImages } from "../../redux/actions";
 import "./CreateProduct.css";
-const URL = process.env.URL || 'http://localhost:3001';
+const URL = process.env.DATABASE_URL || 'http://localhost:3001';
 
 const Form = () => {
     const dispatch = useDispatch();
