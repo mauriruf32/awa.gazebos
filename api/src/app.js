@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const mainRouter = require("./routes/mainRouter");
 const cors = require("cors");
-// const pg = require('pg');
+const pg = require('pg');
 
 
 const app = express();
@@ -29,14 +29,14 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-// const pool = new pg.Pool({
-//     connectionString: process.env.DATABASE_URL,
-// })
+const pool = new pg.Pool({
+    connectionString: process.env.DATABASE_URL,
+})
 
-// app.get("/ping", async (req, res) => {
-//     const result = await pool.query('SELECT NOW()')
-//     return res.json(result.rows[0])
-// })
+app.get("/ping", async (req, res) => {
+    const result = await pool.query('SELECT NOW()')
+    return res.json(result.rows[0])
+})
 
 app.use(mainRouter);
 

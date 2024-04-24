@@ -6,7 +6,7 @@ const ProductsModel = require("./models/Product");
 const PostsModel = require("./models/Posts");
 const ImagesModel = require("./models/Images");
 
-const { USER, PASSWORD, INTERNAL_HOST, PORT, DATABASE} = process.env;
+const { USER, PASSWORD, INTERNAL_HOST, PORT, DATABASE, DATABASE_URL} = process.env;
 
 const sequelize = new Sequelize(
   `postgres://${USER}:${PASSWORD}@${INTERNAL_HOST}:${PORT}/${DATABASE}`,
@@ -15,7 +15,7 @@ const sequelize = new Sequelize(
 
 
 // const sequelize = new Sequelize(
-//   `postgres://USER:PASSWORD@INTERNAL_HOST:PORT/DATABASE`,
+//   DATABASE_URL,
 //     {logging: false}
 // );
 
