@@ -28,7 +28,7 @@ function App() {
   const navigate = useNavigate()
   const [access, setAccess] = useState(false)
 
-  const URL = process.env.URL || 'http://localhost:3001';
+  const URL = process.env.URL || 'http://localhost:5432';
 
 
   async function login({email, password}){

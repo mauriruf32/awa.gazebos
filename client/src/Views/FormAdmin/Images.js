@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import axios from 'axios';
 import "./Images.css";
 
-const URL = process.env.URL || 'http://localhost:3001';
+const URL = process.env.URL || 'http://localhost:5432';
 
 
 const Images = (props) => {

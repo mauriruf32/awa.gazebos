@@ -13,6 +13,7 @@ const sequelize = new Sequelize(
   {logging: false}
 );
 
+
 // const sequelize = new Sequelize(
 //   `postgres://USER:PASSWORD@INTERNAL_HOST:PORT/DATABASE`,
 //     {logging: false}
