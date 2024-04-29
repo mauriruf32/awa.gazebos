@@ -8,16 +8,16 @@ const ImagesModel = require("./models/Images");
 
 const { USER, PASSWORD, INTERNAL_HOST, PORT, DATABASE, DATABASE_URL} = process.env;
 
-// const sequelize = new Sequelize(
-//   `postgres://${USER}:${PASSWORD}@${INTERNAL_HOST}:${PORT}/${DATABASE}`,
-//   {logging: false}
-// );
-
-
 const sequelize = new Sequelize(
-  DATABASE_URL,
-    {logging: false}
+  `postgres://${USER}:${PASSWORD}@${INTERNAL_HOST}:${PORT}/${DATABASE}`,
+  {logging: false}
 );
+
+
+// const sequelize = new Sequelize(
+//   DATABASE_URL,
+//     {logging: false}
+// );
 
 UsersModel(sequelize);
 PostsModel(sequelize);
