@@ -24,7 +24,6 @@ server.get("/ping", async (req, res) => {
     return res.json(result.rows[0])
 })
 
-
 server.listen(3001, () => {
     conn.sync({force: false});
     console.log(`Listening on port ${3001}`);
