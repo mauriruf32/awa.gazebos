@@ -1,4 +1,5 @@
 const { Sequelize } = require("sequelize");
+import pg from `pg`;
 require("dotenv").config();
 
 const UsersModel = require("./models/Users");
@@ -6,9 +7,12 @@ const ProductsModel = require("./models/Product");
 const PostsModel = require("./models/Posts");
 const ImagesModel = require("./models/Images");
 
-const { DATABASE_URL } = require("./config.js");
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME } = process.env;
 
-const sequelize = new Sequelize(`${DATABASE_URL}`, {
+// const { DATABASE_URL } = require("./config.js");
+
+const sequelize = new Sequelize(
+  `${DATABASE_URL}`, {
   logging: false, 
   native: false, 
 });
