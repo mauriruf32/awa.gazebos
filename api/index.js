@@ -19,9 +19,9 @@ const PORT = process.env.PORT || 3001;
 //     port: 5432
 // })
 
-server.get("/ping", async (req, res) => {
-    const result = await pool.query('SELECT NOW()')
-    return res.json(result.rows[0])
+server.get("/", async (req, res) => {
+    const result = "Soy el backend";
+     res.send(result);
 })
 
 server.listen(3001, () => {
