@@ -11,7 +11,7 @@ function DetailProduct() {
 
   useEffect(() => {
     // Obtener la información del producto
-    axios.get(`http://localhost:3001/products/${id}`)
+    axios.get(`https://awa-gazebos-f9rgwox5e-mauricios-projects-27c740db.vercel.app/products/${id}`)
       .then(({ data }) => {
         if (data.name) {
           setProducto(data);
@@ -29,7 +29,7 @@ function DetailProduct() {
       });
 
     // Obtener todas las imágenes disponibles
-    axios.get('http://localhost:3001/images')
+    axios.get('https://awa-gazebos-f9rgwox5e-mauricios-projects-27c740db.vercel.app/images')
       .then((response) => {
         setImages(response.data);
       })
