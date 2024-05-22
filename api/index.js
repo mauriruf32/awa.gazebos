@@ -19,10 +19,6 @@ const PORT = process.env.PORT || 3001;
 //     port: 5432
 // })
 
-server.get("/", async (req, res) => {
-    const result = "Soy el backend";
-     res.send(result);
-})
 
 server.listen(3001, () => {
     conn.sync({force: false});
