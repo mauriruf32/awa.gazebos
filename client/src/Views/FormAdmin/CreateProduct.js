@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { getImages } from "../../redux/actions";
 import "./CreateProduct.css";
-const URL = process.env.URL || 'https://awa-gazebos-f9rgwox5e-mauricios-projects-27c740db.vercel.app';
+const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
 
 const Form = () => {
     const dispatch = useDispatch();
