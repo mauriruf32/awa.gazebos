@@ -13,7 +13,7 @@ export const LOGIN_USER = "LOGIN_USER";
 export const POST_IMAGES = "POST_IMAGES";
 export const GET_IMAGES = "GET_IMAGES";
 
-const URL = "https://awa-gazebos-llsv2zuna-mauricios-projects-27c740db.vercel.app";
+const URL = process.env.URL || "https://awa-gazebos.vercel.app";
 
 
 export function getProducts(){

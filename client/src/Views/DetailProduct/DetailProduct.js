@@ -11,7 +11,7 @@ function DetailProduct() {
 
   useEffect(() => {
     // Obtener la información del producto
-    axios.get(`https://awa-gazebos-f9rgwox5e-mauricios-projects-27c740db.vercel.app/products/${id}`)
+    axios.get(`https://awa-gazebos.vercel.app/products/${id}`)
       .then(({ data }) => {
         if (data.name) {
           setProducto(data);
