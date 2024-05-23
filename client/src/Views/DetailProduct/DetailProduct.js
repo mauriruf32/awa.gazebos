@@ -29,7 +29,7 @@ function DetailProduct() {
       });
 
     // Obtener todas las imágenes disponibles
-    axios.get('https://awa-gazebos-f9rgwox5e-mauricios-projects-27c740db.vercel.app/images')
+    axios.get('https://awa-gazebos.vercel.app/images')
       .then((response) => {
         setImages(response.data);
       })
