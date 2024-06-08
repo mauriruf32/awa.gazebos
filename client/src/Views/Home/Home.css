@@ -1,25 +1,52 @@
+.container-home{
+    display: flex;
+    margin-top: 5%;
+}
+
+
+
+
 .containerCards {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 20px;
+    padding: 0 0 0 5%;
     width: 100%;
+    height: 100%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-
 }
+
 
 /* .card-compo {
 border-color: rgb(255, 72, 0);
 border-radius: 10px;
 } */
 
+
 .containerFilters {
-    display: flex;
+    display: table-row;
+    width: 50%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.containerFilters button{
+    box-shadow: none; 
+    border-radius: 10px;
+    width: 100%;
+    background-color: #F48422; 
+}
+
+.containerFilters button:hover{
+    background-color: rgb(172, 165, 165);
+}
+
+.containerFilters button:not(.collapsed) {
+    box-shadow: none;  
+    background-color: #F48422;
 }
 
 .form-select {
     border-radius: 10px;
-    border-color: rgba(255, 166, 0, 0.651) 
+    border-color:  #F48422;
 }

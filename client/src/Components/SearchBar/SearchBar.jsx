@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { getProductByName } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
+import "./SearchBar.css";
 
 const SearchBar = () => {
   const dispatch = useDispatch();
@@ -32,10 +33,12 @@ const SearchBar = () => {
   };
 
   return (
-    <div>
-      <input type="search" onChange={handleChange} placeholder="Search.." />
-      <button onClick={handleSearchClick}>Buscar</button>
+    <div className="searchBar"  > 
+      <input   type="search" onChange={handleChange} placeholder="Buscar..." />
+      <button  onClick={handleSearchClick}>Buscar</button>
     </div>
+
+
   );
 };
 

@@ -4,6 +4,7 @@ import Home from "../src/Views/Home/Home";
 import Register from "../src/Views/Register/Register";
 import DetailProduct from "../src/Views/DetailProduct/DetailProduct";
 import Login from "./Views/Login/Login";
+import About from "./Views/About/About.js";
 import CreateProduct from "../src/Views/FormAdmin/CreateProduct";
 import Imagenes from "../src/Views/FormAdmin/Images.js";
 import ShowProducts from "./Views/FormAdmin/ShowProducts";
@@ -16,6 +17,7 @@ import ShowUsers from "./Views/FormAdmin/ShowUsers.js";
 import Profile from "./Views/Profiles/Profile.js";
 import { useSelector } from "react-redux";
 import { useState } from 'react';
+import Announcement from "./Components/NavBar/Announcement.jsx";
 
 import axios from 'axios';
 
@@ -53,17 +55,16 @@ function App() {
 
   return (
     <div>
-          {location.pathname !== "/register" &&
-         (
-          <NavBar />
-        )}
 
+          <Announcement />
+          <NavBar />
         <Routes>
           <Route path="/" element={<Home  />} />
           <Route path="/register" element={<Register />} />
           <Route path="/products/:id" element={<DetailProduct />} />
           <Route path="/products/create" element={<CreateProduct />} />
           <Route path="/images" element={<Imagenes />} />
+          <Route path="/about" element={<About />} />
           <Route path="/products/showproducts" element={<ShowProducts />} />
           <Route path="/edit/:id" element={<EditProducts />} />
           <Route path="/profiles" element={<Profile userData={userData}  />} />

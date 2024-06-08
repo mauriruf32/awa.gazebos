@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import { gazebos } from "../utils/dummyData.js"
+
 export const GET_PRODUCTS = "GET_PRODUCTS";
 export const GET_USERS = "GET_USERS";
 export const GET_PRODUCT_BY_ID = "GET_PRODUCT_BY_ID";
@@ -14,6 +16,7 @@ export const POST_IMAGES = "POST_IMAGES";
 export const GET_IMAGES = "GET_IMAGES";
 
 const URL = process.env.URL || "https://awa-gazebos.vercel.app";
+// const URL = process.env.URL || "http://localhost:3001";
 
 
 export function getProducts(){
@@ -25,6 +28,16 @@ export function getProducts(){
         });
     };
 }
+
+// export function getProducts(){
+//     return async function(dispatch){
+//         // const response = await axios.get(`${URL}/products`);
+//          dispatch ({
+//             type: "GET_PRODUCTS",
+//             payload: gazebos
+//         });
+//     };
+// }
 
 export function getProductById(id){
     return async function (dispatch) {
