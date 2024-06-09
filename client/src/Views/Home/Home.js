@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProducts, orderProductsByPrice, filterProductsByMaterial, filterProductsByColor } from '../../redux/actions';
 import CarouselHome from "../../Components/Carousel/Carousel";
 import Card from "../../Components/Card/Card";
-import "./Home.css";
 import { Container } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
+import "./Home.css";
+
 
 const Home = () => {  
   const dispatch = useDispatch();
@@ -58,7 +59,7 @@ const Home = () => {
                     checked={order === 'asc'} 
                     onChange={() => handleOrder('asc')} 
                   />
-                  <label htmlFor="priceAsc">Precio más alto</label>
+                  <label className='p-1' htmlFor="priceAsc">Precio más alto</label>
                 </div>
                 <div>
                   <input 
@@ -69,7 +70,7 @@ const Home = () => {
                     checked={order === 'desc'} 
                     onChange={() => handleOrder('desc')} 
                   />
-                  <label htmlFor="priceDesc">Precio más bajo</label>
+                  <label className='p-1' htmlFor="priceDesc">Precio más bajo</label>
                 </div>
               </Accordion.Body>
             </Accordion.Item>
@@ -87,7 +88,7 @@ const Home = () => {
                       checked={selectedMaterial === material} 
                       onChange={() => handleFilterMaterial(material)} 
                     />
-                    <label htmlFor={`material-${index}`}>{material}</label>
+                    <label className='p-1' htmlFor={`material-${index}`}> {material}</label>
                   </div>
                 ))}
               </Accordion.Body>
@@ -106,14 +107,14 @@ const Home = () => {
                       checked={selectedColor === color} 
                       onChange={() => handleFilterColor(color)} 
                     />
-                    <label htmlFor={`color-${index}`}>{color}</label>
+                    <label className='p-2' htmlFor={`color-${index}`}>{color}</label>
                   </div>
                 ))}
               </Accordion.Body>
             </Accordion.Item>
 
 
-             <button type="button" class="mb-3" style={{ backgroundColor: '#F48422' }} onClick={resetFilters}>    
+             <button type="button" class="mb-3" style={{ backgroundColor: '#F48422', border:"none" }} onClick={resetFilters}>    
            Resetear filtros
       </button>
 

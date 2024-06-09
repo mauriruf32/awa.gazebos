@@ -11,6 +11,8 @@
     border-radius: 90px;
     overflow: hidden;
     position: relative;
+    font-family: Tahoma;
+    font-weight: bold;
 }
 
 .searchBar button {
@@ -19,6 +21,8 @@
     border: 0px;
     padding: 0 16px;
     font-size: 14px;
+    font-family: Tahoma;
+    font-weight: bold;
     position: absolute;
     right: 0;
     display: flex;
@@ -33,7 +37,8 @@
     width: 150%;
     padding: 10px 50px 10px 30px;
     font-size: 20px;
-    font-weight: 500;
+    font-family: Tahoma;
+    font-weight: bold;
     outline-color: rgb(255, 255, 255);
 
 }

@@ -6,6 +6,8 @@
     align-items: center;
     padding: 1rem 0;
     font-size: .8rem;
+    font-family: Tahoma;
+    font-weight: bold;
 }
 
 .announcement-text{

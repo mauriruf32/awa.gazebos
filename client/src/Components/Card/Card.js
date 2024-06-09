@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Card from 'react-bootstrap/Card';
+import Card  from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import axios from "axios";
 import Swal from "sweetalert2";
+import plusIcon from "../../utils/iconmonstr-plus-square-multiple-filled-240.png"
 import "./Card.css";
 
 function Product({ product }) {
@@ -83,25 +84,25 @@ function Product({ product }) {
     addToCart(productId);
   };
   return (
-    <Card  style={{ width: '18rem', borderColor: "orange", marginBottom: "10px" }} >
+    <Card className="card" style={{ width: '18rem', borderColor: "white", marginBottom: "10px", padding: "10px 10px 10px 10px" }} >
       <Card.Img variant="top" src={image} alt={
         name} onClick={handleDetailProductClick} />
       <Card.Body>
         <Card.Title >{
         name}</Card.Title>
+        <ListGroup.Item>Precio: ${price}</ListGroup.Item>
         {/* <Card.Text>{description}</Card.Text> */}
       </Card.Body>
-      <ListGroup className="list-group-flush" style={{  borderColor: "orange" }}>
+      {/* <ListGroup className="list-group-flush" style={{  borderColor: "orange" }}>
         <ListGroup.Item>Precio: ${price}</ListGroup.Item>
         <ListGroup.Item>Tamaño: {size}</ListGroup.Item>
-        <ListGroup.Item>Color: {color}</ListGroup.Item>
+        <ListGroup.Item>Color: {color}</ListGroup.Item> 
       </ListGroup>
-      {/* <Card.Body>
-      <button className="cart-btn" onClick={handleAddToCartClick}>
-            <i className="fa fa-plus"></i>
-            <strong>Add to Cart</strong>
-          </button>
-        <Card.Link  href="/products/:name">Card Link</Card.Link>
+      <Card.Body>*/}
+      <button  onClick={handleDetailProductClick} >
+      <img src={plusIcon} alt="plusIcon" className="w-50" />
+      </button>
+      {/*   <Card.Link  href="/products/:name">Card Link</Card.Link>
         <Card.Link href="#">Another Link</Card.Link>
       </Card.Body> */}
     </Card>
