@@ -48,7 +48,7 @@ const Home = () => {
         <div className='containerFilters' >
           <Accordion defaultActiveKey={['0']} alwaysOpen >
             <Accordion.Item eventKey="0">
-              <Accordion.Header>Ordenar por Precio</Accordion.Header>
+              <Accordion.Header>Orden Precio</Accordion.Header>
               <Accordion.Body>
                 <div>
                   <input 
@@ -59,7 +59,7 @@ const Home = () => {
                     checked={order === 'asc'} 
                     onChange={() => handleOrder('asc')} 
                   />
-                  <label className='p-1' htmlFor="priceAsc">Precio más alto</label>
+                  <label className='p-1 f-s' htmlFor="priceAsc">+ Precio</label>
                 </div>
                 <div>
                   <input 
@@ -70,13 +70,13 @@ const Home = () => {
                     checked={order === 'desc'} 
                     onChange={() => handleOrder('desc')} 
                   />
-                  <label className='p-1' htmlFor="priceDesc">Precio más bajo</label>
+                  <label className='p-1 f-s' htmlFor="priceDesc">- Precio</label>
                 </div>
               </Accordion.Body>
             </Accordion.Item>
             
             <Accordion.Item eventKey="1">
-              <Accordion.Header>Filtrar por Material</Accordion.Header>
+              <Accordion.Header>Materiales</Accordion.Header>
               <Accordion.Body>
                 {[...new Set(allProducts.map(product => product.material))].map((material, index) => (
                   <div key={index}>
@@ -88,14 +88,14 @@ const Home = () => {
                       checked={selectedMaterial === material} 
                       onChange={() => handleFilterMaterial(material)} 
                     />
-                    <label className='p-1' htmlFor={`material-${index}`}> {material}</label>
+                    <label className='p-1 f-s' htmlFor={`material-${index}`}> {material}</label>
                   </div>
                 ))}
               </Accordion.Body>
             </Accordion.Item>
             
             <Accordion.Item eventKey="2">
-              <Accordion.Header>Filtrar por Color</Accordion.Header>
+              <Accordion.Header>Colores</Accordion.Header>
               <Accordion.Body>
                 {[...new Set(allProducts.map(product => product.color))].map((color, index) => (
                   <div key={index}>
@@ -107,7 +107,7 @@ const Home = () => {
                       checked={selectedColor === color} 
                       onChange={() => handleFilterColor(color)} 
                     />
-                    <label className='p-2' htmlFor={`color-${index}`}>{color}</label>
+                    <label className='p-1 f-s' htmlFor={`color-${index}`}>{color}</label>
                   </div>
                 ))}
               </Accordion.Body>

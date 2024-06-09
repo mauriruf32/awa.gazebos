@@ -19,11 +19,12 @@
 
 .containerFilters {
     display: table-row;
-    width: 50%;
+    width: 40%;
     font-family: Tahoma;
     font-weight: bold;
     box-shadow: none;  
     border: none;
+    font-size: small;
 }
 
 .containerFilters button{
@@ -35,6 +36,7 @@
     margin-bottom: 10px;
     font-family: Tahoma;
     font-weight: bold;
+    font-size: medium;
 
 }
 
@@ -49,6 +51,7 @@
     box-shadow: none;  
     background-color: #F48422;
     color: #000;
+
 }
 
 .form-select {
