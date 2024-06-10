@@ -55,6 +55,14 @@ function DetailProduct() {
   return (
     <div className="container-detail"> 
       <div className="detail-product-container">
+        <div className="detail-product-image">
+          {producto.image && (
+            <img
+              src={producto.image}
+              alt={producto.name}
+              onClick={() => showImagePopup(producto.image)}
+            />
+          )}
         <div className="product-images">
           {images.filter(image => producto.images.includes(String(image.id))).map((image) => (
             <img
@@ -66,25 +74,20 @@ function DetailProduct() {
             />
           ))}
         </div>
-        <div className="detail-product-image">
-          {producto.image && (
-            <img
-              src={producto.image}
-              alt={producto.name}
-              onClick={() => showImagePopup(producto.image)}
-            />
-          )}
         </div>
         <div className="detail-product-info">
-          <h4>
-            <b>{producto.name}</b>
-          </h4>
-          <p><strong>Size:</strong> {producto.size}</p>
-          <p><strong>Material:</strong> {producto.material}</p>
-          <p><strong>Categoria:</strong> {producto.category}</p>
-          <p><strong>Material Tela:</strong> {producto.materialTela}</p>
-          <p><strong>Stock:</strong> {producto.stock}</p>
+          <h1 className="price-main__heading">
+            {producto.name}
+          </h1>
+          <div>
+          <p>Size: {producto.size}</p>
+          <p>Material:{producto.material}</p>
+          <p>Categoria: {producto.category}</p>
+          <p>Material Tela: {producto.materialTela}</p>
+          <p>Stock:{producto.stock}</p>
           <p className="product-price">${producto.price}</p>
+          </div>
+
         </div>
       </div>
       
