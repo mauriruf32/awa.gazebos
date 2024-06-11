@@ -1,69 +1,96 @@
-/* EditProduct.css */
-
+/* General container styling */
 .edit-prod {
-    margin-top: 50px;
-  }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .table th, .table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-  }
-  
-  .table th {
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .table th span {
-    font-size: 0.8em;
-  }
-  
-  .table td {
-    text-align: center;
-  }
-  
-  .btn {
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 5px;
-  }
-  
-  .btn-success {
-    background-color: #28a745;
-    color: #fff;
-  }
-  
-  .btn-success:hover {
-    background-color: #218838;
-  }
-  
-  .btn-danger {
-    background-color: #dc3545;
-    color: #fff;
-  }
-  
-  .btn-danger:hover {
-    background-color: #bd2130;
-  }
-  
-  input[type="text"],
-  input[type="number"],
-  select {
-    width: 100%;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 5px;
-  }
-  
-  input[type="checkbox"] {
-    margin-top: 5px;
-  }
-  
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+.table th span {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* Table header styling */
+.table-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Table row hover effect */
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Input field styling */
+.edit-prod input[type="text"],
+.edit-prod select {
+  width: 100%;
+  padding: 6px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button styling */
+.edit-prod button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.edit-prod button:hover {
+  background-color: #0056b3;
+}
+
+/* Save and Cancel button styling */
+.edit-prod .save-btn {
+  background-color: #28a745;
+}
+
+.edit-prod .save-btn:hover {
+  background-color: #218838;
+}
+
+.edit-prod .cancel-btn {
+  background-color: #dc3545;
+}
+
+.edit-prod .cancel-btn:hover {
+  background-color: #c82333;
+}
+
+/* Label styling */
+.edit-prod label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Input field container */
+.edit-prod .input-field {
+  margin-bottom: 15px;
+}
