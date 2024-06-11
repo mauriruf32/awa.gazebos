@@ -3,6 +3,7 @@ import { getProductByName } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import "./SearchBar.css";
+import lupa from "../../utils/search-icon.png"
 
 const SearchBar = () => {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ const SearchBar = () => {
   return (
     <div className="searchBar"  > 
       <input   type="search" onChange={handleChange} placeholder="Buscar..." />
-      <button  onClick={handleSearchClick}>Buscar</button>
+      <button  onClick={handleSearchClick}><img src={lupa} /></button>
     </div>
 
 

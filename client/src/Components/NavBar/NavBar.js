@@ -22,8 +22,8 @@ const NavBar = () => {
             className="d-inline-block align-top"
           />{' '}
         </Navbar.Brand>
-        <Nav.Link className='login' href="/login">Login</Nav.Link>
-        <Nav.Link className='login' href="/about">Nosotros</Nav.Link>       
+        {/* <Nav.Link className='login' href="/login">Login</Nav.Link>
+        <Nav.Link className='login' href="/about">Nosotros</Nav.Link>        */}
       </Container>
           <SearchBar/>
     </Navbar>

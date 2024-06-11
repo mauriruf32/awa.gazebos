@@ -61,6 +61,10 @@ p {
   gap: 1rem;
 }
 
+.product-price{
+  font-size: 2rem;
+  font-weight: 700;
+}
 
 .product-images img {
   display: block;
@@ -127,18 +131,15 @@ p {
   font-weight: bold;
 }
 
-.detail-product-info button{
-  width: 20%;
-  height: 20%;
-  border-radius: 10px;
+.detail-product-button {
+  background-color: #F48422;
   color: #000000;
-  background-color:#F48422;
   font-family: Tahoma;
-  text-align: center;   
+  font-size: smaller;   
 }
 
-.detail-product-info button:hover{
+.detail-product-button:hover {
   background-color: black;
-  color: #ccc;
+  color: #ffffff;
 }
 

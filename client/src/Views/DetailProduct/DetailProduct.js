@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import "./DetailProduct.css";
 import Swal from "sweetalert2";
+import Button from 'react-bootstrap/Button';
 
 function DetailProduct() {
   const { id } = useParams();
@@ -84,13 +85,9 @@ function DetailProduct() {
           <p>Material:{producto.material}</p>
           <p>Categoria: {producto.category}</p>
           <p>Material Tela: {producto.materialTela}</p>
-          <p>Stock:{producto.stock}</p>
           <p className="product-price">${producto.price}</p>
-          </div>
-          
-                <button ><a href="https://wa.me/543435149599"  role="button"></a>Consultar Stock </button>
-                
-            
+          </div>  
+          <Button className="detail-product-button"  href="https://wa.me/543435149599" style={{ border: 'none' }} >Consultar Stock</Button>{' '}
         </div>
       </div>
       

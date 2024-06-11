@@ -1,7 +1,7 @@
 .searchBar{
     width: 50px;
     flex: 0 0 40%;
-    border: 100px;
+    border: 50px;
     border-color: #ffffff;
     outline-color: rgb(255, 255, 255);
     display: flex;
@@ -20,7 +20,7 @@
     height: 100%;
     border: 0px;
     padding: 0 16px;
-    font-size: 14px;
+    font-size: 10px;
     font-family: Tahoma;
     font-weight: bold;
     position: absolute;
@@ -36,7 +36,7 @@
     height: 200%;
     width: 150%;
     padding: 10px 50px 10px 30px;
-    font-size: 20px;
+    font-size: 14px;
     font-family: Tahoma;
     font-weight: bold;
     outline-color: rgb(255, 255, 255);
