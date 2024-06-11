@@ -76,7 +76,7 @@ function DetailProduct() {
         </div>
         </div>
         <div className="detail-product-info">
-          <h1 className="price-main__heading">
+          <h1 className="product-main__heading">
             {producto.name}
           </h1>
           <div>
@@ -87,7 +87,10 @@ function DetailProduct() {
           <p>Stock:{producto.stock}</p>
           <p className="product-price">${producto.price}</p>
           </div>
-
+          
+                <button ><a href="https://wa.me/543435149599"  role="button"></a>Consultar Stock </button>
+                
+            
         </div>
       </div>
       
