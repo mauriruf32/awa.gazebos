@@ -10,45 +10,45 @@ function Product({ product }) {
 
   const { id, name, image, description, price, stock, color, size, material, category } = product;
 
-  const [cart, setCart] = useState(
-    (typeof window !== "undefined" &&
-      JSON.parse(localStorage.getItem("cart"))) ||
-      []
-  );
+  // const [cart, setCart] = useState(
+  //   (typeof window !== "undefined" &&
+  //     JSON.parse(localStorage.getItem("cart"))) ||
+  //     []
+  // );
 
-  const addToCart = async (userId, productId) => {
-    try {
-      const response = await axios.post(`${URL}addOneToCart`, {
-        userId,
-        productId,
-      });
+  // const addToCart = async (userId, productId) => {
+  //   try {
+  //     const response = await axios.post(`${URL}addOneToCart`, {
+  //       userId,
+  //       productId,
+  //     });
 
-      const { message } = response.data;
-      if (response.status === 201) {
-        let cart2 = cart;
+  //     const { message } = response.data;
+  //     if (response.status === 201) {
+  //       let cart2 = cart;
 
-        setCart(cart2);
+  //       setCart(cart2);
 
-        Swal.fire({
-          position: "center",
-          icon: "error",
-          title: "No permitido",
-          text: `${message}`,
-          showConfirmButton: false,
-          timer: 2000,
-        });
-      }
-    } catch (error) {
-      Swal.fire({
-        position: "center",
-        icon: "error",
-        title: "Lo siento!",
-        text: "Ha ocurrido un error: " + error.message,
-        showConfirmButton: false,
-        timer: 2000,
-      });
-    }
-  };
+  //       Swal.fire({
+  //         position: "center",
+  //         icon: "error",
+  //         title: "No permitido",
+  //         text: `${message}`,
+  //         showConfirmButton: false,
+  //         timer: 2000,
+  //       });
+  //     }
+  //   } catch (error) {
+  //     Swal.fire({
+  //       position: "center",
+  //       icon: "error",
+  //       title: "Lo siento!",
+  //       text: "Ha ocurrido un error: " + error.message,
+  //       showConfirmButton: false,
+  //       timer: 2000,
+  //     });
+  //   }
+  // };
 
   const handleDetailProductClick = () => {
     Swal.fire({
@@ -63,12 +63,14 @@ function Product({ product }) {
             <p><strong>Precio:</strong> $${price}</p>
           </div>
         </div>`,
-      showCloseButton: true,
+      // showCloseButton: true,
       showCancelButton: true,
       focusConfirm: false,
-      confirmButtonText: "Agregar al carrito",
+      // confirmButtonText: "Agregar al carrito",
       cancelButtonText: "+ Info",
-      confirmButtonColor: "#202020",
+      cancelButtonColor: "#F48422",
+      confirmButtonColorHover: "#000",
+      confirmButtonColor: "#F48422",
     }).then((result) => {
       if (result.isConfirmed) {
       } else if (result.dismiss === Swal.DismissReason.cancel) {
@@ -79,10 +81,10 @@ function Product({ product }) {
   };
 
      
-  const handleAddToCartClick = () => {
-    const productId = id;
-    addToCart(productId);
-  };
+  // const handleAddToCartClick = () => {
+  //   const productId = id;
+  //   addToCart(productId);
+  // };
   return (
     <Card className="card" style={{ width: '18rem', borderColor: "white", marginBottom: "10px", padding: "10px 10px 10px 10px" }} >
       <Card.Img variant="top" src={image} alt={
@@ -90,7 +92,7 @@ function Product({ product }) {
       <Card.Body>
         <Card.Title >{
         name}</Card.Title>
-        <ListGroup.Item>Precio: ${price}</ListGroup.Item>
+        <ListGroup.Item> $ {price}</ListGroup.Item>
         {/* <Card.Text>{description}</Card.Text> */}
       </Card.Body>
       {/* <ListGroup className="list-group-flush" style={{  borderColor: "orange" }}>
