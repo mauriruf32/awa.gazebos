@@ -115,6 +115,7 @@ const EditProduct = () => {
         "Price",
         "Stock",
         "Size",
+        "Color",
         "Material",
         "Category",
         "Deleted",
@@ -203,6 +204,7 @@ const EditProduct = () => {
                 {renderTableCell(product, "price")}
                 {renderTableCell(product, "stock")}
                 {renderTableCell(product, "size")}
+                {renderTableCell(product, "color")}
                 {renderTableCell(product, "material")}
                 {renderTableCell(product, "category")}
                 {renderTableCell(product, "deleted")}
@@ -250,12 +252,8 @@ const EditProduct = () => {
   
     const getOptionsForField = (fieldName) => {
       switch (fieldName) {
-        case "size":
-          return ["S", "M", "L"];
-        case "category":
-          return ["accesorio", "figura", "decoracion"];
-        case "material":
-          return ["ABS", "PLA", "TPU"];
+        case "color":
+          return ['Rojo','Azul','Naranja','Amarillo'];
         default:
           return [];
       }
