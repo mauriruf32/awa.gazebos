@@ -60,7 +60,7 @@ function Product({ product }) {
             <p><strong>Tamaño:</strong> ${size}</p>
             <p><strong>Material:</strong> ${material}</p>
             <p><strong>Categoria:</strong> ${category}</p>
-            <p><strong>Precio:</strong> $${price}</p>
+            <p><strong>Precio:</strong> $ ${price}</p>
           </div>
         </div>`,
       // showCloseButton: true,
