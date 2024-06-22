@@ -51,17 +51,30 @@ export function getProductById(id){
     };
 }
 
-export function getProductByName(name){
-    return async function (dispatch){
-        const response = await axios.get(
-            `${URL}/products/?name=${name}`
-        );
-         dispatch({
+// export function getProductByName(name){
+//     return async function (dispatch){
+//         const response = await axios.get(
+//             `${URL}/products/?name=${name}`
+//         );
+//          dispatch({
+//             type: "GET_PRODUCT_BY_NAME",
+//             payload: response.data
+//         });
+//     };
+// }
+
+
+export function getProductByName(name) {
+    return async function (dispatch) {
+        const response = await axios.get(`${URL}/products/?name=${name}`);
+        dispatch({
             type: "GET_PRODUCT_BY_NAME",
             payload: response.data
         });
+        return response.data; // Devolvemos los datos para que el componente pueda usarlos
     };
 }
+
 
 export function postImages(data){
     return async function (dispatch){
