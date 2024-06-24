@@ -87,7 +87,7 @@ function DetailProduct() {
           <p>Material Tela: {producto.materialTela}</p>
           <p className="product-price">${producto.price}</p>
           </div>  
-          <Button className="detail-product-button"  href="https://wa.me/543435149599" style={{ border: 'none' }} >Consultar Stock</Button>{' '}
+          <Button className="detail-product-button"  href="https://wa.me/543435149599" style={{ border: 'none', backgroundColor: "#F48422" }} >Consultar Stock</Button>{' '}
         </div>
       </div>
       

@@ -135,7 +135,8 @@ p {
   background-color: #F48422;
   color: #000000;
   font-family: Tahoma;
-  font-size: smaller;   
+  width: 40%;
+  text-align: center;
 }
 
 .detail-product-button:hover {
