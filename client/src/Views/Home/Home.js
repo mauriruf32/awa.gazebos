@@ -5,6 +5,7 @@ import CarouselHome from "../../Components/Carousel/Carousel";
 import Card from "../../Components/Card/Card";
 import { Container } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
+import SearchBar from "../../Components/SearchBar/SearchBar"
 import "./Home.css";
 
 
@@ -44,6 +45,7 @@ const Home = () => {
   return (
     <div>
       <CarouselHome />
+
       <Container className='container-home'>
         <div className='containerFilters' >
           <Accordion defaultActiveKey={['0']} alwaysOpen >

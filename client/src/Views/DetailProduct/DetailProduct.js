@@ -81,10 +81,10 @@ function DetailProduct() {
             {producto.name}
           </h1>
           <div>
-          <p>Size: {producto.size}</p>
+          <p>Medidas: {producto.size}</p>
           <p>Material:{producto.material}</p>
-          <p>Categoria: {producto.category}</p>
           <p>Material Tela: {producto.materialTela}</p>
+          <p>Categoria: {producto.category}</p>
           <p className="product-price">${producto.price}</p>
           </div>  
           <Button className="detail-product-button"  href="https://wa.me/543435149599" style={{ border: 'none', backgroundColor: "#F48422" }} >Consultar Stock</Button>{' '}
