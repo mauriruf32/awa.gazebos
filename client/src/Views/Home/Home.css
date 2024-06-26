@@ -11,7 +11,7 @@
     padding: 0 0 0 5%;
     width: 100%;
     height: 100%;
-    font-family: Helvetica;
+    font-family: 'Monserrat';
    }
 
 
@@ -20,7 +20,7 @@
 .containerFilters {
     display: table-row;
     width: 40%;
-    font-family: Tahoma;
+    font-family: 'Monserrat';
     font-weight: bold;
     box-shadow: none;  
     border: none;
@@ -34,7 +34,7 @@
     background-color: #F48422;
     color: #000;
     margin-bottom: 10px;
-    font-family: Tahoma;
+    font-family: 'Monserrat';
     font-weight: bold;
     font-size: medium;
 
