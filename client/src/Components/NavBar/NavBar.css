@@ -3,7 +3,11 @@
     height: 80px;
     font-family: Tahoma;
     font-weight: bold;
-    width: 100%;    
+    width: 83%;
+    border-bottom: #F48422;
+    border-bottom-width: 5px;
+    border-bottom-style: solid ;  
+    margin-left: 110px;
 }
 
 .login{
@@ -13,5 +17,5 @@
 }
 
 .boton-login:hover {
-    background-color: #f89a0d;
+    background-color: #F48422;
 }

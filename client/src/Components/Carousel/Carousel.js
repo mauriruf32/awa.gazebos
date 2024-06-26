@@ -8,11 +8,10 @@ import { Container } from "react-bootstrap";
 
 
 import "./Carousel.css";
-import SearchBar from "../SearchBar/SearchBar";
 
 function CarouselHome() {
   return (
-    <Container  fluid className="p-0 ha">
+    <Container  fluid className="p-3 ha container">
       <Carousel>
         <Carousel.Item interval={5000}>
           <img className="d-block w-100 fluid"  src={image1} alt="img1" text="First slide"/>
@@ -26,10 +25,7 @@ function CarouselHome() {
         </Carousel.Item>
 
       </Carousel>
-      <div className="sbar-container">
-        <SearchBar/>
-          
-        </div>
+
     </Container>
   );
 }
