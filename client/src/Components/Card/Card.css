@@ -11,7 +11,8 @@
     width: 75px;
     border: none;
     background-color: white;
-    margin-left: 70%;    
+    margin-left: 50%;
+    margin-top: -20%;    
 }
 
 .card button:hover{
