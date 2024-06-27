@@ -1,21 +1,114 @@
-.nav-container {
-    background-color: #ffffff;
-    height: 80px;
+header {
+    height: 50%;
+    width: 85%;
+    padding: -1px 10px;
+    border-bottom: #F48422;
+    border-bottom-width: 5px;
+    border-bottom-style: solid ;  
+    z-index: 1000;
+    color: white;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 8%;
+  }
+  
+  .logo {
+    width: 50px;
+    margin-left: 30%;
+  }
+  
+  nav {
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    color: white;
+  
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-items: center;
+  }
+  
+  li {
+    margin: 0 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .boton {
+    color: white;
+    background-color: #78b0a6;
+    border: #152231;
+    border-radius: 10px;
+    width: 50px;
     font-family: Tahoma;
     font-weight: bold;
-    width: 85%;
+    justify-content: space-around;
+    margin-right: 10px;
+  }
+  
+  .boton:hover {
+    background-color: #181a1d;
+    border-color: #18222c;
+  }
+  
+  .botones {
+    display: flex;
+  }
+
+/* .nav-container {
+    background-color: #ffffff;
+    height: auto;
+    font-family: 'montserrat';
+    width: 100%;
     border-bottom: #F48422;
     border-bottom-width: 5px;
     border-bottom-style: solid ;  
     margin-left: 8%;
+    color: #F48422;
 }
 
-.login{
+.container-enlaces {
+    color: #000000;
+    display: flex;
+    width: 300px;
+    justify-content: space-evenly;
+} */
+
+
+/* .login{
     padding: 100px;
-    margin-left: 10px;
-    
+    margin-left: 50px;
+    color: #000000;
 }
 
-.boton-login:hover {
-    background-color: #F48422;
-}
+.homestyle{
+
+    color:#F48422
+} */
+
+/* .login:hover {
+    color: #000000;
+} */

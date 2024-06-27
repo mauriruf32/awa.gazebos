@@ -1,7 +1,8 @@
 .container-detail {
   display: table;
   margin-top: 5%;
-  font-family: Tahoma;
+  font-family: 'montserrat';
+
 
 }
 
@@ -42,7 +43,8 @@
 .detail-product-info {
   display: flex;
   flex-direction: column;
-  font-family: Tahoma;
+  font-family: 'montserrat';
+
   height: 50%;
 }
 
@@ -127,14 +129,16 @@ p {
   font-size: large;
   margin-left: 5%;
   margin-top: 5%;
-  font-family: Tahoma;
+  font-family: 'montserrat';
+
   font-weight: bold;
 }
 
 .detail-product-button {
   background-color: #F48422;
   color: #000000;
-  font-family: Tahoma;
+  font-family: 'montserrat';
+
   width: 40%;
   text-align: center;
 }
