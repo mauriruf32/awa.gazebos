@@ -98,9 +98,12 @@ p {
 
 @media only screen and (max-width: 576px) {
   .detail-product-info {
-    height: auto;
+    width: 30px;
+    height: 30px;
   }
+
 }
+
 
 .custom-popup-class {
   /* Estilos para el popup personalizado */
