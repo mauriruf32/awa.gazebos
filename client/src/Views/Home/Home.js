@@ -116,7 +116,7 @@ const Home = () => {
             </Accordion.Item>
 
 
-             <button type="button" class="mb-3" style={{ backgroundColor: '#F48422', border:"none" }} onClick={resetFilters}>    
+             <button type="button" class="mb-3" style={{ backgroundColor: '#ffff', border:"#F48422" }} onClick={resetFilters}>    
            Resetear filtros
       </button>
 

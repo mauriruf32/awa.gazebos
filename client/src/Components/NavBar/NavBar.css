@@ -20,6 +20,7 @@ header {
     font-family: 'Montserrat';
     font-size: larger;
     text-decoration: none;
+    margin-left: 10px;
   }
 
   nav {
@@ -44,7 +45,8 @@ header {
   }
   
   li {
-    margin: 0 10px;
+    margin-right: 50px;
+    
   }
   
   a {
@@ -52,6 +54,8 @@ header {
     color: white;
     font-weight: bold;
     cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: larger;
   }
   
 .searchbar {

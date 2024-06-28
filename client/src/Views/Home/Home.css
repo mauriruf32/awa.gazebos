@@ -31,8 +31,8 @@
     box-shadow: none; 
     border-radius: 15px;
     width: 100%;
-    background-color: #F48422;
-    color: #000;
+    background-color: #ffffff;
+    color: #a8a8a8;
     margin-bottom: 10px;
     font-family: 'montserrat';
     font-weight: bold;
@@ -41,8 +41,8 @@
 }
 
 .containerFilters button:hover{
-    background-color: #000;
-    color: #ffff;
+    background-color: #F48422;
+    color: #ffffff;
     box-shadow: none;  
 
 }
@@ -50,7 +50,7 @@
 .containerFilters button:not(.collapsed) {
     box-shadow: none;  
     background-color: #F48422;
-    color: #000;
+    color: #a8a8a8;
 
 }
 
