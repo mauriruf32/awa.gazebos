@@ -1,16 +1,13 @@
 header {
     height: 50%;
-    width: 85%;
-    padding: -1px 10px;
-    border-bottom: #F48422;
-    border-bottom-width: 5px;
-    border-bottom-style: solid ;  
+    width: 100%;
+
     z-index: 1000;
     color: white;
     justify-content: center;
     display: flex;
     flex-direction: column;
-    margin-left: 8%;
+    text-decoration: none;
   }
   
   .logo {
@@ -18,12 +15,23 @@ header {
     margin-left: 30%;
   }
   
+  .text-home{
+    color: #F48422;
+    font-family: 'Montserrat';
+    font-size: larger;
+    text-decoration: none;
+  }
+
   nav {
+    border-bottom: #F48422;
+    border-bottom-width: 5px;
+    border-bottom-style: solid ;
     margin-top: 10px;
     display: flex;
-    width: 100%;
+    width: 85%;
     color: white;
-  
+    text-decoration: none;
+    margin-left: 7%;
   }
   
   ul {
@@ -32,6 +40,7 @@ header {
     margin: 0;
     display: flex;
     justify-items: center;
+    text-decoration: none;
   }
   
   li {
@@ -45,7 +54,15 @@ header {
     cursor: pointer;
   }
   
+.searchbar {
+  display: flex;
+  justify-content: end;
+  width: 50%;
+  margin-left: 30%;
+}
+
   .scroll-down {
+    text-decoration: none;
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -69,9 +86,9 @@ header {
     margin-right: 10px;
   }
   
-  .boton:hover {
-    background-color: #181a1d;
-    border-color: #18222c;
+  header button:hover {
+    background-color: #F48422;
+    border-color: #F48422;
   }
   
   .botones {

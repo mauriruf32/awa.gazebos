@@ -1,5 +1,5 @@
 .searchBar{
-    width: 30%;
+    width: 100%;
     border: 50px;
     border-color: #ffffff;
     outline-color: rgb(255, 255, 255);
@@ -15,7 +15,7 @@
 }
 
 .searchBar button {
-    background-color: #F48422;
+    background-color: #f48422;
     height: 100%;
     border: 0px;
     padding: 0 16px;
@@ -28,10 +28,14 @@
     align-items: center;
 }
 
+.searchBar button:hover{
+    background-color: black;
+}
+
 .searchBar input {
     border: 300px;
     border-color: #ffffff;
-    background-color: #eee;
+    background-color: #ffffff;
     height: 200%;
     width: 150%;
     padding: 10px 50px 10px 30px;
