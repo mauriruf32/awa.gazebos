@@ -5,15 +5,16 @@
     border-radius: 10px;
     box-shadow: 15px 15px 15px #0000004f;
     font-family: 'montserrat';
+    width: 80%;
 
 }
 
 .card button{
-    width: 75px;
+    width: 50px;
     border: none;
-    background-color: white;
-    margin-left: 50%;
-    margin-top: -20%;    
+    background-color: transparent;
+    margin-left: 70%;
+    margin-top: -30%;    
 }
 
 .card button:hover{
