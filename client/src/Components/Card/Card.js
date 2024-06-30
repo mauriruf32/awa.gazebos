@@ -86,12 +86,11 @@ function Product({ product }) {
   //   addToCart(productId);
   // };
   return (
-    <Card className="card" style={{ width: '15rem', borderColor: "white", marginBottom: "50px", padding: "10px 10px 10px 10px", height:"15rem" }} >
+    <Card className="card" style={{ width: '15rem', borderColor: "white", marginBottom: "70px", padding: "10px 10px 10px 10px", height:"15rem" }} >
       <Card.Img variant="top" src={image} alt={
         name} onClick={handleDetailProductClick} />
       <Card.Body>
-        <Card.Title >{
-        name}</Card.Title>
+        <Card.Title className="mt-2">{name}</Card.Title>
         <ListGroup.Item> $ {price}</ListGroup.Item>
         {/* <Card.Text>{description}</Card.Text> */}
       </Card.Body>

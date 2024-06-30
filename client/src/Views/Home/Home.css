@@ -50,11 +50,18 @@
 .containerFilters button:not(.collapsed) {
     box-shadow: none;  
     background-color: #F48422;
-    color: #a8a8a8;
+    color: #ffffff;
 
 }
 
+.containerFilters button:is(.collapsed) {
+    box-shadow: none;  
+    
+}
+
+
 .form-select {
+    box-shadow: none;  
     border-radius: 10px;
     border-color:  #F48422;
 }

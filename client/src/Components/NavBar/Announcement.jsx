@@ -7,12 +7,12 @@ const Announcement = () => {
     <div className="announcement">
         <Marquee>
         <div className="announcement-text text1">
-            <span>¿Queres ser revendedor?</span>
-            <span>Contactate con nosotros al +54 343 5149599</span>
+            <span>¿Queres ser revendedor? Contactate con nosotros al +54 343 5149599</span>
         </div>
-        <br/>
         <div className="announcement-text text2">
             <span>Hacemos envios a todo el Pais.</span>
+        </div>
+        <div className="announcement-text text3">
             <span>Descuentos pagando por efectivo/transferencia.</span>
         </div>
         </Marquee>

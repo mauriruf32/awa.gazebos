@@ -1,5 +1,6 @@
 .searchBar{
-    width: 100%;
+    left: 90px;
+    width: 80%;
     border: 50px;
     border-color: #ffffff;
     outline-color: rgb(255, 255, 255);
