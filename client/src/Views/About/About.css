@@ -39,11 +39,13 @@
 }
 
 .columna1 {
+    justify-content: center;
     display: flex;
     flex-direction: row;
 }
 
 .columna2 {
+    justify-content: center;
     display: flex;
     flex-direction: row;
 }
@@ -55,5 +57,9 @@
     background-color: white;
     color: #050505;
     text-align: justify;
-
+    font-style: italic;
+    padding-top: 3%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
 }
