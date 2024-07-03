@@ -17,10 +17,10 @@ const NavBar = () => {
   <div class="collapse navbar-collapse"  id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto t-black">
       <li class="nav-item " className='text-black'>
-        <a class="nav-link" href="..."><Link to="/" className='text-home' smooth={true} duration={500}>Home</Link></a>
+        <a class="nav-link" href="/"><Link to="/" className='text-home' smooth={true} duration={500}>Home</Link></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="..."><Link to="about" className='text-black text-decoration-none' smooth={true} duration={500}>About</Link></a>
+        <a class="nav-link" href="/about"><Link to="/about" className='text-about' smooth={true} duration={500}>About</Link></a>
       </li>     
      {/* <li class="nav-item">
         <a class="nav-link" href="..."><Link to="login" className='text-black text-decoration-none' smooth={true} duration={500}>LogIn</Link></a>

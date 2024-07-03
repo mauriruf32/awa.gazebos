@@ -23,6 +23,14 @@ header {
     margin-left: 10px;
   }
 
+  .text-about{
+    color: #000000;
+    font-family: 'Montserrat';
+    font-size: larger;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+
   nav {
     border-bottom: #F48422;
     border-bottom-width: 5px;
@@ -62,7 +70,7 @@ header {
   display: flex;
   justify-content: end;
   width: 50%;
-  margin-left: 30%;
+  margin-left: 18%;
 }
 
   .scroll-down {

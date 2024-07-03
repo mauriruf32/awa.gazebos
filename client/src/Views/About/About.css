@@ -4,62 +4,70 @@
     justify-content: center;
     flex-direction: column;
     font-family: "Montserrat";
+    margin-top: 3%;
 }
 
-.check-section {
-    width: 30%;
-    background-color: black;
-    color: #ffffff;
-    justify-content: center;
-    text-align: center;
-    padding-top: 3%;
-    padding-bottom: 1%;
-}
-
-.columna1 img {
-  width: 30%;
-}
-
-.elementos-section {
-    width: 30%;
+.titulo {
+    padding: 5%;
+    font-size: xx-large;
+    position: absolute;
+    height: 300px;
+    width: 100px;
     background-color: #f48422;
-    color: #000000;
-    justify-content: center;
+    writing-mode: vertical-lr;
     text-align: center;
-    padding-top: 1%;
-    padding-bottom: 1%;
-
+    margin-top: -60%;
 }
 
 .arriba-section {
-    width: 100%;
-    justify-content: center;
+    margin-left: 10%;
+    font-family: "Montserrat";
+    width: 80%; /* Aumentamos el ancho para que se ajuste mejor */
+    font-size: large; /* Modificamos el tamaño de fuente */
     text-align: center;
-
+    font-style: oblique 40deg;
+    margin-bottom: 3%; /* Espaciado inferior para separar de la siguiente sección */
 }
 
-.columna1 {
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-}
-
+.columna1,
 .columna2 {
-    justify-content: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center; /* Centramos los elementos verticalmente */
+    margin-bottom: 3%; /* Espaciado inferior para separar las columnas */
+}
+
+.columna1 img {
+    margin-top: 3%;
+    max-width: 100%; /* Imagen responsive, ocupando máximo ancho disponible */
 }
 
 .nosotros-section {
-    display: flex;
-    flex-direction: row;
-    width: 30%;
+    width: 80%; /* Aumentamos el ancho para que se ajuste mejor */
     background-color: white;
     color: #050505;
     text-align: justify;
     font-style: italic;
-    padding-top: 3%;
-    padding-bottom: 1%;
-    padding-left: 1%;
-    padding-right: 1%;
+    font-size: medium; /* Modificamos el tamaño de fuente */
+    padding: 3% 5%; /* Añadimos relleno interno */
+}
+
+.elementos-section,
+.check-section {
+    width: 80%; /* Aumentamos el ancho para que se ajuste mejor */
+    margin-bottom: 3%; /* Espaciado inferior para separar las secciones */
+}
+
+.check-section {
+    background-color: black;
+    color: #ffffff;
+    text-align: left;
+    padding: 3% 5%; /* Añadimos relleno interno */
+}
+
+.elementos-section {
+    background-color: #f48422;
+    color: #000000;
+    text-align: center;
+    padding: 3% 5%; /* Añadimos relleno interno */
 }

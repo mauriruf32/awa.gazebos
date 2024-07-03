@@ -64,30 +64,30 @@ function DetailProduct() {
               onClick={() => showImagePopup(producto.image)}
             />
           )}
-        <div className="product-images">
-          {images.filter(image => producto.images.includes(String(image.id))).map((image) => (
-            <img
-              key={image.id}
-              src={image.url}
-              alt={image.name}
-              onClick={() => showImagePopup(image.url)}
-              className="clickable-image"
-            />
-          ))}
-        </div>
+          <div className="product-images">
+            {images.filter(image => producto.images.includes(String(image.id))).map((image) => (
+              <img
+                key={image.id}
+                src={image.url}
+                alt={image.name}
+                onClick={() => showImagePopup(image.url)}
+                className="clickable-image"
+              />
+            ))}
+          </div>
         </div>
         <div className="detail-product-info">
           <h1 className="product-main__heading">
             {producto.name}
           </h1>
           <div>
-          <p>Medidas: {producto.size}</p>
-          <p>Material:{producto.material}</p>
-          <p>Material Tela: {producto.materialTela}</p>
-          <p>Categoria: {producto.category}</p>
-          <p className="product-price">${producto.price}</p>
-          </div>  
-          <Button className="detail-product-button"  href="https://wa.me/543435149599" style={{ border: 'none', backgroundColor: "#F48422" }} >Consultar Stock</Button>{' '}
+            <p>Medidas: {producto.size}</p>
+            <p>Material: {producto.material}</p>
+            <p>Material Tela: {producto.materialTela}</p>
+            <p>Categoria: {producto.category}</p>
+            <p className="product-price">${producto.price}</p>
+          </div>
+          <Button className="detail-product-button" href="https://wa.me/543435149599" style={{ border: 'none', backgroundColor: "#F48422" }}>Consultar Stock</Button>{' '}
         </div>
       </div>
       
