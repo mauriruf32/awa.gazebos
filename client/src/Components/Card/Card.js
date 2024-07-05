@@ -86,25 +86,23 @@ function Product({ product }) {
   //   addToCart(productId);
   // };
   return (
-    <Card className="card" style={{ width: '15rem', borderColor: "white", marginBottom: "70px", padding: "10px 10px 10px 10px", height:"15rem" }} >
+    <Card className="card" style={{ width: '15rem', borderColor: "white", marginBottom: "35%",  height:"15rem" }} >
       <Card.Img variant="top" src={image} alt={
         name} onClick={handleDetailProductClick} />
-      <Card.Body>
+      
         <Card.Title className="mt-2">{name}</Card.Title>
         <ListGroup.Item> $ {price}</ListGroup.Item>
         {/* <Card.Text>{description}</Card.Text> */}
-      </Card.Body>
+     
       {/* <ListGroup className="list-group-flush" style={{  borderColor: "orange" }}>
         <ListGroup.Item>Precio: ${price}</ListGroup.Item>
         <ListGroup.Item>Tamaño: {size}</ListGroup.Item>
         <ListGroup.Item>Color: {color}</ListGroup.Item> 
       </ListGroup>
       <Card.Body>*/}
-      <button  onClick={handleDetailProductClick} >
-      <img src={plusIcon} alt="plusIcon" className="w-50" />
-      </button>
-      {/*   <Card.Link  href="/products/:name">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
+      <button  onClick={handleDetailProductClick} >Mas Informacion</button>
+       {/* <Card.Link onClick={handleDetailProductClick} >Consultar Stock</Card.Link> */}
+       {/*   <Card.Link href="#">Another Link</Card.Link>
       </Card.Body> */}
     </Card>
   );

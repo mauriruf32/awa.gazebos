@@ -1,24 +1,29 @@
 .card {
-    background-color: rgb(252, 252, 252);
-    padding: 15px;
-    margin: 10px;
+    background-color: #ffffff;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 15px 15px 15px #0000004f;
     font-family: 'montserrat';
-    width: 80%;
+    width: 100%;
+
+}
+
+.card img {
+    box-shadow: 15px 15px 15px #0000004f;
 
 }
 
 .card button{
-    width: 50px;
-    border: none;
-    background-color: transparent;
-    margin-left: 70%;
-    margin-top: -30%;    
+    border-style: none;
+    width: 100%;
+    border-radius: 10px;
+  border-color: #f48422;
+    background-color: #ffffff;
+    box-shadow: 15px 15px 15px #0000004f;
+
 }
 
 .card button:hover{
-    background-color: transparent;
+    background-color: #f48422;
 }
 
 
