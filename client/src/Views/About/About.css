@@ -61,6 +61,8 @@
 }
 
 .check-section {
+    display: flex;
+    flex-direction: column;
     background-color: black;
     color: #ffffff;
     text-align: left;
@@ -76,7 +78,8 @@
 
 .check-section img {
     vertical-align: middle;
-    margin-right: 10px;
+    margin-left: 10%;
+    padding-right: 10px;
 }
 
 @media (min-width: 768px) {
@@ -94,8 +97,16 @@
         width: 50%;
         margin-left: 25%;
     }
+
+
 }
 
+@media screen and (min-width: 320px) {
+    .check-section img {
+        vertical-align: middle;
+        margin-left: 10%;
+    }
+}
 
 @font-face {
     font-family: Edo;
