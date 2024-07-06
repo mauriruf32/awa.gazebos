@@ -100,7 +100,7 @@ function Product({ product }) {
         <ListGroup.Item>Color: {color}</ListGroup.Item> 
       </ListGroup>
       <Card.Body>*/}
-      <button  onClick={handleDetailProductClick} >Mas Informacion</button>
+      <button  onClick={handleDetailProductClick} >+</button>
        {/* <Card.Link onClick={handleDetailProductClick} >Consultar Stock</Card.Link> */}
        {/*   <Card.Link href="#">Another Link</Card.Link>
       </Card.Body> */}

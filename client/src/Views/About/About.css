@@ -1,8 +1,9 @@
 .container-about {
     width: 100%;
-    display: flex;
+    display: flexbox;
+    justify-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row-reverse;
     font-family: "Montserrat";
     margin-top: 3%;
 }
@@ -12,7 +13,7 @@
     height: 100px;
     width: 100px;
     background-color: #f48422;
-    margin-right: 50%;
+    margin-right: -30%;
     text-align: center;
     
 }
@@ -20,7 +21,7 @@
 .arriba-section {
     display: flex;
     font-family: Edo;
-    width: 70%;
+    width: 100%;
     font-size: xx-large;
     text-align: center;
     margin: 0 auto;
@@ -29,9 +30,11 @@
 
 .columna1,
 .columna2 {
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .columna1 img {
@@ -89,6 +92,7 @@
     .columna1,
     .columna2 {
         width: 50%;
+        margin-left: 25%;
     }
 }
 
