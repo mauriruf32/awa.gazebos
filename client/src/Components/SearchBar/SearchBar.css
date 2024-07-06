@@ -71,4 +71,27 @@
 }
 
 
+@media screen and (max-width: 320px) {
+    .searchBar {
+        left: 10px;
+        width: 100%;
+    }
+    .searchBar input {
+        padding: 10px 10px 10px 10px;
+    font-size: 12px;
 
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .searchBar {
+        left: 30px;
+        width: 100%;
+    }
+    .searchBar input {
+        padding: 10px 10px 10px 10px;
+    font-size: 12px;
+
+    }
+}
