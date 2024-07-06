@@ -47,13 +47,28 @@
 
 }
 
+@media screen and (max-width: 360px) {
+    .searchBar {
+        left: 10px;
+        width: 100%;
+    }
+    .searchBar input {
+        padding: 10px 10px 10px 30px;
+    font-size: 12px;
+
+    }
+}
+@media screen and (max-width: 375px) {
+    .searchBar {
+        left: 10px;
+        width: 100%;
+    }
+    .searchBar input {
+        padding: 10px 10px 10px 30px;
+    font-size: 12px;
+
+    }
+}
 
 
-/* .searchBar form {
-    display: flex;
-    align-items: center;
-    background-color: #eee;
-    height: 46px;
-    overflow: hidden;
-    position: relative;
-} */
+
