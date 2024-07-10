@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import "./DetailProduct.css";
 import Swal from "sweetalert2";
 import Button from 'react-bootstrap/Button';
+const URL = process.env.URL || "https://awa-gazebos.vercel.app";
+// const URL = process.env.URL || "http://localhost:3001";
 
 function DetailProduct() {
   const { id } = useParams();
@@ -11,16 +13,18 @@ function DetailProduct() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    // Obtener la información del producto
-    axios.get(`https://awa-gazebos.vercel.app/products/${id}`)
+    // Obtener la información del producto y las imágenes
+    axios.get(`${URL}/products/${id}`)
       .then(({ data }) => {
         if (data.name) {
           setProducto(data);
-          // Filtrar las imágenes asociadas al producto
-          const productImages = data.images.map(imageId => ({
-            ...images.find(image => image.id === parseInt(imageId))
-          }));
-          setImages(productImages);
+          // Filtrar las imágenes asociadas al producto si producto.images está definido
+          if (data.images) {
+            const productImages = data.images.map(imageId => ({
+              ...images.find(image => image.id === parseInt(imageId))
+            }));
+            setImages(productImages);
+          }
         } else {
           window.alert("No hay producto con ese ID");
         }
@@ -30,7 +34,7 @@ function DetailProduct() {
       });
 
     // Obtener todas las imágenes disponibles
-    axios.get('https://awa-gazebos.vercel.app/images')
+    axios.get(`${URL}/images`)
       .then((response) => {
         setImages(response.data);
       })
@@ -65,7 +69,7 @@ function DetailProduct() {
             />
           )}
           <div className="product-images">
-            {images.filter(image => producto.images.includes(String(image.id))).map((image) => (
+            {images.filter(image => producto.images && producto.images.includes(String(image.id))).map((image) => (
               <img
                 key={image.id}
                 src={image.url}

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./EditProducts.css";
 
 const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
+// const URL = process.env.URL || 'http://localhost:3001';
+
 
 const EditProduct = () => {
     const [products, setProducts] = useState([]);
@@ -251,7 +253,7 @@ const EditProduct = () => {
     const getOptionsForField = (fieldName) => {
       switch (fieldName) {
         case "color":
-          return ["Rojo", "Azul", "Naranja", "Amarillo"];
+          return ["Rojo", "Azul", "Naranja", "Amarillo", "Verde", "Otro"];
         default:
           return [];
       }

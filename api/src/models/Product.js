@@ -30,11 +30,15 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       color: {
-        type: DataTypes.ENUM('Rojo','Azul','Naranja','Amarillo'), 
+        type: DataTypes.ENUM('Rojo','Azul','Naranja','Amarillo','Verde','Otro'), 
         allowNull: false
       },
       size: {
         type: DataTypes.STRING,
+        allowNull: false,
+      },
+      marca: {
+        type:DataTypes.STRING,
         allowNull: false,
       },
       material: {
@@ -45,11 +49,22 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      impermeable: {
+        type: DataTypes.ENUM('Si','No'), 
+        allowNull: false,
+      },
+      ajustable: {
+        type: DataTypes.ENUM('Si','No'), 
+        allowNull: false
+      },
       category: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-
+      peso: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: false,
+      },
       deleted: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,

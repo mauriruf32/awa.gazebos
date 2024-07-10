@@ -41,6 +41,10 @@ const createProductHandler = async (req, res) => {
     stock,
     color,
     size,
+    marca,
+    impermeable,
+    ajustable,
+    peso,
     material,
     materialTela,
     category,
@@ -48,7 +52,7 @@ const createProductHandler = async (req, res) => {
   } = req.body;
 
   try {
-    const response = await createProductDB(name, image, description, price, stock, color, size, material, materialTela, category, images);
+    const response = await createProductDB(name, image, description, price, stock, color, size, material, materialTela, marca, impermeable, ajustable, peso, category, images);
     res.status(200).json(response);
   } catch (error) {
     res.status(400).json({ error: error.message });

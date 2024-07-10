@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { getImages } from "../../redux/actions";
 import "./CreateProduct.css";
 const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
+// const URL = process.env.URL || 'http://localhost:3001';
 
 const Form = () => {
     const dispatch = useDispatch();
@@ -23,6 +24,10 @@ const Form = () => {
         size: "",
         material: "",
         materialTela: "",
+        ajustable: "",
+        impermeable: "",
+        peso: "",
+        marca: "",
         category: "",
         images: [],
     });
@@ -37,6 +42,10 @@ const Form = () => {
         color: "",
         material: "",
         materialTela: "",
+        ajustable: "",
+        impermeable: "",
+        peso: "",
+        marca: "",
         category: "",
         images: "",
     });
@@ -69,20 +78,32 @@ const Form = () => {
         else if (form.size.length > 20){
             setErrors({...errors,size: "Less than 20 characters."});
         }
-        else if (form.color !== "Rojo" && form.color !== "Azul" && form.color !== "Naranja" && form.color !== "Amarillo") {
-            setErrors({ ...errors, color: 'You must select a season.' });
+        else if (form.color !== "Rojo" && form.color !== "Azul" && form.color !== "Naranja" && form.color !== "Amarillo" && form.color !== "Verde" && form.color !== "Otro") {
+            setErrors({ ...errors, color: 'You must select a color.' });
+        }
+        else if (form.impermeable !== "Si" && form.impermeable !== "No") {
+            setErrors({ ...errors, impermeable: 'You must select a one.' });
+        }
+        else if (form.ajustable !== "Si" && form.ajustable !== "No") {
+            setErrors({ ...errors, ajustable: 'You must select a one.' });
         }
         else if (form.material.length > 20){
             setErrors({...errors,material: "Less than 20 characters."})
         } 
         else if (form.category.length > 20){
             setErrors({...errors,category: "Less than 20 characters."})
+        }       
+        else if (form.marca.length > 20){
+            setErrors({...errors,marca: "Pick a brand."})
+        }
+        else if (!/^\d+$/.test(form.peso)) {
+            setErrors({ ...errors, peso: 'Peso cannot have letters.' });
         }
         else if (form.images === ""){
             setErrors({...errors,images: 'You must choose at least 1 image.'})
         }
        else {
-            setErrors({ ...errors, name: "", image: "", description: "", price: "", stock: "", size: "", color: "", material: "", category: "", images: [] });
+            setErrors({ ...errors, name: "", image: "", description: "", price: "", stock: "", size: "", color: "", material: "", peso:"", impermeable:"", ajustable:"", marca:"", category: "", images: [] });
         }
     };
 
@@ -185,6 +206,10 @@ const Form = () => {
             <label>Stock: </label>
             <input type="number" value={form.stock} onChange={changeHandler} name="stock" />
             {errors.stock && <span>{errors.stock}</span>}
+
+            <label>Peso: </label>
+            <input type="number" value={form.peso} onChange={changeHandler} name="peso" />
+            {errors.peso && <span>{errors.peso}</span>}
         </div>
         <div className="form-name">
             <label>Tamaño: </label>
@@ -198,8 +223,26 @@ const Form = () => {
                     <option value="Azul">Azul</option>
                     <option value="Naranja">Naranja</option>
                     <option value="Amarillo">Amarillo</option>
+                    <option value="Otro">Otro</option>
+                    <option value="Verde">Verde</option>
                 </select>
             {errors.color && <span>{errors.color}</span>}
+        </div>
+        <div className="form-name">
+            <label>impermeable: </label>
+                <select type="text" value={form.impermeable} onChange={changeHandler} name="impermeable" >
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                </select>
+            {errors.impermeable && <span>{errors.impermeable}</span>}
+        </div>
+        <div className="form-name">
+            <label>ajusatble: </label>
+                <select type="text" value={form.ajustable} onChange={changeHandler} name="ajustable" >
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                </select>
+            {errors.ajustable && <span>{errors.ajustable}</span>}
         </div>
         <div className="form-name">
             <label>Material: </label>
@@ -215,6 +258,11 @@ const Form = () => {
             <label>Categoria: </label>
             <input type="text" value={form.category} onChange={changeHandler} name="category" />
             {errors.category && <span>{errors.category}</span>}
+        </div>
+        <div className="form-name">
+            <label>Marca: </label>
+            <input type="text" value={form.marca} onChange={changeHandler} name="marca" />
+            {errors.marca && <span>{errors.marca}</span>}
         </div>
         <select type="text" value={form.images} name="images" onChange={changeHandler2} multiple required>
                   {images.map((image) => {

@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import "./Card.css";
 
 function Product({ product }) {
-  const { id, name, image, description, price, size, material, category } = product;
+  const { id, name, image, price, impermeable, size, material, category } = product;
 
   function numberWithCommas(price) {
     return price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
@@ -20,7 +20,7 @@ function Product({ product }) {
           <div class="detail-info">
             <p><strong>Tamaño:</strong> ${size}</p>
             <p><strong>Material:</strong> ${material}</p>
-            <p><strong>Categoria:</strong> ${category}</p>
+            <p><strong>Categoria:</strong> ${impermeable}</p>
             <p><strong>Precio:</strong> $ ${numberWithCommas(price)}</p>
           </div>
         </div>`,
