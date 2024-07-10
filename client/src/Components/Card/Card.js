@@ -20,7 +20,7 @@ function Product({ product }) {
           <div class="detail-info">
             <p><strong>Tamaño:</strong> ${size}</p>
             <p><strong>Material:</strong> ${material}</p>
-            <p><strong>Categoria:</strong> ${impermeable}</p>
+            <p><strong>Categoria:</strong> ${category}</p>
             <p><strong>Precio:</strong> $ ${numberWithCommas(price)}</p>
           </div>
         </div>`,
