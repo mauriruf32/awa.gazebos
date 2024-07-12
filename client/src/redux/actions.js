@@ -15,8 +15,8 @@ export const LOGIN_USER = "LOGIN_USER";
 export const POST_IMAGES = "POST_IMAGES";
 export const GET_IMAGES = "GET_IMAGES";
 
-const URL = process.env.URL || "https://awa-gazebos.vercel.app";
-// const URL = process.env.URL || "http://localhost:3001";
+const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
+// const URL = process.env.URL || 'http://localhost:3001';
 
 
 export function getProducts(){
