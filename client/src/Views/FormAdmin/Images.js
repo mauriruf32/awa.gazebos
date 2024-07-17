@@ -8,6 +8,7 @@ const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
 // const URL = process.env.URL || 'http://localhost:3001';
 
 
+
 const Images = (props) => {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(false);

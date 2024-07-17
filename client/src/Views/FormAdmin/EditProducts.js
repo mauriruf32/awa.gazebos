@@ -4,6 +4,7 @@ import "./EditProducts.css";
 const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
 // const URL = process.env.URL || 'http://localhost:3001';
 
+
 const EditProduct = () => {
     const [products, setProducts] = useState([]);
     const [editedProduct, setEditedProduct] = useState({});

@@ -5,7 +5,7 @@
 
 .containerCards {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 0 0 0 0;

@@ -19,6 +19,7 @@ const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
 // const URL = process.env.URL || 'http://localhost:3001';
 
 
+
 export function getProducts(){
     return async function(dispatch){
         const response = await axios.get(`${URL}/products`);

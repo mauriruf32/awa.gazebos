@@ -7,11 +7,19 @@ import Button from 'react-bootstrap/Button';
 const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
 // const URL = process.env.URL || 'http://localhost:3001';
 
+
 function DetailProduct() {
   const { id } = useParams();
   const [producto, setProducto] = useState({});
   const [images, setImages] = useState([]);
-
+  function numberWithCommas(price) {
+    if (typeof price !== 'undefined') {
+      return price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+    } else {
+      return ""; // O cualquier valor por defecto que desees mostrar
+    }
+  }
+  
   useEffect(() => {
     // Obtener la información del producto y las imágenes
     axios.get(`${URL}/products/${id}`)
@@ -89,7 +97,7 @@ function DetailProduct() {
             <p>Material: {producto.material}</p>
             <p>Material Tela: {producto.materialTela}</p>
             <p>Categoria: {producto.category}</p>
-            <p className="product-price">${producto.price}</p>
+            <p className="product-price">${numberWithCommas(producto.price)}</p>
           </div>
           <Button className="detail-product-button" href="https://wa.me/543435149599" style={{ border: 'none', backgroundColor: "#F48422" }}>Consultar Stock</Button>{' '}
         </div>
