@@ -1,0 +1,58 @@
+
+.tableContainer {
+    margin-top: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .editInput {
+    width: 80%;
+    padding: 5px;
+  }
+  
+  .loadingMessage {
+    margin-top: 20px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .editInput {
+    width: 80%;
+    padding: 8px;
+  }
+  
+  .loadingMessage {
+    margin-top: 20px;
+  }
+  
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .inputLabel {
+    margin-bottom: 5px;
+  }

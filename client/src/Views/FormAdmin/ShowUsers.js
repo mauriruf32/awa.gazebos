@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// import { getProducts } from "../../redux/actions";
 
-const URL = `http://localhost:3001/users/`;
+
+const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
+// const URL = process.env.URL || 'http://localhost:3001';
 
 const ShowUsers = () => {
     const [ users, setUser ] = useState([]);
@@ -13,12 +14,12 @@ const ShowUsers = () => {
     },[]);
 
     const getUsers = async () => {
-        const res = await axios.get(URL);
+        const res = await axios.get(`${URL}/users`);
         setUser(res.data)
     };
 
     const deleteUser = async (id) => {
-        axios.delete(`${URL}${id}`);
+        axios.delete(`${URL}/users/${id}`);
         getUsers();
     };
 
@@ -35,6 +36,7 @@ const ShowUsers = () => {
                             <th>Actions</th>
                             <th>Title</th>
                             <th>Contente</th>
+                            <th>Roll</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -46,6 +48,7 @@ const ShowUsers = () => {
                                 <td>{user.phoneNumber}</td>
                                 <td>{user.email}</td>
                                 <td>{user.password}</td>
+                                <td>{user.roll}</td>
                                 <td>
                                     <Link to={`/edit/${user.id}`} className="btn btn-info">Editar</Link>
                                     <button onClick={()=>deleteUser(user.id)} className="btn btn-danger">Eliminar</button>

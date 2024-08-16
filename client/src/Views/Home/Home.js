@@ -7,14 +7,20 @@ import { Container } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
 import SearchBar from "../../Components/SearchBar/SearchBar"
 import "./Home.css";
+import { Navigate } from 'react-router-dom';
 
 
-const Home = () => {  
+const Home = ({ user }) => {  
   const dispatch = useDispatch();
   const [order, setOrder] = useState('');
   const [selectedMaterial, setSelectedMaterial] = useState('');
   const [selectedColor, setSelectedColor] = useState('');
   const allProducts = useSelector((state) => state.allProducts);
+console.log(user)
+
+// if (!user) {
+//   return <Navigate to="/"/>
+// }
 
   const resetFilters = () => {
     setOrder('');

@@ -9,7 +9,7 @@ const postLogin = async (req, res) => {
 
     const user = await User.findOne({ where: { email } });
 
-    if (!user) return res.status(404).send("Usuario no encontrado");
+    if (!user) return res.status(404).send("Usuario nNO encontrado");
 
     /* if (user.password === password)
       return res.status(200).json({ access: true });

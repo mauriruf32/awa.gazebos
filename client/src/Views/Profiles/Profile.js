@@ -4,8 +4,10 @@ import 'react-tabs/style/react-tabs.css'; // Estilo por defecto de react-tabs
 import CreateProduct from "../FormAdmin/CreateProduct";
 import CreateImages from "../FormAdmin/Images";
 import EditProduct from "../FormAdmin/EditProducts";
+import EditUsers from "../FormAdmin/EditUsers";
 import ShowProducts from "../FormAdmin/ShowProducts";
 import "./Perfile.css"
+import ShowUsers from "../FormAdmin/ShowUsers";
 
 const Profile = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -18,7 +20,9 @@ const Profile = () => {
           <Tab>Crear Imagenes</Tab>
           <Tab>Crear Productos</Tab>
           <Tab>Ver Productos</Tab>
+          <Tab>Ver Usuarios</Tab>
           <Tab>Editar Productos</Tab>
+          <Tab>Editar Usuarios</Tab>
         </TabList>
         <TabPanel>
           <CreateImages />
@@ -29,8 +33,14 @@ const Profile = () => {
         <TabPanel>
           <ShowProducts />
         </TabPanel>
+        <TabPanel>
+          <ShowUsers />
+        </TabPanel>
                 <TabPanel >
           <EditProduct className="edit-prod" />
+        </TabPanel>
+        <TabPanel >
+          <EditUsers className="edit-prod" />
         </TabPanel>
       </Tabs>
     </div>

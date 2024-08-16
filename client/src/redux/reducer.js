@@ -14,7 +14,7 @@ import { GET_PRODUCTS,
 const initialState = {
     allProducts: [],
     materialFilter: [],
-    userData: [],
+    userData: null,
     images: [],
 };
 
