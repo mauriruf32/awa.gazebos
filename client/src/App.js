@@ -73,7 +73,6 @@ function App() {
       )}
       <Routes>
         <Route path="/" element={<Home   />} />
-        <Route path="/register" element={<Register />} />
         <Route path="/products/:id" element={<DetailProduct />} />
         <Route path="/images" element={<Imagenes />} />
         <Route path="/about" element={<About />} />
@@ -86,7 +85,7 @@ function App() {
           <Route path="/edit/:id" element={<EditUsers />} />
           <Route path="/users/showusers" element={<ShowUsers />} />
           <Route path="/profiles" element={<Profile />} />
-
+          <Route path="/register" element={<Register />} />
         </Route>
       </Routes>
       <Footer />

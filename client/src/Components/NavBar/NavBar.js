@@ -27,7 +27,7 @@ const NavBar = ({user}) => {
       {
             !user ? (
               <li class="nav-item">
-              <a class="nav-link" href="/profiles"><Link to="/profiles" className='text-about' smooth={true} duration={500}>Profiles</Link></a>
+              <a class="nav-link" href="/profiles"><Link to="/profiles" className='text-about' smooth={true} duration={500}>Dashboard</Link></a>
             </li>  
 
             ) : (

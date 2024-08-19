@@ -1,7 +1,12 @@
 /* General container styling */
 .edit-prod {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
   font-family: Arial, sans-serif;
+  background-color: #dbdada;
+
 }
 
 /* Table styling */
@@ -9,6 +14,8 @@
   width: 100%; 
   border-collapse: collapse;
   margin-bottom: 20px;
+  background-color: #F48422;
+
 }
 
 .table th,
@@ -16,10 +23,12 @@
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
+  background-color: #F48422;
+
 }
 
 .table th {
-  background-color: #f4f4f4;
+  background-color: #000000;
   cursor: pointer;
 }
 
@@ -30,13 +39,14 @@
 
 /* Table header styling */
 .table-primary {
-  background-color: #007bff;
+  background-color: #F48422;
   color: white;
 }
 
 /* Table row hover effect */
 .table tbody tr:hover {
-  background-color: #f1f1f1;
+  background-color: #F48422;
+
 }
 
 /* Input field styling */
@@ -52,7 +62,7 @@
 
 /* Button styling */
 .edit-prod button {
-  background-color: #007bff;
+  background-color: #ff0000;
   color: white;
   border: none;
   padding: 6px 12px;

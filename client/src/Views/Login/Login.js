@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import Form from "react-bootstrap/Form";
+
+import Button from "react-bootstrap/Button";
 import validation from './LoginValidations';
-import { useNavigate } from 'react-router-dom';
+import "./Login.css"
 
 const Login = ({ login }) => {
   
@@ -30,10 +32,41 @@ const Login = ({ login }) => {
   
 
   return (
-    <div>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div className='mb-3'>
+    <div className='login-container'>
+      <div className='login-form '>
+        <Form onSubmit={handleSubmit}>
+        <Form.Group  controlId="email">
+
+<Form.Label>Email</Form.Label>
+
+<Form.Control
+
+  autoFocus
+  type='email'
+  placeholder='Enter Email'
+  name='email'
+  onChange={handleInput}
+  value={values.email}
+/>
+{errors.email && <span>{errors.email}</span>}
+
+</Form.Group>
+<Form.Group   controlId="password">
+
+          <Form.Label>Password</Form.Label>
+
+          <Form.Control
+
+type='password'
+placeholder='Enter password'
+name='password'
+onChange={handleInput}
+value={values.password}
+/>
+{errors.password && <span>{errors.password}</span>}
+
+        </Form.Group>
+          {/* <div className='mb-3'>
             <label htmlFor='email'>Email</label>
             <input
               type='email'
@@ -43,8 +76,8 @@ const Login = ({ login }) => {
               value={values.email}
             />
             {errors.email && <span>{errors.email}</span>}
-          </div>
-          <div className='mb-3'>
+          </div> */}
+          {/* <div className='mb-3'>
             <label htmlFor='password'>Password</label>
             <input
               type='password'
@@ -54,11 +87,9 @@ const Login = ({ login }) => {
               value={values.password}
             />
             {errors.password && <span>{errors.password}</span>}
-          </div>
-          <button type='submit' className='btn btn-success'>Log In</button>
-          <p>You agree to our terms and policies</p>
-          <button className='btn btn-default border'>Create Account</button>
-        </form>
+          </div> */}
+          <Button type='submit' >Log In</Button>
+        </Form>
       </div>
     </div>
   );

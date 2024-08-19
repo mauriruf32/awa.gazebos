@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 80vh;
   }
   
   .login-form {
@@ -37,18 +37,17 @@
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #F48422;
     color: #fff;
     cursor: pointer;
   }
   
   .login-form button:hover {
-    background-color: #0056b3;
+    background-color: #000000;
   }
   
   .login-form span {
-    color: red;
+    color: rgb(0, 0, 0);
     font-size: 0.8rem;
-    margin-top: 5px;
   }
   
