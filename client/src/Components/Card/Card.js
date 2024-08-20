@@ -40,7 +40,7 @@ function Product({ product }) {
   };
 
   return (
-    <Card className="card" style={{ width: '15rem', borderColor: "white", marginBottom: "15%",  height:"15rem" }}>
+    <Card className="card" style={{ width: '15rem', borderColor: "white", marginBottom: "55%",  height:"15rem" }}>
       <Card.Img variant="top" src={image} alt={name} onClick={handleDetailProductClick} />
       <Card.Title className="mt-2">{name}</Card.Title>
       <ListGroup.Item>${numberWithCommas(price)}</ListGroup.Item>
