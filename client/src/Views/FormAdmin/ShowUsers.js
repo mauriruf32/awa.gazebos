@@ -50,7 +50,7 @@ const ShowUsers = () => {
                                 <td>{user.password}</td>
                                 <td>{user.roll}</td>
                                 <td>
-                                    <Link to={`/edit/${user.id}`} className="btn btn-info">Editar</Link>
+                                    {/* <Link to={`/edit/${user.id}`} className="btn btn-info">Editar</Link> */}
                                     <button onClick={()=>deleteUser(user.id)} className="btn btn-danger">Eliminar</button>
                                 </td>
                             </tr>
