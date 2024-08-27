@@ -1,4 +1,4 @@
-const { createUserDB, getUserById, getAllUsers, getUserByName } = require("../controllers/Users");
+const { createUserDB, getUserById, getAllUsers, getUserByName, deleteUser } = require("../controllers/Users");
 
 const getUsersHandler = async (req, res) => {
     const { firstName } = req.query;
@@ -43,6 +43,19 @@ const createUserHandler = async (req, res) => {
     // res.status(200).send(`Usuario ${firstName} creado con el email ${email}`);
 };
 
+const deleteUserHandler = async (req, res) => {
+    const { id } = req.params;
+  
+    try {
+      const response = await deleteUser(id);
+      res.status(200).json(response);
+    } catch (error) {
+      res.status(400).json({error: error.message});
+    }
+  
+      // res.status(200).send(`Detalle del producto ${id}`);
+  };
+  
 
 // /:id => params
 // query ===> ?name=name&raza=raza
@@ -53,4 +66,5 @@ module.exports = {
     getUserByIdHandler,
     getUsersHandler,
     createUserHandler,
+    deleteUserHandler,
 };

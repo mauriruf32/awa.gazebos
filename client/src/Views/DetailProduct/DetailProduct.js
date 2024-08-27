@@ -4,8 +4,7 @@ import React, { useEffect, useState } from "react";
 import "./DetailProduct.css";
 import Swal from "sweetalert2";
 import Button from 'react-bootstrap/Button';
-const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
-// const URL = process.env.URL || 'http://localhost:3001';
+import { URL } from "../../config.js";
 
 
 function DetailProduct() {

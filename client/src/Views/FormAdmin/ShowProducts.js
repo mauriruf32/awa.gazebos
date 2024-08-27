@@ -1,12 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { getProducts } from "../../redux/actions";
-import "./ShowProducts.css"
+import { URL } from "../../config.js";
 
-const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
-// const URL = process.env.URL || 'http://localhost:3001';
-
+import "./ShowProducts.css";
 
 
 const ShowProducts = () => {
@@ -22,7 +18,7 @@ const ShowProducts = () => {
     };
 
     const deleteProduct = async (id) => {
-        axios.delete(`https://awa-gazebos.vercel.app/products/${id}`);
+        axios.delete(`${URL}/products/${id}`);
         getProducts();
     };
 

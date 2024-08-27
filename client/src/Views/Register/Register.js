@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-// import { URL } from "../../config.js";
+import { URL } from "../../config.js";
 import './Register.css';
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
@@ -34,7 +34,7 @@ const Register = () => {
 
   const onSubmit = async (values, { setSubmitting }) => {
     try {
-      const response = await axios.post(`http://localhost:3001/users`, values);
+      const response = await axios.post(`${URL}/users`, values);
 
       if (response.status === 200) {
         Swal.fire({

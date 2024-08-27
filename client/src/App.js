@@ -21,6 +21,8 @@ import { useState } from 'react';
 import Announcement from "./Components/NavBar/Announcement.jsx";
 import  ProtectedRoute  from "./Components/ProtectedRoute/ProtectedRoute.jsx";
 import axios from 'axios';
+import { URL } from "../src/config.js";
+
 
 function App() {
   const userData = useSelector((state) => state.userData);
@@ -30,8 +32,8 @@ function App() {
   const [access, setAccess] = useState(false);
   const [user, setUser] = useState(null);
  
-  const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
-// const URL = process.env.URL || 'http://localhost:3001';
+
+
 
   const logout = () => setUser(null);
 
@@ -77,6 +79,7 @@ function App() {
         <Route path="/images" element={<Imagenes />} />
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
+
 
         <Route element={<ProtectedRoute isAllowed={!!user } />}>
           <Route path="/products/create" element={<CreateProduct />} />

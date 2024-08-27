@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import { getImages } from "../../redux/actions";
 import "./CreateProduct.css";
-const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
-// const URL = process.env.URL || 'http://localhost:3001';
+import { URL } from "../../config.js";
+
 
 const Form = () => {
     const dispatch = useDispatch();

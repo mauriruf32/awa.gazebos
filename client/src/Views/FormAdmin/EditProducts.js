@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./EditProducts.css";
+import { URL } from "../../config.js";
 
-const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
-// const URL = process.env.URL || 'http://localhost:3001';
 
 
 const EditProduct = () => {

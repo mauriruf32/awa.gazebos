@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { gazebos } from "../utils/dummyData.js"
+import { URL } from "../config.js";
 
 export const GET_PRODUCTS = "GET_PRODUCTS";
 export const GET_USERS = "GET_USERS";
@@ -15,7 +15,7 @@ export const LOGIN_USER = "LOGIN_USER";
 export const POST_IMAGES = "POST_IMAGES";
 export const GET_IMAGES = "GET_IMAGES";
 
-const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
+// const URL = process.env.URL || 'https://awa-gazebos.vercel.app';
 // const URL = process.env.URL || 'http://localhost:3001';
 
 

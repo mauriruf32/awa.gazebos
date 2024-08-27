@@ -32,9 +32,24 @@ return userDB;
     // const userFiltered = await User.filter(user => user.firstName === firstName);
 };
 
+const deleteUser = async (id) => {
+   
+      const userDB = await User.destroy({
+        where: {
+          id: id,
+        },
+      });
+  
+  
+  
+      return userDB
+    
+  };
+
 module.exports = {
     createUserDB,
     getUserById,
     getAllUsers,
     getUserByName,
+    deleteUser,
 };
