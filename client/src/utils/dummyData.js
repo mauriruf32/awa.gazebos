@@ -4,7 +4,7 @@ import  Premium3  from "./Premium3.jpg"
 import  TurquesaPortada  from "./TURQUESAPORTADA2.jpg"
 import  Turquesa12  from "./TURQUESA12.jpg"
 import  Turquesa2  from "./TURQUESA2.jpg"
-import  Turquesa3  from "./TURQUESA3.jpg"
+// import  Turquesa3  from "./TURQUESA3.jpg"
 import  RojoPortada  from "./ROJOPORTADA.jpg"
 import  Rojo1  from "./ROJO1.jpg"
 import  Rojo2  from "./ROJO2.jpg"
@@ -61,7 +61,6 @@ export const gazebos = [
     "images": [
       Turquesa12,
       Turquesa2,
-    Turquesa3
     ],
     "Images": []
     },
