@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import { URL } from "../config.js";
-
+import { gazebos } from "../utils/dummyData.js";
 export const GET_PRODUCTS = "GET_PRODUCTS";
 export const GET_USERS = "GET_USERS";
 export const GET_PRODUCT_BY_ID = "GET_PRODUCT_BY_ID";
@@ -20,61 +20,78 @@ export const GET_IMAGES = "GET_IMAGES";
 
 
 
-export function getProducts(){
-    return async function(dispatch){
-        const response = await axios.get(`${URL}/products`);
-         dispatch ({
-            type: "GET_PRODUCTS",
-            payload: response.data
-        });
-    };
-}
-
 // export function getProducts(){
 //     return async function(dispatch){
-//         // const response = await axios.get(`${URL}/products`);
+//         const response = await axios.get(`${URL}/products`);
 //          dispatch ({
 //             type: "GET_PRODUCTS",
-//             payload: gazebos
+//             payload: response.data
 //         });
 //     };
 // }
 
+export function getProducts(){
+    return async function(dispatch){
+        // const response = await axios.get(`${URL}/products`);
+         dispatch ({
+            type: "GET_PRODUCTS",
+            payload: gazebos
+        });
+    };
+}
+
 export function getProductById(id){
     return async function (dispatch) {
-        const response = await axios.get(
-            `${URL}/products/${id}`
-        );
+        // const response = await axios.get(
+        //     `${URL}/products/${id}`
+        // );
          dispatch({
             type: "GET_PRODUCT_BY_ID", 
-            payload: response.data
+            payload: gazebos
         });
     };
 }
 
 // export function getProductByName(name){
 //     return async function (dispatch){
-//         const response = await axios.get(
-//             `${URL}/products/?name=${name}`
-//         );
+//         // const response = await axios.get(
+//         //     `${URL}/products/?name=${name}`
+//         // );
 //          dispatch({
 //             type: "GET_PRODUCT_BY_NAME",
-//             payload: response.data
+//             payload: gazebos
 //         });
 //     };
 // }
 
 
+//FUNCION PARA BUSCAR EN DUMMYDATA
 export function getProductByName(name) {
-    return async function (dispatch) {
-        const response = await axios.get(`${URL}/products/?name=${name}`);
-        dispatch({
-            type: "GET_PRODUCT_BY_NAME",
-            payload: response.data
-        });
-        return response.data; // Devolvemos los datos para que el componente pueda usarlos
+    return function (dispatch) {
+      // Filtrar los pructos por nombre
+      const foundProduct = gazebos.filter(product =>
+        product.name.toLowerCase().includes(name.toLowerCase())
+      );
+      dispatch({
+        type: "GET_PRODUCT_BY_NAME",
+        payload: foundProduct
+      });
     };
-}
+  }
+
+
+//FUNCION PARA BUSCAR EN LA API
+
+// export function getProductByName(name) {
+//     return async function (dispatch) {
+//         const response = await axios.get(`${URL}/products/?name=${name}`);
+//         dispatch({
+//             type: "GET_PRODUCT_BY_NAME",
+//             payload: response.data
+//         });
+//         return response.data; 
+//     };
+// }
 
 
 export function postImages(data){

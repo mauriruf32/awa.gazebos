@@ -1,3 +1,5 @@
+import { gazebos } from "../utils/dummyData";
+
 import { GET_PRODUCTS, 
     GET_PRODUCT_BY_ID,
     GET_PRODUCT_BY_NAME, 

@@ -1,48 +1,122 @@
+import  Premium1  from "./Premium1.jpg"
+import  Premium2  from "./Premium2.jpg"
+import  Premium3  from "./Premium3.jpg"
+import  TurquesaPortada  from "./TURQUESAPORTADA2.jpg"
+import  Turquesa12  from "./TURQUESA12.jpg"
+import  Turquesa2  from "./TURQUESA2.jpg"
+import  Turquesa3  from "./TURQUESA3.jpg"
+import  RojoPortada  from "./ROJOPORTADA.jpg"
+import  Rojo1  from "./ROJO1.jpg"
+import  Rojo2  from "./ROJO2.jpg"
+import  Rojo3  from "./ROJO3.jpg"
+import  CelestePortada  from "./CELESTEPORTADA.jpg"
+import  Celeste1  from "./CELESTE1.jpg"
+import  Celeste2  from "./CELESTE2.jpg"
+import  Celeste3  from "./CELESTE3.jpg"
 export const gazebos = [
-  {
-  "id": 6,
-  "name": "Gazebo Mini",
-  "image": "http://res.cloudinary.com/djsqt7j6v/image/upload/v1717802270/gzkf7byokoazo2qyrxkh.jpg",
-  "description": "Modelo Mini:\n-tela 1,5X2m (armado queda de 2x3 aprox)\n-2 parantes regulables (1,7 altura máxima) (opcional 2 parantes más extras.)\n-4 estacas tirabuzón\n-4 bolsas de contrapeso.\n- bolso de transporte.\n\nDescuentos pagando por efectivo/transferencia.\n\nMultiforma, transportable, todo terreno, resistente al clima, sencillo y sin mantenimiento, rápido y práctico.\n\n•Multiforma: su toldo elástico, y sus parantes regulables en altura te permitirán darle la forma que desees y que mejor se acomode a tus necesidades.\n\n•Transportable: su bolso de 70cm X 10cm y su peso de 6,5 Kg te permitirá transportarlo adónde desees si problemas.\n\n•Todo terreno: su doble sistema de anclaje es ideal para armarlo en cualquier superficie, sin importar el tipo de suelo ni los desniveles.\n\n•Resistente al clima: sus estacas tirabuzón le permite soportar vientos muy fuertes. Ampliamente probado en las cosas argentinas!!\n\n•Sencillo y sin mantenimiento: Ninguna de sus piezas necesita mantenimiento. Además no posee piezas móviles, lo que reduce ampliamente el riesgo de roturas, permitiendo una vida útil súper larga.\nSus parantes son de aluminio, lo que evita la oxidación y deterioro.\n\n•Rápido y práctico: su armado se puede realizar por una sola persona, sin tomar más de 5 minutos para esto\n\n",
-  "price": "345000.00",
-  "stock": 5,
-  "color": "Rojo",
-  "size": "Tela elastica 3x3m (armado queda de 5x5m aprox)",
-  "material": "Aluminio",
-  "materialTela": "Elastica",
-  "category": "Mini",
-  "deleted": false,
-  "averageScore": 0,
-  "countReviews": 0,
-  "images": [
-  "10",
-  "11",
-  "12"
-  ],
-  "Images": []
-  },
-  {
-  "id": 7,
-  "name": "Premium",
-  "image": "http://res.cloudinary.com/djsqt7j6v/image/upload/v1717804778/kztgocux2oyqjjposbof.jpg",
-  "description": "Modelo Premium:\n-Tela elastica 3x3m (armado queda de 5x5m aprox)\n-4 parantes de aluminio regulables (2,25m altura máxima)\n-4 estacas tirabuzón\n-4 bolsas de contrapeso\n- bolso de transporte\n\n\n---\nMultiforma, transportable, todo terreno, resistente al clima, sencillo y sin mantenimiento, rápido y práctico.\n\n•Multiforma: su toldo elástico, y sus parantes regulables en altura te permitirán darle la forma que desees y que mejor se acomode a tus necesidades.\n\n•Transportable: su bolso de 70cm X 10cm y su peso de 6,5 Kg te permitirá transportarlo adónde desees si problemas.\n\n•Todo terreno: su doble sistema de anclaje es ideal para armarlo en cualquier superficie, sin importar el tipo de suelo ni los desniveles.\n\n•Resistente al clima: sus estacas tirabuzón le permite soportar vientos muy fuertes. Ampliamente probado en las cosas argentinas!!\n\n•Sencillo y sin mantenimiento: Ninguna de sus piezas necesita mantenimiento. Además no posee piezas móviles, lo que reduce ampliamente el riesgo de roturas, permitiendo una vida útil súper larga.\nSus parantes son de aluminio, lo que evita la oxidación y deterioro.\n\n•Rápido y práctico: su armado se puede realizar por una sola persona, sin tomar más de 5 minutos para esto.\n",
-  "price": "240000.00",
-  "stock": 13,
-  "color": "Azul",
-  "size": " 5x5m aprox",
-  "material": "Aluminio",
-  "materialTela": "Elastica",
-  "category": "PREMIUN 5X5",
-  "deleted": false,
-  "averageScore": 0,
-  "countReviews": 0,
-  "images": [
-  "13",
-  "14",
-  "15"
-  ],
-  "Images": []
-  }
+     {
+      id: 4,
+      name: "Gazebo Modelo Premium",
+      image: "http://res.cloudinary.com/djsqt7j6v/image/upload/v1728073268/eopdkih3mum4kpky2juu.jpg",
+      description: "Modelo Premium:\n-Tela elastica 3x3m (armado queda de 5x5m aprox)\n-4 Parantes de aluminio regulables (2,25m altura máxima)\n-4 estacas tirabuzón\n-4 bolsas de contrapeso\n- bolso de transporte\n\nDescuentos pagando por efectivo/transferencia.\n\n•Multiforma: su toldo elástico, y sus parantes regulables en altura te permitirán darle la forma que desees y que mejor se acomode a tus necesidades.\n\n•Transportable: su bolso de 70cm X 10cm y su peso de 6,5 Kg te permitirá transportarlo adónde desees sin problemas.\n\n•Todo terreno: su doble sistema de anclaje es ideal para armarlo en cualquier superficie, sin importar el tipo de suelo ni los desniveles.\n\n•Resistente al clima: sus estacas tirabuzón le permite soportar vientos muy fuertes. Ampliamente probado en las cosas argentinas!!\n\n•Sencillo y sin mantenimiento: Ninguna de sus piezas necesita mantenimiento. Además no posee piezas móviles, lo que reduce ampliamente el riesgo de roturas, permitiendo una vida útil súper larga.\nSus parantes son de aluminio, lo que evita la oxidación y deterioro.\n\n•Rápido y práctico: su armado se puede realizar por una sola persona, sin tomar más de 5 minutos para esto.",
+      price: "450000.00",
+      stock: 5,
+      color: "Verde",
+      size: "Grande",
+      marca: "AWA",
+      material: "Aluminio",
+      materialTela: "Tela elástica UV",
+      impermeable: "Si",
+      ajustable: "Si",
+      category: "PREMIUN 3X3",
+      peso: "6500.00",
+      deleted: false,
+      averageScore: 0,
+      countReviews: 0,
+      images: [
+        Premium1,
+        Premium2,
+        Premium3
+      ]
+    },
+    {
+    "id": 5,
+    "name": "Gazebo Modelo Mini",
+    "image": TurquesaPortada,
+    "description": "Modelo Mini:\n-tela 1,5X2m (armado queda de 2x3 aprox)\n-2 Parantes regulables (1,7 altura máxima) (opcional 2 parantes más extras.)\n-4 estacas tirabuzón\n-4 bolsas de contrapeso.\n- bolso de transporte.\n\nDescuentos pagando por efectivo/transferencia.\n•Multiforma: su toldo elástico, y sus parantes regulables en altura te permitirán darle la forma que desees y que mejor se acomode a tus necesidades.\n\n•Transportable: su bolso de 70cm X 10cm y su peso de 6,5 Kg te permitirá transportarlo adónde desees si problemas.\n\n•Todo terreno: su doble sistema de anclaje es ideal para armarlo en cualquier superficie, sin importar el tipo de suelo ni los desniveles.\n\n•Resistente al clima: sus estacas tirabuzón le permite soportar vientos muy fuertes. Ampliamente probado en las cosas argentinas!!\n\n•Sencillo y sin mantenimiento: Ninguna de sus piezas necesita mantenimiento. Además no posee piezas móviles, lo que reduce ampliamente el riesgo de roturas, permitiendo una vida útil súper larga.\nSus parantes son de aluminio, lo que evita la oxidación y deterioro.\n\n•Rápido y práctico: su armado se puede realizar por una sola persona, sin tomar más de 5 minutos para esto.\n",
+    "price": "320000.00",
+    "stock": 5,
+    "color": "Otro",
+    "size": "Mini",
+    "marca": "AWA",
+    "material": "Aluminio",
+    "materialTela": "Tela elástica UV",
+    "impermeable": "Si",
+    "ajustable": "Si",
+    "category": "Mini",
+    "peso": "6.00",
+    "deleted": false,
+    "averageScore": 0,
+    "countReviews": 0,
+    "images": [
+      Turquesa12,
+      Turquesa2,
+    Turquesa3
+    ],
+    "Images": []
+    },
+    {
+      "id": 6,
+      "name": "Gazebo Modelo Celeste",
+      "image": CelestePortada,
+      "description": "Modelo Celeste:\n-Tela elastica 3x3m (armado queda de 5x5m aprox)\n-4 Parantes de aluminio regulables (2,25m altura máxima)\n-4 estacas tirabuzón\n-4 bolsas de contrapeso\n- bolso de transporte\n\nDescuentos pagando por efectivo/transferencia.\n\n•Multiforma: su toldo elástico, y sus parantes regulables en altura te permitirán darle la forma que desees y que mejor se acomode a tus necesidades.\n\n•Transportable: su bolso de 70cm X 10cm y su peso de 6,5 Kg te permitirá transportarlo adónde desees si problemas.\n\n•Todo terreno: su doble sistema de anclaje es ideal para armarlo en cualquier superficie, sin importar el tipo de suelo ni los desniveles.\n\n•Resistente al clima: sus estacas tirabuzón le permite soportar vientos muy fuertes. Ampliamente probado en las cosas argentinas!!\n\n•Sencillo y sin mantenimiento: Ninguna de sus piezas necesita mantenimiento. Además no posee piezas móviles, lo que reduce ampliamente el riesgo de roturas, permitiendo una vida útil súper larga.\nSus parantes son de aluminio, lo que evita la oxidación y deterioro.\n\n•Rápido y práctico: su armado se puede realizar por una sola persona, sin tomar más de 5 minutos para esto.",
+      "price": "450000.00",
+      "stock": 5,
+      "color": "Celeste",
+      "size": "Grande",
+      "marca": "AWA",
+      "material": "Aluminio",
+      "materialTela": "Tela elástica UV",
+      "impermeable": "Si",
+      "ajustable": "Si",
+      "category": "PREMIUN 3X3",
+      "peso": "6500.00",
+      "deleted": false,
+      "averageScore": 0,
+      "countReviews": 0,
+      "images": [
+        Celeste1,
+        Celeste2,
+        Celeste3
+      ],
+      "Images": []
+    },
+    {
+    "id": 7,
+    "name": "Gazebo Modelo Rojo",
+    "image": RojoPortada,
+    "description": "Modelo Mini:\n-tela 1,5X2m (armado queda de 2x3 aprox)\n-2 Parantes regulables (1,7 altura máxima) (opcional 2 parantes más extras.)\n-4 estacas tirabuzón\n-4 bolsas de contrapeso.\n- bolso de transporte.\n\nDescuentos pagando por efectivo/transferencia.\n•Multiforma: su toldo elástico, y sus parantes regulables en altura te permitirán darle la forma que desees y que mejor se acomode a tus necesidades.\n\n•Transportable: su bolso de 70cm X 10cm y su peso de 6,5 Kg te permitirá transportarlo adónde desees si problemas.\n\n•Todo terreno: su doble sistema de anclaje es ideal para armarlo en cualquier superficie, sin importar el tipo de suelo ni los desniveles.\n\n•Resistente al clima: sus estacas tirabuzón le permite soportar vientos muy fuertes. Ampliamente probado en las cosas argentinas!!\n\n•Sencillo y sin mantenimiento: Ninguna de sus piezas necesita mantenimiento. Además no posee piezas móviles, lo que reduce ampliamente el riesgo de roturas, permitiendo una vida útil súper larga.\nSus parantes son de aluminio, lo que evita la oxidación y deterioro.\n\n•Rápido y práctico: su armado se puede realizar por una sola persona, sin tomar más de 5 minutos para esto.\n",
+    "price": "320000.00",
+    "stock": 5,
+    "color": "Rojo",
+    "size": "Mini",
+    "marca": "AWA",
+    "material": "Aluminio",
+    "materialTela": "Tela elástica UV",
+    "impermeable": "Si",
+    "ajustable": "Si",
+    "category": "Mini",
+    "peso": "6.00",
+    "deleted": false,
+    "averageScore": 0,
+    "countReviews": 0,
+    "images": [
+      Rojo1,
+      Rojo2,
+      Rojo3
+    ],
+    "Images": []
+    },
   ]
 
 // export const gazebos = [
@@ -151,7 +225,7 @@ export const gazebos = [
 //   {
 //     id: 7,
 //     name: "Gazebo Económico Naranja 3.5x3.5m",
-//     image: "https://example.com/gazebo-naranja-3.5x3.5.jpg",
+//     image: "http://res.cloudinary.com/djsqt7j6v/image/upload/v1720811163/lrt7keghnxyt8e6vkxv9.jpg",
 //     description: "Gazebo económico de 3.5x3.5 metros en color naranja, fácil de montar.",
 //     price: 119.99,
 //     stock: 20,

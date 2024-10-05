@@ -36,9 +36,9 @@ const NavBar = ({user}) => {
             )
           }
  
-      {/* <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="/profiles"><Link to="/register" className='text-about' smooth={true} duration={500}>Registrate</Link></a>
-      </li>  */}
+      </li> 
      <li class="nav-item">
         <a class="nav-link" href="/login"><Link to="/login" className='text-about' smooth={true} duration={500}>LogIn</Link></a>
       </li>   

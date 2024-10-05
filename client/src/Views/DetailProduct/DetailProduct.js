@@ -5,52 +5,42 @@ import "./DetailProduct.css";
 import Swal from "sweetalert2";
 import Button from 'react-bootstrap/Button';
 import { URL } from "../../config.js";
-
+import { gazebos } from "../../utils/dummyData.js";
 
 function DetailProduct() {
   const { id } = useParams();
   const [producto, setProducto] = useState({});
-  const [images, setImages] = useState([]);
+
   function numberWithCommas(price) {
     if (typeof price !== 'undefined') {
       return price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
     } else {
-      return ""; // O cualquier valor por defecto que desees mostrar
+      return "";
     }
   }
-  
+
   useEffect(() => {
-    // Obtener la información del producto y las imágenes
+    // Obtener la información del producto desde la API
     axios.get(`${URL}/products/${id}`)
       .then(({ data }) => {
         if (data.name) {
           setProducto(data);
-          // Filtrar las imágenes asociadas al producto si producto.images está definido
-          if (data.images) {
-            const productImages = data.images.map(imageId => ({
-              ...images.find(image => image.id === parseInt(imageId))
-            }));
-            setImages(productImages);
-          }
         } else {
           window.alert("No hay producto con ese ID");
         }
       })
       .catch((error) => {
         console.error('Error fetching product:', error);
-      });
-
-    // Obtener todas las imágenes disponibles
-    axios.get(`${URL}/images`)
-      .then((response) => {
-        setImages(response.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching images:', error);
+        // Cargar el producto desde dummyData.js si la API falla
+        const productoDummy = gazebos.find(item => item.id === parseInt(id));
+        if (productoDummy) {
+          setProducto(productoDummy);
+        } else {
+          window.alert("No hay producto con ese ID en los datos de prueba");
+        }
       });
   }, [id]);
 
-  // Función para mostrar la imagen ampliada
   const showImagePopup = (imageUrl) => {
     Swal.fire({
       imageUrl: imageUrl,
@@ -59,7 +49,7 @@ function DetailProduct() {
       showConfirmButton: false,
       focusConfirm: false,
       customClass: {
-        popup: 'custom-popup-class', // Clase CSS personalizada para el popup
+        popup: 'custom-popup-class',
       }
     });
   };
@@ -76,12 +66,12 @@ function DetailProduct() {
             />
           )}
           <div className="product-images">
-            {images.filter(image => producto.images && producto.images.includes(String(image.id))).map((image) => (
+            {producto.images && producto.images.map((image, index) => (
               <img
-                key={image.id}
-                src={image.url}
-                alt={image.name}
-                onClick={() => showImagePopup(image.url)}
+                key={index}
+                src={image}
+                alt={`${producto.name} ${index + 1}`}
+                onClick={() => showImagePopup(image)}
                 className="clickable-image"
               />
             ))}

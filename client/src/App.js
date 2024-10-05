@@ -78,17 +78,22 @@ function App() {
         <Route path="/products/:id" element={<DetailProduct />} />
         <Route path="/images" element={<Imagenes />} />
         <Route path="/about" element={<About />} />
-        <Route path="/cart" element={<Cart />} />
-
-
-        <Route element={<ProtectedRoute isAllowed={!!user } />}>
+          <Route path="/register" element={<Register />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/products/create" element={<CreateProduct />} />
           <Route path="/products/showproducts" element={<ShowProducts />} />
           <Route path="/edit/:id" element={<EditProducts />} />
           <Route path="/edit/:id" element={<EditUsers />} />
           <Route path="/users/showusers" element={<ShowUsers />} />
           <Route path="/profiles" element={<Profile />} />
-          <Route path="/register" element={<Register />} />
+
+        <Route element={<ProtectedRoute isAllowed={!!user } />}>
+          {/* <Route path="/products/create" element={<CreateProduct />} />
+          <Route path="/products/showproducts" element={<ShowProducts />} />
+          <Route path="/edit/:id" element={<EditProducts />} />
+          <Route path="/edit/:id" element={<EditUsers />} />
+          <Route path="/users/showusers" element={<ShowUsers />} />
+          <Route path="/profiles" element={<Profile />} /> */}
         </Route>
       </Routes>
       <Footer />
